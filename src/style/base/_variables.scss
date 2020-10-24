@@ -2,3 +2,42 @@
 @use "colors";
 
 $primary-radius: 4px;
+
+/**
+ * 1. Base
+ */
+$base-background-color: mixins.color('gray', 50);
+$base-body-gutter: 0;
+$base-font-color: mixins.color('blueGray', 900);
+$base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
+$base-font-size: 16px;
+$base-border-color: mixins.color('gray', 300);
+
+:root {
+    --base-font-size: #{$base-font-size};
+    --base-body-background: #{$base-background-color};
+    --base-body-gutter: #{$base-body-gutter};
+    --base-font-color: #{$base-font-color};
+    --base-font-family: #{$base-font-family};
+    --base-border-color: #{$base-border-color};
+}
+
+/**
+ * 2. Panel
+ */
+$panel-background: #fff;
+$panel-gutter: 2rem;
+
+:root {
+    --panel-background: #{$panel-background};
+    --panel-gutter: #{$panel-gutter}
+}
+
+/**
+ * 3. Page
+ */
+$page-gutter: 2rem;
+
+:root {
+    --page-gutter: #{$page-gutter};
+}

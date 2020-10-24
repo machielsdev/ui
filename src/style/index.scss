@@ -3,9 +3,12 @@
  */
 @use "base/colors";
 @use "base/mixins";
+@use "base/typography";
 @use "base/variables";
 @use "base/base";
 
 /**
  * 2. Components
  */
+@use "components/page";
+@use "components/panel";

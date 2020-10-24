@@ -1,0 +1,22 @@
+.page {
+    background: var(--page-background-color);
+
+    .page-header {
+        border-bottom: solid 1px var(--base-border-color);
+        padding-top: var(--page-gutter);
+        padding-right: var(--page-gutter);
+        padding-left: var(--page-gutter);
+
+        &:not(.with-title) {
+            padding-bottom: var(--page-gutter);
+        }
+
+        .page-header-title {
+            padding-bottom: var(--page-gutter);
+        }
+    }
+
+    .page-content {
+        padding: var(--page-gutter);
+    }
+}

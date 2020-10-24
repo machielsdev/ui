@@ -1,0 +1,7 @@
+.panel {
+    background: var(--panel-background);
+
+    &.panel-spaced {
+        padding: var(--panel-gutter);
+    }
+}
