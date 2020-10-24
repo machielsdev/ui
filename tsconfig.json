@@ -43,6 +43,7 @@
     "exclude": [
         "node_modules",
         "dist",
-        "setupTests.ts"
+        "setupTests.ts",
+        "www"
     ]
 }
