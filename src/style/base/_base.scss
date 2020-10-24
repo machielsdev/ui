@@ -1,3 +1,12 @@
 html {
-    font-size: 14px;
+    font-size: var(--base-font-size);
+}
+
+body {
+    background: var(--base-body-background);
+    color: var(--base-font-color);
+    margin: var(--base-body-gutter);
+    font: {
+        family: var(--base-font-family);
+    }
 }
