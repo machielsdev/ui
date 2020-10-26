@@ -1,0 +1,107 @@
+.btn {
+    border: solid 1px transparent;
+    border-radius: var(--base-border-radius);
+    cursor: pointer;
+    display: inline-flex;
+    padding: var(--button-padding);
+    outline: none;
+    justify-content: center;
+    font: {
+        weight: var(--button-font-weight);
+        size: var(--button-font-size);
+    }
+
+    &.btn-primary {
+        background: var(--primary-button-background);
+        border-color: var(--primary-button-border);
+        color: #fff;
+
+        &:hover {
+            background: var(--primary-button-hover-background);
+            border-color: var(--primary-button-hover-border);
+        }
+
+        &:active {
+            background: var(--primary-button-active-background);
+            border-color: var(--primary-button-active-border);
+        }
+    }
+
+    &.btn-primary-ghost {
+        border-color: var(--primary-button-ghost-border);
+        color: var(--primary-button-ghost-color);
+
+        &:hover {
+            background: var(--primary-button-ghost-hover-background);
+            border-color: var(--primary-button-border);
+        }
+
+        &:active {
+            background: var(--primary-button-ghost-active-background);
+            border-color: var(--primary-button-border);
+        }
+    }
+
+    &.btn-secondary {
+        background: transparent;
+        color: var(--primary-color);
+        border-color: var(--base-border-color);
+
+        &:hover {
+            background: var(--secondary-button-hover-background);
+        }
+
+        &:active {
+            background: var(--secondary-button-active-background);
+        }
+    }
+
+    &.btn-danger {
+        background: var(--danger-button-background);
+        border-color: var(--danger-button-border);
+        color: #fff;
+
+        &:hover {
+            background: var(--danger-button-hover-background);
+            border-color: var(--danger-button-hover-border);
+        }
+
+        &:active {
+            background: var(--danger-button-active-background);
+            border-color: var(--danger-button-active-border);
+        }
+    }
+
+    &.btn-danger-ghost {
+        border-color: var(--danger-button-ghost-border);
+        color: var(--danger-button-ghost-color);
+
+        &:hover {
+            background: var(--danger-button-ghost-hover-background);
+            border-color: var(--danger-button-ghost-border);
+        }
+
+        &:active {
+            background: var(--danger-button-ghost-active-background);
+            border-color: var(--danger-button-ghost-border);
+        }
+    }
+
+    .icon-container {
+        &.icon-left {
+            margin-right: var(--base-gutter);
+        }
+
+        &.icon-right {
+            margin-left: var(--base-gutter);
+        }
+    }
+
+    &.btn-block {
+        width: 100%;
+    }
+
+    &.btn-small {
+        padding: 0.5rem;
+    }
+}

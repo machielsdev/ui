@@ -1,8 +1,6 @@
 @use "mixins";
 @use "colors";
 
-$primary-radius: 4px;
-
 /**
  * 1. Base
  */
@@ -12,6 +10,8 @@ $base-font-color: mixins.color('blueGray', 900);
 $base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
 $base-font-size: 16px;
 $base-border-color: mixins.color('gray', 300);
+$base-border-radius: 4px;
+$base-gutter: 1rem;
 
 :root {
     --base-font-size: #{$base-font-size};
@@ -20,10 +20,41 @@ $base-border-color: mixins.color('gray', 300);
     --base-font-color: #{$base-font-color};
     --base-font-family: #{$base-font-family};
     --base-border-color: #{$base-border-color};
+    --base-border-radius: #{$base-border-radius};
+    --base-gutter: #{$base-gutter};
 }
 
 /**
- * 2. Panel
+ * 2. Colors
+ */
+$primary-color: mixins.color('deepPurple', 600);
+$primary-color-hover: mixins.color('deepPurple', 700);
+$primary-color-active: mixins.color('deepPurple', 800);
+
+$secondary-color: mixins.color('red', 600);
+$secondary-color-hover: mixins.color('red', 700);
+$secondary-color-active: mixins.color('red', 800);
+
+$danger-color: mixins.color('red', 700);
+$danger-color-hover: mixins.color('red', 800);
+$danger-color-active: mixins.color('red', 900);
+
+:root {
+    --primary-color: #{$primary-color};
+    --primary-color-hover: #{$primary-color-hover};
+    --primary-color-active: #{$primary-color-active};
+
+    --secondary-color: #{$secondary-color};
+    --secondary-color-hover: #{$secondary-color-hover};
+    --secondary-color-active: #{$secondary-color-active};
+
+    --danger-color: #{$danger-color};
+    --danger-color-hover: #{$danger-color-hover};
+    --danger-color-active: #{$danger-color-active};
+}
+
+/**
+ * 3. Panel
  */
 $panel-background: #fff;
 $panel-gutter: 2rem;
@@ -34,10 +65,61 @@ $panel-gutter: 2rem;
 }
 
 /**
- * 3. Page
+ * 4. Page
  */
 $page-gutter: 2rem;
 
 :root {
     --page-gutter: #{$page-gutter};
+}
+
+/**
+ * 5. Button
+ */
+$button-padding: 1rem;
+$button-font-weight: 600;
+$button-font-size: 1rem;
+
+$primary-button-ghost-hover-background: mixins.color('deepPurple', 50);
+$primary-button-ghost-active-background: mixins.color('deepPurple', 75);
+
+$secondary-button-background: transparent;
+$secondary-button-hover-background: mixins.color('deepPurple', 50);
+$secondary-button-active-background: mixins.color('deepPurple', 75);
+
+$danger-button-ghost-hover-background: mixins.color('red', 50);
+$danger-button-ghost-active-background: mixins.color('red', 75);
+
+:root {
+    --button-padding: #{$button-padding};
+    --button-font-weight: #{$button-font-weight};
+    --button-font-size: #{$button-font-size};
+
+    --primary-button-background: var(--primary-color);
+    --primary-button-border: var(--primary-color);
+    --primary-button-hover-background: var(--primary-color-hover);
+    --primary-button-hover-border: var(--primary-color-hover);
+    --primary-button-active-background: var(--primary-color-active);
+    --primary-button-active-border: var(--primary-color-active);
+
+    --primary-button-ghost-color: var(--primary-color);
+    --primary-button-ghost-border: var(--primary-color);
+    --primary-button-ghost-hover-background: #{$primary-button-ghost-hover-background};
+    --primary-button-ghost-active-background: #{$primary-button-ghost-active-background};
+
+    --secondary-button-background: #{$secondary-button-background};
+    --secondary-button-hover-background: #{$secondary-button-hover-background};
+    --secondary-button-active-background: #{$secondary-button-active-background};
+
+    --danger-button-background: var(--danger-color);
+    --danger-button-border: var(--danger-color);
+    --danger-button-hover-background: var(--danger-color-hover);
+    --danger-button-hover-border: var(--danger-color-hover);
+    --danger-button-active-background: var(--danger-color-active);
+    --danger-button-active-border: var(--danger-color-active);
+
+    --danger-button-ghost-color: var(--danger-color);
+    --danger-button-ghost-border: var(--danger-color);
+    --danger-button-ghost-hover-background: #{$danger-button-ghost-hover-background};
+    --danger-button-ghost-active-background: #{$danger-button-ghost-active-background};
 }
