@@ -24,7 +24,7 @@ const PageHeader = ({
                     'page-header-title'
                 )}
             >
-                <h1>{title}</h1>
+                {title}
             </div>
         )}
         {children}
