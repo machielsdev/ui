@@ -1,5 +1,7 @@
 html {
     font-size: var(--base-font-size);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -9,4 +11,5 @@ body {
     font: {
         family: var(--base-font-family);
     }
+    line-height: 1.2rem;
 }
