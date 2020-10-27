@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Panel from '@/components/Panel';
+import { Panel } from '@/components/Panel';
 import clsx from 'clsx';
 
 export interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
