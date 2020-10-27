@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
 import { Variant } from '@/components';
 
 describe('Button test', () => {
