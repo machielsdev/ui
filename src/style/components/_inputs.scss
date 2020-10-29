@@ -1,0 +1,66 @@
+@use "../base/mixins";
+
+.cui-input-base {
+    background: #fff;
+    border: solid 1px var(--base-border-color);
+    border-radius: var(--base-border-radius);
+    pointer-events: none;
+    position: relative;
+    width: auto;
+    display: flex;
+    padding: 0 var(--input-padding);
+    transition: all .1s ease-in-out;
+
+    .cui-input-actions {
+        align-self: center;
+        pointer-events: auto;
+        margin-left: var(--input-padding);
+    }
+
+    &:hover {
+        border-color: var(--base-border-hover-color);
+    }
+
+    &.has-focus {
+        border-color: var(--primary-color);
+
+        .cui-input-label {
+            color: var(--primary-color);
+        }
+    }
+
+    &.has-focus, &.has-value {
+        .cui-input-label {
+            transform: translateY(calc((var(--input-padding) / 2) / 2));
+            top: 0;
+            font: {
+                size: 0.8rem;
+            }
+        }
+    }
+
+    .cui-input {
+        padding: calc(var(--input-padding) + (var(--input-padding) / 2)) 0 calc(var(--input-padding) / 2);
+        background: none;
+        border-radius: var(--base-border-radius);
+        border: none;
+        outline: none;
+        width: 100%;
+        font: {
+            size: var(--input-font-size);
+            weight: var(--input-font-weight);
+        }
+        pointer-events: auto;
+    }
+
+    .cui-input-label {
+        font: {
+            size: var(--input-font-size);
+        }
+        color: mixins.color('gray', 700);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .1s ease-in-out;
+    }
+}

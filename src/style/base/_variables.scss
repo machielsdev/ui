@@ -8,18 +8,18 @@ $base-background-color: mixins.color('gray', 50);
 $base-body-gutter: 0;
 $base-font-color: mixins.color('blueGray', 900);
 $base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
-$base-font-size: 16px;
 $base-border-color: mixins.color('gray', 300);
+$bse-border-hover-color: mixins.color('gray', 400);
 $base-border-radius: 4px;
 $base-gutter: 1rem;
 
 :root {
-    --base-font-size: #{$base-font-size};
     --base-body-background: #{$base-background-color};
     --base-body-gutter: #{$base-body-gutter};
     --base-font-color: #{$base-font-color};
     --base-font-family: #{$base-font-family};
     --base-border-color: #{$base-border-color};
+    --base-border-hover-color: #{$bse-border-hover-color};
     --base-border-radius: #{$base-border-radius};
     --base-gutter: #{$base-gutter};
 }
@@ -122,4 +122,17 @@ $danger-button-ghost-active-background: mixins.color('red', 75);
     --danger-button-ghost-border: var(--danger-color);
     --danger-button-ghost-hover-background: #{$danger-button-ghost-hover-background};
     --danger-button-ghost-active-background: #{$danger-button-ghost-active-background};
+}
+
+/**
+ * 7. Inputs
+ */
+$input-padding: 1rem;
+$input-font-weight: 500;
+$input-font-size: 1rem;
+
+:root {
+    --input-padding: #{$input-padding};
+    --input-font-weight: #{$input-font-weight};
+    --input-font-size: #{$input-font-size};
 }
