@@ -25,7 +25,7 @@ const setEnvVars = () => {
 
 module.exports = {
     entry: {
-        main: './www/src/Page.tsx'
+        main: './www/src/index.tsx'
     },
     module: {
         rules: [
