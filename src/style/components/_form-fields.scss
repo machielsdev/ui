@@ -1,6 +1,6 @@
 @use "../base/mixins";
 
-.cui-input-base {
+.cui-form-field-base {
     background: #fff;
     border: solid 1px var(--base-border-color);
     border-radius: var(--base-border-radius);
@@ -8,30 +8,30 @@
     position: relative;
     width: auto;
     display: flex;
-    padding: 0 var(--input-padding);
+    padding: 0 var(--form-field-padding);
     transition: all .1s ease-in-out;
 
-    .cui-input-actions {
+    .cui-form-field-actions {
         align-self: center;
         pointer-events: auto;
-        margin-left: var(--input-padding);
+        margin-left: var(--form-field-padding);
     }
 
     &:hover {
         border-color: var(--base-border-hover-color);
     }
 
-    &.has-focus {
+    &.cui-focused {
         border-color: var(--primary-color);
 
-        .cui-input-label {
+        .cui-form-field-label {
             color: var(--primary-color);
         }
     }
 
-    &.has-focus, &.has-value {
-        .cui-input-label {
-            transform: translateY(calc((var(--input-padding) / 2) / 2));
+    &.cui-focused, &.cui-has-value {
+        .cui-form-field-label {
+            transform: translateY(calc((var(--form-field-padding) / 2) / 2));
             top: 0;
             font: {
                 size: 0.8rem;
@@ -39,23 +39,30 @@
         }
     }
 
-    .cui-input {
-        padding: calc(var(--input-padding) + (var(--input-padding) / 2)) 0 calc(var(--input-padding) / 2);
+    &.cui-floating-label .cui-form-field  {
+        padding: calc(var(--form-field-padding) + (var(--form-field-padding) / 2)) 0 calc(var(--form-field-padding) / 2);
+    }
+
+    &:not(.cui-floating-label) .cui-form-field {
+        padding: var(--form-field-padding) 0;
+    }
+
+    .cui-form-field {
         background: none;
         border-radius: var(--base-border-radius);
         border: none;
         outline: none;
         width: 100%;
         font: {
-            size: var(--input-font-size);
-            weight: var(--input-font-weight);
+            size: var(--form-field-font-size);
+            weight: var(--form-field-font-weight);
         }
         pointer-events: auto;
     }
 
-    .cui-input-label {
+    .cui-form-field-label {
         font: {
-            size: var(--input-font-size);
+            size: var(--form-field-font-size);
         }
         color: mixins.color('gray', 700);
         position: absolute;

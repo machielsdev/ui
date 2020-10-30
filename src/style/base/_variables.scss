@@ -125,14 +125,14 @@ $danger-button-ghost-active-background: mixins.color('red', 75);
 }
 
 /**
- * 7. Inputs
+ * 7. Form fields
  */
-$input-padding: 1rem;
-$input-font-weight: 500;
-$input-font-size: 1rem;
+$form-field-padding: 1rem;
+$form-field-font-weight: 500;
+$form-field-font-size: 1rem;
 
 :root {
-    --input-padding: #{$input-padding};
-    --input-font-weight: #{$input-font-weight};
-    --input-font-size: #{$input-font-size};
+    --form-field-padding: #{$form-field-padding};
+    --form-field-font-weight: #{$form-field-font-weight};
+    --form-field-font-size: #{$form-field-font-size};
 }
