@@ -13,6 +13,7 @@ ReactDom.render(
         <Page.Content>
             <Button variant={Variant.PRIMARY}>Test</Button>
             <TextField
+                valid={true}
                 type="password"
                 label="Gebruikersnaam"
             />

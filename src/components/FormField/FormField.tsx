@@ -4,12 +4,14 @@ import TextField, { TextFieldProps } from '@/components/FormField/TextField';
 
 interface FormFieldProps extends TextFieldProps {
     as?: 'input' | 'textarea' | 'select';
+    valid?: boolean;
 }
 
 const FormField = React.forwardRef<HTMLElement, FormFieldProps>((
     {
         as = 'input',
-        label
+        label,
+        valid
     },
     ref
 ): React.ReactElement => {
@@ -18,7 +20,8 @@ const FormField = React.forwardRef<HTMLElement, FormFieldProps>((
         default:
             return React.createElement(TextField, {
                 ref: ref as React.RefObject<HTMLInputElement>,
-                label
+                label,
+                valid
             })
     }
 });
@@ -26,7 +29,8 @@ const FormField = React.forwardRef<HTMLElement, FormFieldProps>((
 FormField.displayName = 'FormField';
 FormField.propTypes = {
     as: PropTypes.oneOf(['input', 'textarea', 'select']),
-    label: PropTypes.node
+    label: PropTypes.node,
+    valid: PropTypes.bool
 }
 
 export default FormField;

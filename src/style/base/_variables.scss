@@ -39,6 +39,10 @@ $danger-color: mixins.color('red', 700);
 $danger-color-hover: mixins.color('red', 800);
 $danger-color-active: mixins.color('red', 900);
 
+$success-color: mixins.color('green', 700);
+$success-color-hover: mixins.color('green', 800);
+$success-color-active: mixins.color('green', 900);
+
 :root {
     --primary-color: #{$primary-color};
     --primary-color-hover: #{$primary-color-hover};
@@ -51,6 +55,10 @@ $danger-color-active: mixins.color('red', 900);
     --danger-color: #{$danger-color};
     --danger-color-hover: #{$danger-color-hover};
     --danger-color-active: #{$danger-color-active};
+
+    --success-color: #{$success-color};
+    --success-color-hover: #{$success-color};
+    --success-color-active: #{$success-color-active}
 }
 
 /**

@@ -11,17 +11,33 @@
     padding: 0 var(--form-field-padding);
     transition: all .1s ease-in-out;
 
+    &.cui-form-field-invalid {
+        border-color: var(--danger-color);
+
+        .cui-form-field-label {
+            color: var(--danger-color);
+        }
+    }
+
+    &.cui-form-field-valid {
+        border-color: var(--success-color);
+
+        .cui-form-field-label {
+            color: var(--success-color);
+        }
+    }
+
     .cui-form-field-actions {
         align-self: center;
         pointer-events: auto;
         margin-left: var(--form-field-padding);
     }
 
-    &:hover {
+    &:hover:not(.cui-form-field-valid):not(.cui-form-field-invalid) {
         border-color: var(--base-border-hover-color);
     }
 
-    &.cui-focused {
+    &.cui-focused:not(.cui-form-field-valid):not(.cui-form-field-invalid) {
         border-color: var(--primary-color);
 
         .cui-form-field-label {

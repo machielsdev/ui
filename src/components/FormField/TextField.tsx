@@ -5,10 +5,11 @@ import { Variant } from '@/components';
 import PropTypes from 'prop-types';
 
 export interface TextFieldProps extends React.HTMLAttributes<HTMLInputElement> {
-    variant?: Variant | string;
     actions?: React.ReactNode;
-    type?: string;
     label?: React.ReactNode;
+    type?: string;
+    valid?: boolean;
+    variant?: Variant | string;
 }
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
@@ -17,7 +18,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
         label,
         onChange,
         type = 'text',
-        variant = Variant.PRIMARY
+        variant = Variant.PRIMARY,
+        valid
     },
     ref
 ): React.ReactElement => {
@@ -30,7 +32,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
             `cui-form-field-${variant}`,
             hasFocus && 'cui-focused',
             value && 'cui-has-value',
-            label && 'cui-floating-label'
+            label && 'cui-floating-label',
+            valid === true ? 'cui-form-field-valid' : valid === false ? 'cui-form-field-invalid' : null
         )}>
             {label && (
                 <label
