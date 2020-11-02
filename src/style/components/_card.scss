@@ -22,6 +22,10 @@
                 margin-left: var(--card-padding);
             }
         }
+
+        & + .card-content {
+            padding-top: 0;
+        }
     }
 
     .card-title {
@@ -29,5 +33,23 @@
             weight: 600;
             size: 1.1rem;
         }
+    }
+
+    &.card-primary {
+        border-color: var(--primary-color);
+        background: var(--primary-color-light-background);
+    }
+
+    &.card-primary-ghost {
+        border-color: var(--primary-color);
+    }
+
+    &.card-danger {
+        border-color: var(--danger-color);
+        background: var(--danger-color-light-background);
+    }
+
+    &.card-danger-ghost {
+        border-color: var(--danger-color);
     }
 }

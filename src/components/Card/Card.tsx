@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import CardContent from '@/components/Card/Content';
 import { ForwardComponentWithStatics } from '@/components/utils/ForwardComponentWithStatics';
 import CardHeader from '@/components/Card/Header';
+import { Variant } from '@/components';
 
 export type CardStatics = {
     Content: typeof CardContent;
     Header: typeof CardHeader;
 }
 
-type CardProps = React.HTMLAttributes<HTMLDivElement>;
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+    variant?: Variant | string;
+}
 
 // Static properties are not given yet, when declaring the card const. Therefore, the error saying
 // that Card is missing above CardStatics  properties. These will defined after the card component
@@ -20,12 +23,14 @@ const Card: ForwardComponentWithStatics<HTMLDivElement, CardProps, CardStatics> 
     {
         children,
         className,
+        variant
     },
     ref
 ): React.ReactElement => (
     <div
         className={clsx(
             'card',
+            variant && `card-${variant}`,
             className
         )}
         ref={ref}
@@ -37,7 +42,8 @@ const Card: ForwardComponentWithStatics<HTMLDivElement, CardProps, CardStatics> 
 Card.displayName = 'Card';
 Card.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
+    variant: PropTypes.string
 };
 
 Card.Content = CardContent;

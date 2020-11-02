@@ -3,6 +3,7 @@ import React from 'react';
 import Card from '@/components/Card/Card';
 import CardContent from '@/components/Card/Content';
 import CardHeader from '@/components/Card/Header';
+import { Variant } from '@/components';
 
 describe('Card test', () => {
     it('should render card', () => {
@@ -53,5 +54,15 @@ describe('Card test', () => {
         );
 
         expect(container.find('.card .card-content').text()).toBe('ContentContent');
+    });
+
+    it('should render variant card ', () => {
+        const container = render(
+            <div>
+                <Card variant={Variant.PRIMARY} />
+            </div>
+        );
+
+        expect(container.find('.card.card-primary').length).toBe(1);
     });
 });
