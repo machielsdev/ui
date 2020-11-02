@@ -86,4 +86,17 @@
         transform: translateY(-50%);
         transition: all .1s ease-in-out;
     }
+
+    &.cui-toggles {
+        position: relative;
+
+        &:after {
+            content: '';
+            color: inherit;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: var(--form-field-padding);
+        }
+    }
 }

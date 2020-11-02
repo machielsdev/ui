@@ -1,34 +1,43 @@
 import * as React from 'react';
-import { useState } from 'react';
-import clsx from 'clsx';
 import { Variant } from '@/components';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 
-export interface TextFieldProps extends React.HTMLAttributes<HTMLInputElement> {
+interface SelectFieldProps extends React.HTMLAttributes<HTMLSelectElement> {
     actions?: React.ReactNode;
     label?: React.ReactNode;
-    type?: string;
     valid?: boolean;
     variant?: Variant | string;
 }
 
-const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
+const SelectField = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
     {
         actions,
+        children,
         label,
         onChange,
-        type = 'text',
         variant = Variant.PRIMARY,
         valid
     },
     ref
 ): React.ReactElement => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState<string | undefined>(undefined);
     const [hasFocus, setHasFocus] = useState(false);
+
+    useEffect((): void => {
+        if (value === undefined) {
+            React.Children.forEach<React.ReactNode>(children, (child: React.ReactNode) => {
+                if (React.isValidElement(child) && child.type === 'option' && child.props.selected) {
+                    setValue(child.props.value);
+                }
+            })
+        }
+    }, []);
 
     return (
         <div className={clsx(
-            'cui-form-field-base',
+            'cui-form-field-base cui-toggles',
             `cui-form-field-${variant}`,
             hasFocus && 'cui-focused',
             value && 'cui-has-value',
@@ -44,22 +53,23 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
                     {label}
                 </label>
             )}
-            <input
+            <select
                 ref={ref}
-                type={type}
                 value={value}
                 onFocus={() => setHasFocus(true)}
                 onBlur={() => setHasFocus(false)}
                 className={clsx(
                     'cui-form-field'
                 )}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                     setValue(event.target.value);
                     if (onChange) {
                         onChange(event);
                     }
                 }}
-            />
+            >
+                {children}
+            </select>
             {actions && (
                 <div className="cui-input-actions">
                     {actions}
@@ -69,14 +79,14 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
     );
 });
 
-TextField.displayName = 'TextField';
-TextField.propTypes = {
+SelectField.displayName = 'SelectField';
+SelectField.propTypes = {
     actions: PropTypes.node,
+    children: PropTypes.node,
     label: PropTypes.node,
-    type: PropTypes.oneOf(['password', 'text', 'reset']),
     onChange: PropTypes.func,
     valid: PropTypes.bool,
     variant: PropTypes.string
 }
 
-export default TextField;
+export default SelectField;
