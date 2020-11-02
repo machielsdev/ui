@@ -1,0 +1,20 @@
+@use "../base/variables";
+
+.cui-icon {
+    font: {
+        family: 'Cui-Icons';
+        style: normal;
+    }
+    line-height: 1;
+    display: inline-block;
+
+    .cui-icon-activity:before {
+
+    }
+}
+
+@each $name, $icon in variables.$icons {
+    .cui-icon-#{$name}:before {
+        content: '#{$icon}';
+    }
+}

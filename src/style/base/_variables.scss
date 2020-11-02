@@ -155,250 +155,254 @@ $form-field-font-size: 1rem;
 /**
  * 8. Icons
  */
-$icomoon-font-family: "Cui-Icons" !default;
-$icomoon-font-path: "fonts" !default;
+$icons: (
+    'activity': '\e900',
+    'alert-circle': '\e901',
+    'alert-triangle': '\e902',
+    'archive': '\e903',
+    'arrow-back': '\e904',
+    'arrow-circle-down': '\e905',
+    'arrow-circle-left': '\e906',
+    'arrow-circle-right': '\e907',
+    'arrow-circle-up': '\e908',
+    'arrow-down': '\e909',
+    'arrow-downward': '\e90a',
+    'arrow-forward': '\e90b',
+    'arrow-ios-back': '\e90c',
+    'arrow-ios-downward': '\e90d',
+    'arrow-ios-forward': '\e90e',
+    'arrow-ios-upward': '\e90f',
+    'arrow-left': '\e910',
+    'arrow-right': '\e911',
+    'arrow-up': '\e912',
+    'arrow-upward': '\e913',
+    'arrowhead-down': '\e914',
+    'arrowhead-left': '\e915',
+    'arrowhead-right': '\e916',
+    'arrowhead-up': '\e917',
+    'at': '\e918',
+    'attach-2': '\e919',
+    'attach': '\e91a',
+    'award': '\e91b',
+    'backspace': '\e91c',
+    'bar-chart-2': '\e91d',
+    'bar-chart': '\e91e',
+    'battery': '\e91f',
+    'behance': '\e920',
+    'bell-off': '\e921',
+    'bell': '\e922',
+    'bluetooth': '\e923',
+    'book-open': '\e924',
+    'book': '\e925',
+    'bookmark': '\e926',
+    'briefcase': '\e927',
+    'browser': '\e928',
+    'brush': '\e929',
+    'bulb': '\e92a',
+    'calendar': '\e92b',
+    'camera': '\e92c',
+    'car': '\e92d',
+    'cast': '\e92e',
+    'charging': '\e92f',
+    'checkmark-circle-2': '\e930',
+    'checkmark-circle': '\e931',
+    'checkmark': '\e932',
+    'checkmark-square-2': '\e933',
+    'checkmark-square': '\e934',
+    'chevron-down': '\e935',
+    'chevron-left': '\e936',
+    'chevron-right': '\e937',
+    'chevron-up': '\e938',
+    'clipboard': '\e939',
+    'clock': '\e93a',
+    'close-circle': '\e93b',
+    'close': '\e93c',
+    'close-square': '\e93d',
+    'cloud-download': '\e93e',
+    'cloud-upload': '\e93f',
+    'code-download': '\e940',
+    'code': '\e941',
+    'collapse': '\e942',
+    'color-palette': '\e943',
+    'color-picker': '\e944',
+    'compass': '\e945',
+    'copy': '\e946',
+    'corner-down-left': '\e947',
+    'corner-down-right': '\e948',
+    'corner-left-down': '\e949',
+    'corner-left-up': '\e94a',
+    'corner-right-down': '\e94b',
+    'corner-right-up': '\e94c',
+    'corner-up-left': '\e94d',
+    'corner-up-right': '\e94e',
+    'credit-card': '\e94f',
+    'crop': '\e950',
+    'cube': '\e951',
+    'diagonal-arrow-left-down': '\e952',
+    'diagonal-arrow-left-up': '\e953',
+    'diagonal-arrow-right-down': '\e954',
+    'diagonal-arrow-right-up': '\e955',
+    'done-all': '\e956',
+    'download': '\e957',
+    'droplet-off': '\e958',
+    'droplet': '\e959',
+    'edit-2': '\e95a',
+    'edit': '\e95b',
+    'email': '\e95c',
+    'expand': '\e95d',
+    'external-link': '\e95e',
+    'eye-off-2': '\e95f',
+    'eye-off': '\e960',
+    'eye': '\e961',
+    'facebook': '\e962',
+    'file-add': '\e963',
+    'file': '\e964',
+    'file-remove': '\e965',
+    'file-text': '\e966',
+    'film': '\e967',
+    'flag': '\e968',
+    'flash-off': '\e969',
+    'flash': '\e96a',
+    'flip-2': '\e96b',
+    'flip': '\e96c',
+    'folder-add': '\e96d',
+    'folder': '\e96e',
+    'folder-remove': '\e96f',
+    'funnel': '\e970',
+    'gift': '\e971',
+    'github': '\e972',
+    'globe-2': '\e973',
+    'globe': '\e974',
+    'google': '\e975',
+    'grid': '\e976',
+    'hard-drive': '\e977',
+    'hash': '\e978',
+    'headphones': '\e979',
+    'heart': '\e97a',
+    'home': '\e97b',
+    'image': '\e97c',
+    'inbox': '\e97d',
+    'info': '\e97e',
+    'keypad': '\e97f',
+    'layers': '\e980',
+    'layout': '\e981',
+    'link-2': '\e982',
+    'link': '\e983',
+    'linkedin': '\e984',
+    'list': '\e985',
+    'loader': '\e986',
+    'lock': '\e987',
+    'log-in': '\e988',
+    'log-out': '\e989',
+    'map': '\e98a',
+    'maximize': '\e98b',
+    'menu-2': '\e98c',
+    'menu-arrow': '\e98d',
+    'menu': '\e98e',
+    'message-circle': '\e98f',
+    'message-square': '\e990',
+    'mic-off': '\e991',
+    'mic': '\e992',
+    'minimize': '\e993',
+    'minus-circle': '\e994',
+    'minus': '\e995',
+    'minus-square': '\e996',
+    'monitor': '\e997',
+    'moon': '\e998',
+    'more-horizontal': '\e999',
+    'more-vertical': '\e99a',
+    'move': '\e99b',
+    'music': '\e99c',
+    'navigation-2': '\e99d',
+    'navigation': '\e99e',
+    'npm': '\e99f',
+    'options-2': '\e9a0',
+    'options': '\e9a1',
+    'pantone': '\e9a2',
+    'paper-plane': '\e9a3',
+    'pause-circle': '\e9a4',
+    'people': '\e9a5',
+    'percent': '\e9a6',
+    'person-add': '\e9a7',
+    'person-delete': '\e9a8',
+    'person-done': '\e9a9',
+    'person': '\e9aa',
+    'person-remove': '\e9ab',
+    'phone-call': '\e9ac',
+    'phone-missed': '\e9ad',
+    'phone-off': '\e9ae',
+    'phone': '\e9af',
+    'pie-chart': '\e9b0',
+    'pin': '\e9b1',
+    'play-circle': '\e9b2',
+    'plus-circle': '\e9b3',
+    'plus': '\e9b4',
+    'plus-square': '\e9b5',
+    'power': '\e9b6',
+    'pricetags': '\e9b7',
+    'printer': '\e9b8',
+    'question-mark-circle': '\e9b9',
+    'question-mark': '\e9ba',
+    'radio-button-off': '\e9bb',
+    'radio-button-on': '\e9bc',
+    'radio': '\e9bd',
+    'recording': '\e9be',
+    'refresh': '\e9bf',
+    'repeat': '\e9c0',
+    'rewind-left': '\e9c1',
+    'rewind-right': '\e9c2',
+    'save': '\e9c3',
+    'scissors': '\e9c4',
+    'search': '\e9c5',
+    'settings-2': '\e9c6',
+    'settings': '\e9c7',
+    'shake': '\e9c8',
+    'share': '\e9c9',
+    'shield-off': '\e9ca',
+    'shield': '\e9cb',
+    'shopping-bag': '\e9cc',
+    'shopping-cart': '\e9cd',
+    'shuffle-2': '\e9ce',
+    'shuffle': '\e9cf',
+    'skip-back': '\e9d0',
+    'skip-forward': '\e9d1',
+    'slash': '\e9d2',
+    'smartphone': '\e9d3',
+    'smiling-face': '\e9d4',
+    'speaker': '\e9d5',
+    'square': '\e9d6',
+    'star': '\e9d7',
+    'stop-circle': '\e9d8',
+    'sun': '\e9d9',
+    'swap': '\e9da',
+    'sync': '\e9db',
+    'text': '\e9dc',
+    'thermometer-minus': '\e9dd',
+    'thermometer': '\e9de',
+    'thermometer-plus': '\e9df',
+    'toggle-left': '\e9e0',
+    'toggle-right': '\e9e1',
+    'trash-2': '\e9e2',
+    'trash': '\e9e3',
+    'trending-down': '\e9e4',
+    'trending-up': '\e9e5',
+    'tv': '\e9e6',
+    'twitter': '\e9e7',
+    'umbrella': '\e9e8',
+    'undo': '\e9e9',
+    'unlock': '\e9ea',
+    'upload': '\e9eb',
+    'video-off': '\e9ec',
+    'video': '\e9ed',
+    'volume-down': '\e9ee',
+    'volume-mute': '\e9ef',
+    'volume-off': '\e9f0',
+    'volume-up': '\e9f1',
+    'wifi-off': '\e9f2',
+    'wifi': '\e9f3',
+);
 
-$icon-activity: "\e900";
-$icon-alert-circle: "\e901";
-$icon-alert-triangle: "\e902";
-$icon-archive: "\e903";
-$icon-arrow-back: "\e904";
-$icon-arrow-circle-down: "\e905";
-$icon-arrow-circle-left: "\e906";
-$icon-arrow-circle-right: "\e907";
-$icon-arrow-circle-up: "\e908";
-$icon-arrow-down: "\e909";
-$icon-arrow-downward: "\e90a";
-$icon-arrow-forward: "\e90b";
-$icon-arrow-ios-back: "\e90c";
-$icon-arrow-ios-downward: "\e90d";
-$icon-arrow-ios-forward: "\e90e";
-$icon-arrow-ios-upward: "\e90f";
-$icon-arrow-left: "\e910";
-$icon-arrow-right: "\e911";
-$icon-arrow-up: "\e912";
-$icon-arrow-upward: "\e913";
-$icon-arrowhead-down: "\e914";
-$icon-arrowhead-left: "\e915";
-$icon-arrowhead-right: "\e916";
-$icon-arrowhead-up: "\e917";
-$icon-at: "\e918";
-$icon-attach-2: "\e919";
-$icon-attach: "\e91a";
-$icon-award: "\e91b";
-$icon-backspace: "\e91c";
-$icon-bar-chart-2: "\e91d";
-$icon-bar-chart: "\e91e";
-$icon-battery: "\e91f";
-$icon-behance: "\e920";
-$icon-bell-off: "\e921";
-$icon-bell: "\e922";
-$icon-bluetooth: "\e923";
-$icon-book-open: "\e924";
-$icon-book: "\e925";
-$icon-bookmark: "\e926";
-$icon-briefcase: "\e927";
-$icon-browser: "\e928";
-$icon-brush: "\e929";
-$icon-bulb: "\e92a";
-$icon-calendar: "\e92b";
-$icon-camera: "\e92c";
-$icon-car: "\e92d";
-$icon-cast: "\e92e";
-$icon-charging: "\e92f";
-$icon-checkmark-circle-2: "\e930";
-$icon-checkmark-circle: "\e931";
-$icon-checkmark: "\e932";
-$icon-checkmark-square-2: "\e933";
-$icon-checkmark-square: "\e934";
-$icon-chevron-down: "\e935";
-$icon-chevron-left: "\e936";
-$icon-chevron-right: "\e937";
-$icon-chevron-up: "\e938";
-$icon-clipboard: "\e939";
-$icon-clock: "\e93a";
-$icon-close-circle: "\e93b";
-$icon-close: "\e93c";
-$icon-close-square: "\e93d";
-$icon-cloud-download: "\e93e";
-$icon-cloud-upload: "\e93f";
-$icon-code-download: "\e940";
-$icon-code: "\e941";
-$icon-collapse: "\e942";
-$icon-color-palette: "\e943";
-$icon-color-picker: "\e944";
-$icon-compass: "\e945";
-$icon-copy: "\e946";
-$icon-corner-down-left: "\e947";
-$icon-corner-down-right: "\e948";
-$icon-corner-left-down: "\e949";
-$icon-corner-left-up: "\e94a";
-$icon-corner-right-down: "\e94b";
-$icon-corner-right-up: "\e94c";
-$icon-corner-up-left: "\e94d";
-$icon-corner-up-right: "\e94e";
-$icon-credit-card: "\e94f";
-$icon-crop: "\e950";
-$icon-cube: "\e951";
-$icon-diagonal-arrow-left-down: "\e952";
-$icon-diagonal-arrow-left-up: "\e953";
-$icon-diagonal-arrow-right-down: "\e954";
-$icon-diagonal-arrow-right-up: "\e955";
-$icon-done-all: "\e956";
-$icon-download: "\e957";
-$icon-droplet-off: "\e958";
-$icon-droplet: "\e959";
-$icon-edit-2: "\e95a";
-$icon-edit: "\e95b";
-$icon-email: "\e95c";
-$icon-expand: "\e95d";
-$icon-external-link: "\e95e";
-$icon-eye-off-2: "\e95f";
-$icon-eye-off: "\e960";
-$icon-eye: "\e961";
-$icon-facebook: "\e962";
-$icon-file-add: "\e963";
-$icon-file: "\e964";
-$icon-file-remove: "\e965";
-$icon-file-text: "\e966";
-$icon-film: "\e967";
-$icon-flag: "\e968";
-$icon-flash-off: "\e969";
-$icon-flash: "\e96a";
-$icon-flip-2: "\e96b";
-$icon-flip: "\e96c";
-$icon-folder-add: "\e96d";
-$icon-folder: "\e96e";
-$icon-folder-remove: "\e96f";
-$icon-funnel: "\e970";
-$icon-gift: "\e971";
-$icon-github: "\e972";
-$icon-globe-2: "\e973";
-$icon-globe: "\e974";
-$icon-google: "\e975";
-$icon-grid: "\e976";
-$icon-hard-drive: "\e977";
-$icon-hash: "\e978";
-$icon-headphones: "\e979";
-$icon-heart: "\e97a";
-$icon-home: "\e97b";
-$icon-image: "\e97c";
-$icon-inbox: "\e97d";
-$icon-info: "\e97e";
-$icon-keypad: "\e97f";
-$icon-layers: "\e980";
-$icon-layout: "\e981";
-$icon-link-2: "\e982";
-$icon-link: "\e983";
-$icon-linkedin: "\e984";
-$icon-list: "\e985";
-$icon-loader: "\e986";
-$icon-lock: "\e987";
-$icon-log-in: "\e988";
-$icon-log-out: "\e989";
-$icon-map: "\e98a";
-$icon-maximize: "\e98b";
-$icon-menu-2: "\e98c";
-$icon-menu-arrow: "\e98d";
-$icon-menu: "\e98e";
-$icon-message-circle: "\e98f";
-$icon-message-square: "\e990";
-$icon-mic-off: "\e991";
-$icon-mic: "\e992";
-$icon-minimize: "\e993";
-$icon-minus-circle: "\e994";
-$icon-minus: "\e995";
-$icon-minus-square: "\e996";
-$icon-monitor: "\e997";
-$icon-moon: "\e998";
-$icon-more-horizontal: "\e999";
-$icon-more-vertical: "\e99a";
-$icon-move: "\e99b";
-$icon-music: "\e99c";
-$icon-navigation-2: "\e99d";
-$icon-navigation: "\e99e";
-$icon-npm: "\e99f";
-$icon-options-2: "\e9a0";
-$icon-options: "\e9a1";
-$icon-pantone: "\e9a2";
-$icon-paper-plane: "\e9a3";
-$icon-pause-circle: "\e9a4";
-$icon-people: "\e9a5";
-$icon-percent: "\e9a6";
-$icon-person-add: "\e9a7";
-$icon-person-delete: "\e9a8";
-$icon-person-done: "\e9a9";
-$icon-person: "\e9aa";
-$icon-person-remove: "\e9ab";
-$icon-phone-call: "\e9ac";
-$icon-phone-missed: "\e9ad";
-$icon-phone-off: "\e9ae";
-$icon-phone: "\e9af";
-$icon-pie-chart: "\e9b0";
-$icon-pin: "\e9b1";
-$icon-play-circle: "\e9b2";
-$icon-plus-circle: "\e9b3";
-$icon-plus: "\e9b4";
-$icon-plus-square: "\e9b5";
-$icon-power: "\e9b6";
-$icon-pricetags: "\e9b7";
-$icon-printer: "\e9b8";
-$icon-question-mark-circle: "\e9b9";
-$icon-question-mark: "\e9ba";
-$icon-radio-button-off: "\e9bb";
-$icon-radio-button-on: "\e9bc";
-$icon-radio: "\e9bd";
-$icon-recording: "\e9be";
-$icon-refresh: "\e9bf";
-$icon-repeat: "\e9c0";
-$icon-rewind-left: "\e9c1";
-$icon-rewind-right: "\e9c2";
-$icon-save: "\e9c3";
-$icon-scissors: "\e9c4";
-$icon-search: "\e9c5";
-$icon-settings-2: "\e9c6";
-$icon-settings: "\e9c7";
-$icon-shake: "\e9c8";
-$icon-share: "\e9c9";
-$icon-shield-off: "\e9ca";
-$icon-shield: "\e9cb";
-$icon-shopping-bag: "\e9cc";
-$icon-shopping-cart: "\e9cd";
-$icon-shuffle-2: "\e9ce";
-$icon-shuffle: "\e9cf";
-$icon-skip-back: "\e9d0";
-$icon-skip-forward: "\e9d1";
-$icon-slash: "\e9d2";
-$icon-smartphone: "\e9d3";
-$icon-smiling-face: "\e9d4";
-$icon-speaker: "\e9d5";
-$icon-square: "\e9d6";
-$icon-star: "\e9d7";
-$icon-stop-circle: "\e9d8";
-$icon-sun: "\e9d9";
-$icon-swap: "\e9da";
-$icon-sync: "\e9db";
-$icon-text: "\e9dc";
-$icon-thermometer-minus: "\e9dd";
-$icon-thermometer: "\e9de";
-$icon-thermometer-plus: "\e9df";
-$icon-toggle-left: "\e9e0";
-$icon-toggle-right: "\e9e1";
-$icon-trash-2: "\e9e2";
-$icon-trash: "\e9e3";
-$icon-trending-down: "\e9e4";
-$icon-trending-up: "\e9e5";
-$icon-tv: "\e9e6";
-$icon-twitter: "\e9e7";
-$icon-umbrella: "\e9e8";
-$icon-undo: "\e9e9";
-$icon-unlock: "\e9ea";
-$icon-upload: "\e9eb";
-$icon-video-off: "\e9ec";
-$icon-video: "\e9ed";
-$icon-volume-down: "\e9ee";
-$icon-volume-mute: "\e9ef";
-$icon-volume-off: "\e9f0";
-$icon-volume-up: "\e9f1";
-$icon-wifi-off: "\e9f2";
-$icon-wifi: "\e9f3";
+
+@function icon($name) {
+    @return map-get($icons, $name);
+}
