@@ -1,0 +1,44 @@
+@use "../base/variables";
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .col {
+        flex-grow: 1;
+        flex-basis: 0;
+        //padding: 0 1rem;
+
+        @for $i from 1 through 12 {
+            &.col-#{$i} {
+                flex: 0 0 calc((#{$i} / 12) * 100%);
+            }
+        }
+
+        @each $breakpoint, $pixels in variables.$breakpoints {
+            @media screen and (min-width: #{$pixels}) {
+                @for $i from 1 through 12 {
+                    &.#{$breakpoint}\:col-#{$i} {
+                        flex: 0 0 calc((#{$i} / 12) * 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid {
+    display: grid;
+
+    @for $i from 1 through 12 {
+        &.grid-columns-#{$i} {
+            grid-template-columns: repeat($i, minmax(0, 1fr));
+        }
+    }
+
+    @for $i from 1 through 12 {
+        &.grid-gap-#{$i} {
+            gap: #{$i * variables.$base-gutter-steps}rem;
+        }
+    }
+}
