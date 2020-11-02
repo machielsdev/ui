@@ -30,6 +30,7 @@ $base-gutter: 1rem;
 $primary-color: mixins.color('deepPurple', 600);
 $primary-color-hover: mixins.color('deepPurple', 700);
 $primary-color-active: mixins.color('deepPurple', 800);
+$primary-color-light-background: mixins.color('deepPurple', 50);
 
 $secondary-color: mixins.color('red', 600);
 $secondary-color-hover: mixins.color('red', 700);
@@ -38,11 +39,13 @@ $secondary-color-active: mixins.color('red', 800);
 $danger-color: mixins.color('red', 700);
 $danger-color-hover: mixins.color('red', 800);
 $danger-color-active: mixins.color('red', 900);
+$danger-color-light-background: mixins.color('red', 50);
 
 :root {
     --primary-color: #{$primary-color};
     --primary-color-hover: #{$primary-color-hover};
     --primary-color-active: #{$primary-color-active};
+    --primary-color-light-background: #{$primary-color-light-background};
 
     --secondary-color: #{$secondary-color};
     --secondary-color-hover: #{$secondary-color-hover};
@@ -51,6 +54,7 @@ $danger-color-active: mixins.color('red', 900);
     --danger-color: #{$danger-color};
     --danger-color-hover: #{$danger-color-hover};
     --danger-color-active: #{$danger-color-active};
+    --danger-color-light-background: #{$danger-color-light-background}
 }
 
 /**
@@ -122,6 +126,17 @@ $danger-button-ghost-active-background: mixins.color('red', 75);
     --danger-button-ghost-border: var(--danger-color);
     --danger-button-ghost-hover-background: #{$danger-button-ghost-hover-background};
     --danger-button-ghost-active-background: #{$danger-button-ghost-active-background};
+}
+
+/**
+ * 6. Cards
+ */
+$card-padding: 1rem;
+$card-background: #fff;
+
+:root {
+    --card-padding: #{$card-padding};
+    --card-background: #{$card-background};
 }
 
 /**
