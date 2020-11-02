@@ -1,0 +1,46 @@
+import * as React from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import CardContent from '@/components/Card/Content';
+import { ForwardComponentWithStatics } from '@/components/utils/ForwardComponentWithStatics';
+import CardHeader from '@/components/Card/Header';
+
+export type CardStatics = {
+    Content: typeof CardContent;
+    Header: typeof CardHeader;
+}
+
+type CardProps = React.HTMLAttributes<HTMLDivElement>;
+
+// Static properties are not given yet, when declaring the card const. Therefore, the error saying
+// that Card is missing above CardStatics  properties. These will defined after the card component
+// is defined.
+// @ts-ignore
+const Card: ForwardComponentWithStatics<HTMLDivElement, CardProps, CardStatics> = React.forwardRef((
+    {
+        children,
+        className,
+    },
+    ref
+): React.ReactElement => (
+    <div
+        className={clsx(
+            'card',
+            className
+        )}
+        ref={ref}
+    >
+        {children}
+    </div>
+));
+
+Card.displayName = 'Card';
+Card.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node
+};
+
+Card.Content = CardContent;
+Card.Header = CardHeader;
+
+export default Card;

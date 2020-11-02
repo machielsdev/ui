@@ -1,0 +1,33 @@
+@use "elevation";
+
+.card {
+    @extend .elevated-1;
+    background: var(--card-background);
+    border: solid 1px var(--base-border-color);
+    border-radius: var(--base-border-radius);
+
+    .card-content {
+        padding: var(--card-padding);
+    }
+
+    .card-header {
+        padding: var(--card-padding);
+        display: flex;
+        align-items: center;
+
+        .card-header-actions {
+            margin-left: auto;
+
+            > .card-header-action {
+                margin-left: var(--card-padding);
+            }
+        }
+    }
+
+    .card-title {
+        font: {
+            weight: 600;
+            size: 1.1rem;
+        }
+    }
+}

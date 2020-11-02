@@ -123,3 +123,14 @@ $danger-button-ghost-active-background: mixins.color('red', 75);
     --danger-button-ghost-hover-background: #{$danger-button-ghost-hover-background};
     --danger-button-ghost-active-background: #{$danger-button-ghost-active-background};
 }
+
+/**
+ * 6. Cards
+ */
+$card-padding: 1rem;
+$card-background: #fff;
+
+:root {
+    --card-padding: #{$card-padding};
+    --card-background: #{$card-background};
+}
