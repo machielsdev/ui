@@ -14,4 +14,9 @@
 @use "components/page";
 @use "components/panel";
 @use "components/card";
-@use "components/grid";
+
+/**
+ * 3. Layout
+ */
+@use "layout/grid";
+@use "layout/helpers";
