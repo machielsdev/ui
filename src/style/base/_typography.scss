@@ -95,17 +95,6 @@
     url('../fonts/icons/cui-icons.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-.cui-icon {
-    font: {
-        family: 'Cui-Icons';
-        weight: normal;
-    }
-
-    line-height: 1.2rem;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-}
-
 h1 {
     font-size: 2rem;
     color: mixins.color('gray', 900);

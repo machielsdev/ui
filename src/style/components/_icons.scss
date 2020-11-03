@@ -11,6 +11,12 @@
     .cui-icon-activity:before {
 
     }
+
+    @for $i from 1 through 12 {
+        &.cui-icon-size-#{$i} {
+            font-size: #{$i * variables.$base-gutter-steps}rem;
+        }
+    }
 }
 
 @each $name, $icon in variables.$icons {
