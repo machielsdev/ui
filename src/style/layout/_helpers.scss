@@ -1,0 +1,87 @@
+@use "../base/variables";
+
+@for $i from 0 through 12 {
+    .p-#{$i} {
+        padding: #{$i * variables.$base-gutter-steps}rem !important;
+    }
+
+    .py-#{$i} {
+        padding-top: #{$i * variables.$base-gutter-steps}rem !important;;
+        padding-bottom: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .px-#{$i} {
+        padding-left: #{$i * variables.$base-gutter-steps}rem !important;;
+        padding-right: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .pl-#{$i} {
+        padding-left: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .m-#{$i} {
+        margin: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .my-#{$i} {
+        margin-top: #{$i * variables.$base-gutter-steps}rem !important;;
+        margin-bottom: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .mx-#{$i} {
+        margin-left: #{$i * variables.$base-gutter-steps}rem !important;;
+        margin-right: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .mr-#{$i} {
+        margin-right: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+
+    .ml-#{$i} {
+        margin-left: #{$i * variables.$base-gutter-steps}rem !important;;
+    }
+}
+
+.background-primary-light {
+    background: var(--primary-color-light-background);
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-inline-flex {
+    display: inline-flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
