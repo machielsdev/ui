@@ -37,17 +37,17 @@ const SelectField = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
 
     return (
         <div className={clsx(
-            'cui-form-field-base cui-toggles',
-            `cui-form-field-${variant}`,
-            hasFocus && 'cui-focused',
-            value && 'cui-has-value',
-            label && 'cui-floating-label',
-            valid === true ? 'cui-form-field-valid' : valid === false ? 'cui-form-field-invalid' : null
+            'form-field-base toggles',
+            `form-field-${variant}`,
+            hasFocus && 'focused',
+            value && 'has-value',
+            label && 'floating-label',
+            valid === true ? 'form-field-valid' : valid === false ? 'form-field-invalid' : null
         )}>
             {label && (
                 <label
                     className={clsx(
-                        'cui-form-field-label'
+                        'form-field-label'
                     )}
                 >
                     {label}
@@ -59,7 +59,7 @@ const SelectField = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
                 onFocus={() => setHasFocus(true)}
                 onBlur={() => setHasFocus(false)}
                 className={clsx(
-                    'cui-form-field'
+                    'form-field'
                 )}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                     setValue(event.target.value);
@@ -71,7 +71,7 @@ const SelectField = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
                 {children}
             </select>
             {actions && (
-                <div className="cui-input-actions">
+                <div className="input-actions">
                     {actions}
                 </div>
             )}
