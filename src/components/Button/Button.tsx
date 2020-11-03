@@ -45,7 +45,7 @@ const Button = React.forwardRef<HTMLElement, ButtonProps>((
                     {iconLeft}
                 </div>
             )}
-            <span>{children}</span>
+            <span className="btn-text">{children}</span>
             {iconRight && (
                 <div className="icon-container icon-right">
                     {iconRight}

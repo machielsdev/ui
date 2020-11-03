@@ -11,6 +11,11 @@
         size: var(--button-font-size);
     }
 
+    > .btn-text {
+        align-self: center;
+        line-height: 1.3rem;
+    }
+
     &.btn-primary {
         background: var(--primary-button-background);
         border-color: var(--primary-button-border);
@@ -88,6 +93,12 @@
     }
 
     .icon-container {
+        display: flex;
+        align-items: center;
+
+        .cui-icon {
+            font-size: 1.3rem;
+        }
         &.icon-left {
             margin-right: var(--base-gutter);
         }
