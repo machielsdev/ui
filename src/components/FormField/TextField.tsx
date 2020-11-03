@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Variant } from '@/components';
 import PropTypes from 'prop-types';
 
-export interface TextFieldProps extends React.HTMLAttributes<HTMLInputElement> {
+export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
     actions?: React.ReactNode;
     label?: React.ReactNode;
     type?: string;
@@ -19,7 +19,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
         onChange,
         type = 'text',
         variant = Variant.PRIMARY,
-        valid
+        valid,
+        ...rest
     },
     ref
 ): React.ReactElement => {
@@ -27,18 +28,20 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
     const [hasFocus, setHasFocus] = useState(false);
 
     return (
-        <div className={clsx(
-            'cui-form-field-base',
-            `cui-form-field-${variant}`,
-            hasFocus && 'cui-focused',
-            value && 'cui-has-value',
-            label && 'cui-floating-label',
-            valid === true ? 'cui-form-field-valid' : valid === false ? 'cui-form-field-invalid' : null
-        )}>
+        <div
+            className={clsx(
+                'form-field-base',
+                `form-field-${variant}`,
+                hasFocus && 'focused',
+                value && 'has-value',
+                label && 'floating-label',
+                valid === true ? 'form-field-valid' : valid === false ? 'form-field-invalid' : null
+            )}
+        >
             {label && (
                 <label
                     className={clsx(
-                        'cui-form-field-label'
+                        'form-field-label'
                     )}
                 >
                     {label}
@@ -51,7 +54,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
                 onFocus={() => setHasFocus(true)}
                 onBlur={() => setHasFocus(false)}
                 className={clsx(
-                    'cui-form-field'
+                    'form-field'
                 )}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setValue(event.target.value);
@@ -59,9 +62,10 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
                         onChange(event);
                     }
                 }}
+                {...rest}
             />
             {actions && (
-                <div className="cui-input-actions">
+                <div className="form-field-actions">
                     {actions}
                 </div>
             )}
