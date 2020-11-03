@@ -2,53 +2,44 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import '../../src/style/index.scss';
-import { Page, Variant } from '../../src/components';
-import { Card, Button, Icon } from '../../src';
+import { Card, Col, Page, Row } from '../../src';
+import Container from '../../src/components/Container/Container';
 
 ReactDom.render(
     <Page>
         <Page.Header title="Dashboard" />
         <Page.Content>
             <Card>
-                <Card.Header title="Buttons" />
+                <Card.Header title="Grid" />
                 <Card.Content>
-                    <Button
-                        variant={Variant.PRIMARY}
-                    >
-                        Primary button
-                    </Button>
-                    <Button
-                        variant={Variant.SECONDARY}
-                    >
-                        Secondary button
-                    </Button>
-                    <Button
-                        variant={Variant.DANGER}
-                    >
-                        Danger button
-                    </Button>
-                    <Button
-                        variant={Variant.PRIMARY_GHOST}
-                    >
-                        Primary ghost button
-                    </Button>
-                    <Button
-                        variant={Variant.DANGER_GHOST}
-                    >
-                        Danger ghost button
-                    </Button>
-                    <Button
-                        variant={Variant.PRIMARY}
-                        iconLeft={<Icon icon="home" />}
-                    >
-                        Icon left
-                    </Button>
-                    <Button
-                        variant={Variant.PRIMARY}
-                        iconRight={<Icon icon="compass" />}
-                    >
-                        Icon right
-                    </Button>
+                    <Container fluid>
+                        <Row className="mb-4">
+                            <Col className="py-4 background-primary-light">Col 1/1</Col>
+                        </Row>
+                        <Row className="mb-4">
+                            <Col className="py-4 background-primary-light">Col 1/2</Col>
+                            <Col className="py-4 background-primary-light">Col 2/2</Col>
+                        </Row>
+
+                        <Row className="mb-4">
+                            <Col className="py-4 background-primary-light">Col 1/3</Col>
+                            <Col className="py-4 background-primary-light">Col 2/3</Col>
+                            <Col className="py-4 background-primary-light">Col 3/4</Col>
+                        </Row>
+
+                        <Row className="mb-4">
+                            <Col className="py-4 background-primary-light">Col 1/3</Col>
+                            <Col className="py-4 background-primary-light">Col 2/3</Col>
+                            <Col className="py-4 background-primary-light">Col 3/4</Col>
+                        </Row>
+
+                        <Row className="mb-4">
+                            <Col className="py-4 background-primary-light">Col 1/4</Col>
+                            <Col className="py-4 background-primary-light">Col 2/4</Col>
+                            <Col className="py-4 background-primary-light">Col 3/4</Col>
+                            <Col className="py-4 background-primary-light">Col 4/4</Col>
+                        </Row>
+                    </Container>
                 </Card.Content>
             </Card>
         </Page.Content>

@@ -12,6 +12,14 @@ $base-font-size: 16px;
 $base-border-color: mixins.color('gray', 300);
 $base-border-radius: 4px;
 $base-gutter: 1rem;
+$base-gutter-steps: 0.25;
+
+$breakpoints: (
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px'
+);
 
 :root {
     --base-font-size: #{$base-font-size};
