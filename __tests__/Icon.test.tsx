@@ -10,7 +10,7 @@ describe('Icon test', () => {
             </div>
         );
 
-        expect(container.find('.cui-icon.cui-icon-home').length).toBe(1);
+        expect(container.find('.icon.icon-home').length).toBe(1);
     });
 
     it('should render icon with specific size', () => {
@@ -20,6 +20,6 @@ describe('Icon test', () => {
             </div>
         );
 
-        expect(container.find('.cui-icon.cui-icon-home.cui-icon-size-12').length).toBe(1);
+        expect(container.find('.icon.icon-home.icon-size-12').length).toBe(1);
     });
 });
