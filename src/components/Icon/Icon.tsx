@@ -5,12 +5,14 @@ import { IconName } from '@/components/Icon/IconName';
 
 interface IconProps extends React.HTMLAttributes<HTMLElement> {
     icon: IconName | string;
+    size?: string | number;
 }
 
 const Icon = React.forwardRef<HTMLElement, IconProps>((
     {
         className,
-        icon
+        icon,
+        size
     },
     ref
 ): React.ReactElement => (
@@ -19,6 +21,7 @@ const Icon = React.forwardRef<HTMLElement, IconProps>((
         className={clsx(
             'cui-icon',
             `cui-icon-${icon}`,
+            size && `cui-icon-size-${size}`,
             className
         )}
     />
@@ -27,7 +30,8 @@ const Icon = React.forwardRef<HTMLElement, IconProps>((
 Icon.displayName = 'Icon';
 Icon.propTypes = {
     className: PropTypes.string,
-    icon: PropTypes.string.isRequired
+    icon: PropTypes.string.isRequired,
+    size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 export default Icon;
