@@ -19,9 +19,9 @@ const Icon = React.forwardRef<HTMLElement, IconProps>((
     <i
         ref={ref}
         className={clsx(
-            'cui-icon',
-            `cui-icon-${icon}`,
-            size && `cui-icon-size-${size}`,
+            'icon',
+            `icon-${icon}`,
+            size && `icon-size-${size}`,
             className
         )}
     />
