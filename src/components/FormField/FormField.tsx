@@ -11,7 +11,8 @@ const FormField = React.forwardRef<HTMLElement, FormFieldProps>((
     {
         as = 'input',
         label,
-        valid
+        valid,
+        ...rest
     },
     ref
 ): React.ReactElement => {
@@ -21,7 +22,8 @@ const FormField = React.forwardRef<HTMLElement, FormFieldProps>((
             return React.createElement(TextField, {
                 ref: ref as React.RefObject<HTMLInputElement>,
                 label,
-                valid
+                valid,
+                ...rest
             })
     }
 });

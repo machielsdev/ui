@@ -13,7 +13,7 @@
     &.form-field-invalid {
         border-color: var(--danger-color);
 
-        .form-field-label {
+        .form-field-label-floating {
             color: var(--danger-color);
         }
     }
@@ -21,7 +21,7 @@
     &.form-field-valid {
         border-color: var(--success-color);
 
-        .form-field-label {
+        .form-field-label-floating {
             color: var(--success-color);
         }
     }
@@ -40,13 +40,13 @@
     &.focused:not(.form-field-valid):not(.form-field-invalid) {
         border-color: var(--primary-color);
 
-        .form-field-label {
+        .form-field-label-floating {
             color: var(--primary-color);
         }
     }
 
     &.focused, &.has-value {
-        .form-field-label {
+        .form-field-label-floating {
             transform: translateY(calc((var(--form-field-padding) / 2) / 2));
             top: 0;
             font: {
@@ -77,7 +77,7 @@
         line-height: 1.3rem;
     }
 
-    .form-field-label {
+    .form-field-label-floating {
         font: {
             size: var(--form-field-font-size);
         }
