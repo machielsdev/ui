@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { Variant } from '@/components';
 import PropTypes from 'prop-types';
@@ -20,12 +20,19 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
         type = 'text',
         variant = Variant.PRIMARY,
         valid,
+        value: propValue,
         ...rest
     },
     ref
 ): React.ReactElement => {
     const [value, setValue] = useState('');
     const [hasFocus, setHasFocus] = useState(false);
+
+    useEffect(() => {
+        if (propValue) {
+            setValue(propValue.toString());
+        }
+    }, [propValue]);
 
     return (
         <div
@@ -41,7 +48,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
             {label && (
                 <label
                     className={clsx(
-                        'form-field-label'
+                        'form-field-label-floating'
                     )}
                 >
                     {label}
@@ -80,6 +87,7 @@ TextField.propTypes = {
     type: PropTypes.oneOf(['password', 'text', 'reset']),
     onChange: PropTypes.func,
     valid: PropTypes.bool,
+    value: PropTypes.string,
     variant: PropTypes.string
 }
 
