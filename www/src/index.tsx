@@ -93,6 +93,14 @@ ReactDom.render(
                             </FormGroup>
 
                             <FormGroup>
+                                <h5>Input with default value</h5>
+                                <TextField
+                                    label="With default value"
+                                    value="Hello world"
+                                />
+                            </FormGroup>
+
+                            <FormGroup>
                                 <h5>Input with actions</h5>
                                 <TextField
                                     label="Username"
