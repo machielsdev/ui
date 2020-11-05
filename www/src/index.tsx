@@ -6,6 +6,7 @@ import { Button, Card, Col, Grid, Icon, Page, Row, TextField, Variant } from '..
 import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
+import FormMessage from '../../src/components/Form/Message';
 
 ReactDom.render(
     <Page>
@@ -107,6 +108,25 @@ ReactDom.render(
                                     actions={[
                                         <Button small variant={Variant.SECONDARY}><Icon icon="eye" /></Button>
                                     ]}
+                                />
+                            </FormGroup>
+
+                            <FormGroup>
+                                <h5>Invalid input</h5>
+                                <TextField
+                                    label="Invalid input"
+                                    valid={false}
+                                />
+                                <FormMessage valid={false}>
+                                    Input is invalid
+                                </FormMessage>
+                            </FormGroup>
+
+                            <FormGroup>
+                                <h5>Valid input</h5>
+                                <TextField
+                                    label="Valid input"
+                                    valid
                                 />
                             </FormGroup>
                         </Card.Content>

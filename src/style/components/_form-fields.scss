@@ -1,4 +1,6 @@
 @use "../base/mixins";
+@use "../base/variables";
+@use "icons";
 
 .form-field-base {
     background: #fff;
@@ -9,22 +11,6 @@
     width: auto;
     display: flex;
     transition: all .1s ease-in-out;
-
-    &.form-field-invalid {
-        border-color: var(--danger-color);
-
-        .form-field-label-floating {
-            color: var(--danger-color);
-        }
-    }
-
-    &.form-field-valid {
-        border-color: var(--success-color);
-
-        .form-field-label-floating {
-            color: var(--success-color);
-        }
-    }
 
     .form-field-actions {
         align-self: center;
@@ -99,6 +85,57 @@
             top: 50%;
             transform: translateY(-50%);
             right: var(--form-field-padding);
+        }
+    }
+
+    & + .form-message {
+        margin-top: 0.25rem;
+    }
+}
+
+.form-field-base {
+    &.form-field-valid, &.form-field-invalid {
+        &:after {
+            @extend .icon;
+            right: var(--form-field-padding);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 var(--form-field-padding);
+        }
+    }
+
+    &.form-field-invalid {
+        border-color: var(--danger-color);
+
+        .form-field-label-floating {
+            color: var(--danger-color);
+        }
+
+        .form-field {
+            padding-right: calc(var(--form-field-padding) * 3);
+        }
+
+        &:after {
+            content: variables.icon('close-circle');
+            color: var(--danger-color);
+        }
+    }
+
+    &.form-field-valid {
+        border-color: var(--success-color);
+
+        .form-field-label-floating {
+            color: var(--success-color);
+        }
+
+        .form-field {
+            padding-right: calc(var(--form-field-padding) * 3);
+        }
+
+        &:after {
+            content: variables.icon('checkmark-circle-2');
+            color: var(--success-color);
         }
     }
 }
