@@ -1,22 +1,22 @@
 import { mount, render } from 'enzyme';
 import React from 'react';
-import { Button, FormField, Variant } from '@/components';
+import { Button, TextField, Variant } from '@/components';
 
-describe('Input test', () => {
-    it('should render input', () => {
+describe('TextField test', () => {
+    it('should render text input', () => {
         const container = render(
             <div>
-                <FormField/>
+                <TextField />
             </div>
         );
 
-        expect(container.find('.form-field-base > .form-field').length).toBe(1);
+        expect(container.find('.form-field-base .form-field').length).toBe(1);
     });
 
     it('should render variant class', () => {
         const container = render(
             <div>
-                <FormField
+                <TextField
                     variant={Variant.PRIMARY}
                 />
             </div>
@@ -27,7 +27,7 @@ describe('Input test', () => {
 
     it('should give focus class when focused', () => {
         const container = mount(
-            <FormField />
+            <TextField />
         );
 
         container.find('input').simulate('focus');
@@ -37,7 +37,7 @@ describe('Input test', () => {
 
     it('should not have focus class when blurred after focus', () => {
         const container = mount(
-            <FormField />
+            <TextField />
         );
 
         container.find('input').simulate('focus').simulate('blur');
@@ -49,7 +49,7 @@ describe('Input test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <FormField onChange={() => fn()} />
+            <TextField onChange={() => fn()} />
         );
 
         container.find('input').simulate('change');
@@ -61,7 +61,7 @@ describe('Input test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <FormField />
+            <TextField />
         );
 
         container.find('input').simulate('change');
@@ -73,7 +73,7 @@ describe('Input test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <FormField value="Test" onChange={() => fn()} />
+            <TextField value="Test" onChange={() => fn()} />
         );
 
         expect(container.find('input').prop('value')).toBe('Test');
@@ -87,7 +87,7 @@ describe('Input test', () => {
     it('should render floating label', () => {
         const container = mount(
             <div>
-                <FormField label="Username" />
+                <TextField label="Username" />
             </div>
         );
 
@@ -99,7 +99,7 @@ describe('Input test', () => {
     it('should render valid fields', () => {
         const container = mount(
             <div>
-                <FormField valid={true} />
+                <TextField valid={true} />
             </div>
         );
 
@@ -110,7 +110,7 @@ describe('Input test', () => {
     it('should render invalid fields', () => {
         const container = mount(
             <div>
-                <FormField valid={false} />
+                <TextField valid={false} />
             </div>
         );
 
@@ -121,7 +121,7 @@ describe('Input test', () => {
     it('should render field actions', () => {
         const container = mount(
             <div>
-                <FormField actions={[<Button key={1} variant={Variant.PRIMARY} />]} />
+                <TextField actions={[<Button key={1} variant={Variant.PRIMARY} />]} />
             </div>
         );
 

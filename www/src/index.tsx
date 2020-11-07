@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import '../../src/style/index.scss';
-import { Button, Card, Col, Grid, Icon, Page, Row, TextField, Variant } from '../../src';
+import { Button, Card, Col, Grid, Icon, Page, Row, SelectField, TextField, Variant } from '../../src';
 import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
@@ -105,9 +105,11 @@ ReactDom.render(
                                 <h5>Input with actions</h5>
                                 <TextField
                                     label="Username"
+                                    type="password"
                                     actions={[
-                                        <Button small variant={Variant.SECONDARY}><Icon icon="eye" /></Button>
+                                        <Button small variant={Variant.PRIMARY}><Icon icon="eye" /></Button>
                                     ]}
+                                    valid={true}
                                 />
                             </FormGroup>
 
@@ -128,6 +130,19 @@ ReactDom.render(
                                     label="Valid input"
                                     valid
                                 />
+                            </FormGroup>
+                              <FormGroup>
+                                <h5>Valid input</h5>
+                                <SelectField
+                                    label="Valid input"
+                                    valid
+                                >
+                                    <option value="b">A</option>
+                                    <option value="d">B</option>
+                                    <option value="e">C</option>
+                                    <option value="f">D</option>
+                                    <option value="g">E</option>
+                                </SelectField>
                             </FormGroup>
                         </Card.Content>
                     </Card>

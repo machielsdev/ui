@@ -15,8 +15,7 @@
     .form-field-actions {
         align-self: center;
         pointer-events: auto;
-        margin-left: var(--form-field-padding);
-        padding: 0 var(--form-field-padding);
+        padding-right: var(--form-field-padding);
     }
 
     &:hover:not(.form-field-valid):not(.form-field-invalid) {
@@ -41,7 +40,7 @@
         }
     }
 
-    &.floating-label .form-field  {
+    &.floating-label .form-field {
         padding: calc(var(--form-field-padding) + (var(--form-field-padding) / 2)) var(--form-field-padding) calc(var(--form-field-padding) / 2);
     }
 
@@ -75,34 +74,19 @@
         transition: all .1s ease-in-out;
     }
 
-    &.toggles {
-        position: relative;
-
-        &:after {
-            content: '';
-            color: inherit;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: var(--form-field-padding);
-        }
-    }
-
     & + .form-message {
         margin-top: 0.25rem;
     }
-}
 
-.form-field-base {
-    &.form-field-valid, &.form-field-invalid {
-        &:after {
-            @extend .icon;
-            right: var(--form-field-padding);
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 var(--form-field-padding);
-        }
+    .field-state-icon {
+        @extend .icon;
+
+        position: absolute;
+        justify-content: center;
+        right: var(--form-field-padding);
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     &.form-field-invalid {
@@ -116,9 +100,8 @@
             padding-right: calc(var(--form-field-padding) * 3);
         }
 
-        &:after {
-            content: variables.icon('close-circle');
-            color: var(--danger-color);
+        .field-state-icon {
+            color: var(--danger-color)
         }
     }
 
@@ -133,9 +116,58 @@
             padding-right: calc(var(--form-field-padding) * 3);
         }
 
-        &:after {
-            content: variables.icon('checkmark-circle-2');
-            color: var(--success-color);
+        .field-state-icon {
+            color: var(--success-color)
+        }
+    }
+
+    &.form-field-invalid .form-field-container .form-field,
+    &.form-field-valid .form-field-container .form-field {
+        padding-right: calc(var(--form-field-padding) * 3);
+    }
+
+    .form-field-container {
+        flex: 1 1 100%;
+        display: flex;
+        position: relative;
+
+        &.toggles {
+            position: relative;
+
+            &:before {
+                content: variables.icon('arrow-alt-down');
+                font-family: 'Cui-Icons';
+                color: inherit;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: var(--form-field-padding);
+            }
+
+            .form-field-select {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+
+                &::-ms-expand {
+                    display: none;
+                }
+            }
+
+            .field-state-icon {
+                right: calc(var(--form-field-padding) * 2);
+            }
+        }
+    }
+
+    &.form-field-base-toggles {
+        &.form-field-valid, &.form-field-invalid {
+            .field-state-icon {
+                right: calc(var(--form-field-padding) * 2.5);
+            }
+
+            .form-field-container.toggles .form-field {
+                padding-right: calc(var(--form-field-padding) * 4.5);
+            }
         }
     }
 }
