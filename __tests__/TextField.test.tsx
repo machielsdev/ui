@@ -125,9 +125,6 @@ describe('TextField test', () => {
             </div>
         );
 
-        console.log(container.html());
-
-
         expect(container.find('.form-field-base .form-field-actions > *').length).toBe(1);
     });
 });

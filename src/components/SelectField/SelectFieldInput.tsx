@@ -36,7 +36,6 @@ const SelectFieldInput = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
     useEffect(() => {
         if (!inputValue) {
             const initialValue = value || defaultValue || determineInitialValue(children);
-            console.log(initialValue);
             fieldContext.changeValue(!!initialValue);
             setInputValue(initialValue.toString());
         }
