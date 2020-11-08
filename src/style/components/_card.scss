@@ -5,6 +5,7 @@
     background: var(--card-background);
     border: solid 1px var(--base-border-color);
     border-radius: var(--base-border-radius);
+    width: 100%;
 
     .card-content {
         padding: var(--card-padding);
@@ -22,16 +23,12 @@
                 margin-left: var(--card-padding);
             }
         }
-
-        & + .card-content {
-            padding-top: 0;
-        }
     }
 
     .card-title {
         font: {
             weight: 600;
-            size: 1.1rem;
+            size: 1.2rem;
         }
     }
 

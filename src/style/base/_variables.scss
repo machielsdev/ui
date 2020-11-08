@@ -8,8 +8,8 @@ $base-background-color: mixins.color('gray', 50);
 $base-body-gutter: 0;
 $base-font-color: mixins.color('blueGray', 900);
 $base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
-$base-font-size: 16px;
 $base-border-color: mixins.color('gray', 300);
+$bse-border-hover-color: mixins.color('gray', 400);
 $base-border-radius: 4px;
 $base-gutter: 1rem;
 $base-gutter-steps: 0.25;
@@ -22,12 +22,12 @@ $breakpoints: (
 );
 
 :root {
-    --base-font-size: #{$base-font-size};
     --base-body-background: #{$base-background-color};
     --base-body-gutter: #{$base-body-gutter};
     --base-font-color: #{$base-font-color};
     --base-font-family: #{$base-font-family};
     --base-border-color: #{$base-border-color};
+    --base-border-hover-color: #{$bse-border-hover-color};
     --base-border-radius: #{$base-border-radius};
     --base-gutter: #{$base-gutter};
 }
@@ -49,6 +49,10 @@ $danger-color-hover: mixins.color('red', 800);
 $danger-color-active: mixins.color('red', 900);
 $danger-color-light-background: mixins.color('red', 50);
 
+$success-color: mixins.color('green', 700);
+$success-color-hover: mixins.color('green', 800);
+$success-color-active: mixins.color('green', 900);
+
 :root {
     --primary-color: #{$primary-color};
     --primary-color-hover: #{$primary-color-hover};
@@ -62,7 +66,11 @@ $danger-color-light-background: mixins.color('red', 50);
     --danger-color: #{$danger-color};
     --danger-color-hover: #{$danger-color-hover};
     --danger-color-active: #{$danger-color-active};
-    --danger-color-light-background: #{$danger-color-light-background}
+    --danger-color-light-background: #{$danger-color-light-background};
+
+    --success-color: #{$success-color};
+    --success-color-hover: #{$success-color};
+    --success-color-active: #{$success-color-active}
 }
 
 /**
@@ -88,7 +96,7 @@ $page-gutter: 2rem;
 /**
  * 5. Button
  */
-$button-padding: 0.9rem;
+$button-padding: 1rem;
 $button-font-weight: 600;
 $button-font-size: 1rem;
 
@@ -139,7 +147,7 @@ $danger-button-ghost-active-background: mixins.color('red', 75);
 /**
  * 6. Cards
  */
-$card-padding: 1rem;
+$card-padding: 1.5rem;
 $card-background: #fff;
 
 :root {
@@ -413,4 +421,17 @@ $icons: (
 
 @function icon($name) {
     @return map-get($icons, $name);
+}
+
+/**
+ * 8. Form fields
+ */
+$form-field-padding: 1rem;
+$form-field-font-weight: 500;
+$form-field-font-size: 1rem;
+
+:root {
+    --form-field-padding: #{$form-field-padding};
+    --form-field-font-weight: #{$form-field-font-weight};
+    --form-field-font-size: #{$form-field-font-size};
 }
