@@ -102,8 +102,6 @@ describe('FieldBase test', () => {
             </div>
         );
 
-        console.log(container.html());
-
         expect(container.find('.form-field-base.focused.has-value').length).toBe(1);
     })
 
