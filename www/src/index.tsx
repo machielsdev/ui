@@ -7,6 +7,29 @@ import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
+import { useState } from 'react';
+
+const TestControllable = () => {
+    const [value, setValue] = useState('');
+
+    return (
+        <>
+            <h5>Controllable inputs</h5>
+            <FormGroup>
+                <TextField
+                    label="Changable input"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value)}
+                />
+            </FormGroup>
+            <FormGroup>
+                <TextField
+                    label="Input that will be changed"
+                    value={value}
+                />
+            </FormGroup>
+        </>
+    );
+}
 
 ReactDom.render(
     <Page>
@@ -106,6 +129,9 @@ ReactDom.render(
                                 <TextField
                                     label="Username"
                                     type="password"
+                                    onChange={() => {
+
+                                    }}
                                     actions={[
                                         <Button small variant={Variant.PRIMARY}><Icon icon="eye" /></Button>
                                     ]}
@@ -144,6 +170,7 @@ ReactDom.render(
                                     <option value="g">E</option>
                                 </SelectField>
                             </FormGroup>
+                            <TestControllable />
                         </Card.Content>
                     </Card>
                 </Row>

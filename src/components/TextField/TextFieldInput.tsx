@@ -2,6 +2,7 @@ import * as React from 'react';
 import { FieldContext, FieldContextProps } from '@/components/Field/FieldContext';
 import { propTypes, TextFieldProps } from './TextField';
 import { useContext, useEffect, useState } from 'react';
+import FieldContainer from '@/components/Field/FieldContainer';
 
 const TextFieldInput = React.forwardRef<HTMLInputElement, TextFieldProps>((
     {
@@ -16,15 +17,13 @@ const TextFieldInput = React.forwardRef<HTMLInputElement, TextFieldProps>((
     const [inputValue, setInputValue] = useState<string | ReadonlyArray<string> | number>('');
 
     useEffect(() => {
-        if (!inputValue && value) {
-            setInputValue(value);
-            fieldContext.changeValue(!!value);
-        }
+        setInputValue(value || '');
+        fieldContext.changeValue(!!value);
     }, [value]);
     return (
         <FieldContext.Consumer>
             {({ changeValue, changeFocus, stateIcon }) => (
-                <div className="form-field-container">
+                <FieldContainer>
                     <input
                         ref={ref}
                         type={type}
@@ -42,7 +41,7 @@ const TextFieldInput = React.forwardRef<HTMLInputElement, TextFieldProps>((
                         {...rest}
                     />
                     {stateIcon}
-                </div>
+                </FieldContainer>
             )}
         </FieldContext.Consumer>
     )

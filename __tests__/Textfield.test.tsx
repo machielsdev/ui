@@ -6,11 +6,11 @@ describe('TextField test', () => {
     it('should render text input', () => {
         const container = render(
             <div>
-                <TextField />
+                <TextField/>
             </div>
         );
 
-        expect(container.find('.form-field-base .form-field').length).toBe(1);
+        expect(container.find('.form-field-base input').length).toBe(1);
     });
 
     it('should render variant class', () => {
@@ -27,7 +27,7 @@ describe('TextField test', () => {
 
     it('should give focus class when focused', () => {
         const container = mount(
-            <TextField />
+            <TextField/>
         );
 
         container.find('input').simulate('focus');
@@ -37,7 +37,7 @@ describe('TextField test', () => {
 
     it('should not have focus class when blurred after focus', () => {
         const container = mount(
-            <TextField />
+            <TextField/>
         );
 
         container.find('input').simulate('focus').simulate('blur');
@@ -49,7 +49,7 @@ describe('TextField test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <TextField onChange={() => fn()} />
+            <TextField onChange={() => fn()}/>
         );
 
         container.find('input').simulate('change');
@@ -61,7 +61,7 @@ describe('TextField test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <TextField />
+            <TextField/>
         );
 
         container.find('input').simulate('change');
@@ -73,12 +73,12 @@ describe('TextField test', () => {
         const fn = jest.fn();
 
         const container = mount(
-            <TextField value="Test" onChange={() => fn()} />
+            <TextField value="Test" onChange={() => fn()}/>
         );
 
         expect(container.find('input').prop('value')).toBe('Test');
 
-        container.find('input').simulate('change', { target: { value: 'Foo' } });
+        container.find('input').simulate('change', {target: {value: 'Foo'}});
 
         expect(container.find('input').prop('value')).toBe('Foo');
         expect(fn).toHaveBeenCalled();
@@ -87,7 +87,7 @@ describe('TextField test', () => {
     it('should render floating label', () => {
         const container = mount(
             <div>
-                <TextField label="Username" />
+                <TextField label="Username"/>
             </div>
         );
 
@@ -99,7 +99,7 @@ describe('TextField test', () => {
     it('should render valid fields', () => {
         const container = mount(
             <div>
-                <TextField valid={true} />
+                <TextField valid={true}/>
             </div>
         );
 
@@ -110,7 +110,7 @@ describe('TextField test', () => {
     it('should render invalid fields', () => {
         const container = mount(
             <div>
-                <TextField valid={false} />
+                <TextField valid={false}/>
             </div>
         );
 
@@ -121,7 +121,7 @@ describe('TextField test', () => {
     it('should render field actions', () => {
         const container = mount(
             <div>
-                <TextField actions={[<Button key={1} variant={Variant.PRIMARY} />]} />
+                <TextField actions={[<Button key={1} variant={Variant.PRIMARY}/>]}/>
             </div>
         );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FieldBase from '@/components/Field/FieldBase';
+import FieldBase, { propTypes as basePropTypes } from '@/components/Field/FieldBase';
 import FieldBaseProps from '@/components/Field/FieldBase';
 import TextFieldInput from '@/components/TextField/TextFieldInput';
 
@@ -27,9 +27,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>((
 ));
 
 export const propTypes = {
-    ...FieldBase.propTypes,
-    type: PropTypes.oneOf(['password', 'text', 'reset']),
-    onChange: PropTypes.func
+    ...basePropTypes,
+    type: PropTypes.oneOf(['password', 'text', 'reset'])
 }
 
 TextField.displayName = 'TextField';

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { SelectFieldProps } from '@/components/SelectField/SelectField';
+import { propTypes, SelectFieldProps } from '@/components/SelectField/SelectField';
 import { Children, isValidElement, ReactNode, useContext, useEffect, useState } from 'react';
 import { FieldContext, FieldContextProps } from '@/components/Field/FieldContext';
 import clsx from 'clsx';
-import { propTypes } from '@/components/TextField/TextField';
+import FieldContainer from '@/components/Field/FieldContainer';
 
-const determineInitialValue = (children: React.ReactNode): string => {
+const determineInitialValue = (children: ReactNode): string => {
     let value = '';
     Children.forEach<ReactNode>(children, (child: ReactNode) => {
         if (
@@ -34,17 +34,15 @@ const SelectFieldInput = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
     const [inputValue, setInputValue] = useState<string | ReadonlyArray<string> | number>('');
 
     useEffect(() => {
-        if (!inputValue) {
-            const initialValue = value || defaultValue || determineInitialValue(children);
-            fieldContext.changeValue(!!initialValue);
-            setInputValue(initialValue.toString());
-        }
+        const initialValue = value || defaultValue || determineInitialValue(children);
+        fieldContext.changeValue(!!initialValue);
+        setInputValue(initialValue.toString());
     }, [value, defaultValue]);
 
     return (
         <FieldContext.Consumer>
             {({ changeValue, changeFocus, stateIcon }) => (
-                <div className="form-field-container toggles">
+                <FieldContainer toggles>
                     <select
                         ref={ref}
                         value={inputValue}
@@ -65,7 +63,7 @@ const SelectFieldInput = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
                         {children}
                     </select>
                     {stateIcon}
-                </div>
+                </FieldContainer>
             )}
         </FieldContext.Consumer>
     );

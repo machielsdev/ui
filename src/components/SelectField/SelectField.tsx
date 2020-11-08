@@ -1,7 +1,6 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import FieldBaseProps from '@/components/Field/FieldBase';
-import FieldBase from '@/components/Field/FieldBase';
+import FieldBase, { propTypes as basePropTypes } from '@/components/Field/FieldBase';
 import SelectFieldInput from '@/components/SelectField/SelectFieldInput';
 
 export type SelectFieldProps = React.SelectHTMLAttributes<HTMLSelectElement> & FieldBaseProps;
@@ -27,10 +26,7 @@ const SelectField = React.forwardRef<HTMLSelectElement, SelectFieldProps>((
     </FieldBase>
 ));
 
-export const propTypes = {
-    ...FieldBase.propTypes,
-    onChange: PropTypes.func,
-};
+export const propTypes = basePropTypes;
 
 SelectField.displayName = 'SelectField';
 SelectField.propTypes = propTypes;

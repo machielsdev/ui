@@ -81,15 +81,17 @@ const FieldBaseProps = ({
     );
 };
 
-FieldBaseProps.displayName = 'FieldBase';
-FieldBaseProps.propTypes = {
+export const propTypes = {
     actions: PropTypes.node,
     children: PropTypes.node,
     label: PropTypes.node,
     onChange: PropTypes.func,
     valid: PropTypes.bool,
     value: PropTypes.string,
-    variant: PropTypes.string
+    variant: PropTypes.string,
 }
+
+FieldBaseProps.displayName = 'FieldBase';
+FieldBaseProps.propTypes = propTypes;
 
 export default FieldBaseProps;
