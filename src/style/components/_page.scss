@@ -1,28 +1,50 @@
 @use "../base/mixins";
 
 .page {
-    background: var(--page-background-color);
+    display: flex;
+
+    .page-main {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
 
     .page-header {
         border-bottom: solid 1px var(--base-border-color);
-        padding-top: var(--page-gutter);
         padding-right: var(--page-gutter);
         padding-left: var(--page-gutter);
-
-        &:not(.with-title) {
-            padding-bottom: var(--page-gutter);
-        }
+        height: var(--page-header-height);
+        display: flex;
+        align-items: center;
 
         .page-header-title {
             font-size: 2rem;
             color: mixins.color('gray', 900);
             font-weight: normal;
             margin: 0;
-            padding-bottom: var(--page-gutter);
         }
     }
 
     .page-content {
         padding: var(--page-gutter);
+    }
+
+    .page-side {
+        flex: 1 1 auto;
+        background: var(--page-side-background-color);
+
+        &.page-side-right {
+            border-left: solid 1px var(--page-side-border-color);
+        }
+
+        &.page-side-left {
+            border-right: solid 1px var(--page-side-border-color);
+        }
+
+        &.page-side-fixed {
+            align-self: flex-start;
+            position: sticky;
+            top: 0; /* required */
+        }
     }
 }

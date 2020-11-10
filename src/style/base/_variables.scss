@@ -39,6 +39,7 @@ $primary-color: mixins.color('deepPurple', 600);
 $primary-color-hover: mixins.color('deepPurple', 700);
 $primary-color-active: mixins.color('deepPurple', 800);
 $primary-color-light-background: mixins.color('deepPurple', 50);
+$primary-color-shadow-lighter: mixins.color('deepPurple', 400);
 
 $secondary-color: mixins.color('red', 600);
 $secondary-color-hover: mixins.color('red', 700);
@@ -58,6 +59,7 @@ $success-color-active: mixins.color('green', 900);
     --primary-color-hover: #{$primary-color-hover};
     --primary-color-active: #{$primary-color-active};
     --primary-color-light-background: #{$primary-color-light-background};
+    --primary-color-shadow-lighter: #{$primary-color-shadow-lighter};
 
     --secondary-color: #{$secondary-color};
     --secondary-color-hover: #{$secondary-color-hover};
@@ -88,9 +90,17 @@ $panel-gutter: 2rem;
  * 4. Page
  */
 $page-gutter: 2rem;
+$page-side-background-color: mixins.color('gray', 100);
+$page-side-border-color: mixins.color('gray', 300);
+$page-side-gutter: 1rem;
+$page-header-height: 120px;
 
 :root {
     --page-gutter: #{$page-gutter};
+    --page-side-background-color: #{$page-side-background-color};
+    --page-side-border-color: #{$page-side-border-color};
+    --page-side-gutter: #{$page-side-gutter};
+    --page-header-height: #{$page-header-height}
 }
 
 /**
@@ -434,4 +444,15 @@ $form-field-font-size: 1rem;
     --form-field-padding: #{$form-field-padding};
     --form-field-font-weight: #{$form-field-font-weight};
     --form-field-font-size: #{$form-field-font-size};
+}
+
+/**
+ * 9. Navigation
+ */
+$vertical-navigation-border-color: mixins.color('gray', 300);
+$vertical-navigation-active-item-background-color: rgba(0, 0, 0, .05);
+
+:root {
+    --vertical-navigation-border-color: #{$vertical-navigation-border-color};
+    --vertical-navigation-active-item-background-color: #{$vertical-navigation-active-item-background-color};
 }

@@ -2,6 +2,10 @@
     background: var(--panel-background);
 
     &.panel-spaced {
-        padding: var(--panel-gutter);
+        padding: var(--base-gutter);
+    }
+
+    &.panel-primary {
+        background: var(--primary-color);
     }
 }

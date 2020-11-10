@@ -1,0 +1,63 @@
+@use "../base/mixins";
+
+.vertical-navigation-container {
+    width: 100%;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+
+    .vertical-navigation-top {
+        min-height: var(--page-header-height);
+        padding: 0 var(--base-gutter);
+        display: flex;
+        align-items: center;
+    }
+
+    .vertical-navigation-divider {
+        height: 1px;
+        background: var(--vertical-navigation-border-color);
+        width: 100%;
+    }
+
+    .vertical-navigation-list {
+        padding: var(--base-gutter);
+        overflow-y: scroll;
+
+        .vertical-navigation-list-item {
+            align-items: center;
+            cursor: pointer;
+            color: currentColor;
+            display: flex;
+            padding: var(--base-gutter);
+            border-radius: var(--base-border-radius);
+            font: {
+                weight: 500;
+            }
+
+            &:hover {
+                background: var(--vertical-navigation-active-item-background-color);
+            }
+
+            .vertical-navigation-list-item-icon {
+                margin-right: var(--base-gutter);
+                font: {
+                    size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+.navigation-primary {
+    color: mixins.color('deepPurple', 50);
+
+    .vertical-navigation-list-item {
+        color: currentColor;
+    }
+
+    .vertical-navigation-divider {
+        background: var(--primary-color-shadow-lighter);
+    }
+}
