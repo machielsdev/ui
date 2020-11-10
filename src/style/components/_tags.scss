@@ -1,0 +1,28 @@
+.tag {
+    display: inline-block;
+    align-items: center;
+
+    &.tag-primary, &.tag-purple {
+        background: var(--primary-color-light-background);
+        color: var(--primary-color);
+        padding: calc(var(--base-gutter) / 2);
+        border-radius: var(--base-border-radius);
+        font: {
+            weight: 500;
+        }
+    }
+
+    &.tag-danger, &.tag-red {
+        background: var(--danger-color-light-background);
+        color: var(--danger-color);
+        padding: calc(var(--base-gutter) / 2);
+        border-radius: var(--base-border-radius);
+        font: {
+            weight: 500;
+        }
+    }
+
+    + .tag {
+        margin-left: var(--base-gutter);
+    }
+}

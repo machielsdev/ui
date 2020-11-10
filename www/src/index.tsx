@@ -1,13 +1,13 @@
 import * as React from 'react';
+import { useState } from 'react';
 import * as ReactDom from 'react-dom';
 
 import '../../src/style/index.scss';
-import { Button, Card, Col, Grid, Icon, Page, Row, SelectField, TextField, Variant } from '../../src';
+import { Button, Card, Col, Grid, Icon, Page, Row, SelectField, Tag, TextField, Variant } from '../../src';
 import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
-import { useState } from 'react';
 
 const TestControllable = () => {
     const [value, setValue] = useState('');
@@ -171,6 +171,14 @@ ReactDom.render(
                                 </SelectField>
                             </FormGroup>
                             <TestControllable />
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Card.Header title="Tags" />
+                        <Card.Content>
+                            test text
+                            <Tag variant={Variant.PRIMARY}>Primary</Tag>
+                            <Tag variant={Variant.DANGER}>Primary</Tag>
                         </Card.Content>
                     </Card>
                 </Row>
