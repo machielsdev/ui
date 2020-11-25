@@ -66,55 +66,55 @@ ReactDom.render(
                             <h4>Button colors</h4>
                             <Grid columns={7} gap={4} className="mb-8">
                                 <div>
-                                    <Button variant={Variant.RED}>Rood</Button>
+                                    <Button variant={Variant.RED} block>Rood</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.PINK}>Roze</Button>
+                                    <Button variant={Variant.PINK} block>Roze</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.PURPLE}>Paars</Button>
+                                    <Button variant={Variant.PURPLE} block>Paars</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.DEEP_PURPLE}>Diep-paars</Button>
+                                    <Button variant={Variant.DEEP_PURPLE} block>Diep-paars</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.INDIGO}>Indigo</Button>
+                                    <Button variant={Variant.INDIGO} block>Indigo</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BLUE}>Blauw</Button>
+                                    <Button variant={Variant.BLUE} block>Blauw</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIGHT_BLUE}>Lichtblauw</Button>
+                                    <Button variant={Variant.LIGHT_BLUE} block>Lichtblauw</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.TEAL}>Teal</Button>
+                                    <Button variant={Variant.TEAL} block>Teal</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.GREEN}>Groen</Button>
+                                    <Button variant={Variant.GREEN} block>Groen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIGHT_GREEN}>Lichtgroen</Button>
+                                    <Button variant={Variant.LIGHT_GREEN} block>Lichtgroen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIME}>Limoen</Button>
+                                    <Button variant={Variant.LIME} block>Limoen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.YELLOW}>Geel</Button>
+                                    <Button variant={Variant.YELLOW} block>Geel</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.AMBER}>Amber</Button>
+                                    <Button variant={Variant.AMBER} block>Amber</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.ORANGE}>Oranje</Button>
+                                    <Button variant={Variant.ORANGE} block>Oranje</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BROWN}>Bruin</Button>
+                                    <Button variant={Variant.BROWN} block>Bruin</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.GRAY}>Grijs</Button>
+                                    <Button variant={Variant.GRAY} block>Grijs</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BLUE_GRAY}>Blauwgrijs</Button>
+                                    <Button variant={Variant.BLUE_GRAY} block>Blauwgrijs</Button>
                                 </div>
                             </Grid>
                         </Card.Content>
