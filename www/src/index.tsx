@@ -66,55 +66,55 @@ ReactDom.render(
                             <h4>Button colors</h4>
                             <Grid columns={7} gap={4} className="mb-8">
                                 <div>
-                                    <Button variant={Variant.RED} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.RED}>Rood</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.PINK} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.PINK}>Roze</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.PURPLE} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.PURPLE}>Paars</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.DEEP_PURPLE} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.DEEP_PURPLE}>Diep-paars</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.INDIGO} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.INDIGO}>Indigo</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BLUE} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.BLUE}>Blauw</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIGHT_BLUE} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.LIGHT_BLUE}>Lichtblauw</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.TEAL} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.TEAL}>Teal</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.GREEN} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.GREEN}>Groen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIGHT_GREEN} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.LIGHT_GREEN}>Lichtgroen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.LIME} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.LIME}>Limoen</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.YELLOW} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.YELLOW}>Geel</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.AMBER} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.AMBER}>Amber</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.ORANGE} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.ORANGE}>Oranje</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BROWN} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.BROWN}>Bruin</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.GRAY} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.GRAY}>Grijs</Button>
                                 </div>
                                 <div>
-                                    <Button variant={Variant.BLUE_GRAY} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                    <Button variant={Variant.BLUE_GRAY}>Blauwgrijs</Button>
                                 </div>
                             </Grid>
                         </Card.Content>
