@@ -1,4 +1,4 @@
-@use "../base/mixins";
+@use "../base/variables";
 
 .page {
     background: var(--page-background-color);
@@ -15,7 +15,7 @@
 
         .page-header-title {
             font-size: 2rem;
-            color: mixins.color('gray', 900);
+            color: variables.$base-font-color;
             font-weight: normal;
             margin: 0;
             padding-bottom: var(--page-gutter);
