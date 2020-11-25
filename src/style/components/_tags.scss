@@ -1,28 +1,35 @@
+@use "../base/variables";
+
 .tag {
-    display: inline-block;
     align-items: center;
+    border-radius: var(--base-border-radius);
+    display: inline-block;
+    font: {
+        weight: 500;
+    }
+    padding: calc(var(--base-gutter) / 2);
 
     &.tag-primary, &.tag-purple {
         background: var(--primary-color-light-background);
         color: var(--primary-color);
-        padding: calc(var(--base-gutter) / 2);
-        border-radius: var(--base-border-radius);
-        font: {
-            weight: 500;
-        }
     }
 
-    &.tag-danger, &.tag-red {
+    &.tag-danger {
         background: var(--danger-color-light-background);
         color: var(--danger-color);
-        padding: calc(var(--base-gutter) / 2);
-        border-radius: var(--base-border-radius);
-        font: {
-            weight: 500;
-        }
     }
 
     + .tag {
         margin-left: var(--base-gutter);
+    }
+
+    @each $color, $_ in variables.$colors {
+        &.tag-#{$color} {
+            background: variables.color($color, 'background');
+            color: variables.color($color, 'dark');
+            font: {
+                weight: 500;
+            }
+        }
     }
 }

@@ -232,7 +232,24 @@ ReactDom.render(
                         <Card.Content>
                             test text
                             <Tag variant={Variant.PRIMARY}>Primary</Tag>
-                            <Tag variant={Variant.DANGER}>Primary</Tag>
+                            <Tag variant={Variant.DANGER}>Danger</Tag>
+                            <Tag variant={Variant.RED}>Rood</Tag>
+                            <Tag variant={Variant.PINK}>Roze</Tag>
+                            <Tag variant={Variant.PURPLE}>Paars</Tag>
+                            <Tag variant={Variant.DEEP_PURPLE}>Diep-paars</Tag>
+                            <Tag variant={Variant.INDIGO}>Indigo</Tag>
+                            <Tag variant={Variant.BLUE}>Blauw</Tag>
+                            <Tag variant={Variant.LIGHT_BLUE}>Lichtblauw</Tag>
+                            <Tag variant={Variant.TEAL}>Teal</Tag>
+                            <Tag variant={Variant.GREEN}>Groen</Tag>
+                            <Tag variant={Variant.LIGHT_GREEN}>Lichtgroen</Tag>
+                            <Tag variant={Variant.LIME}>Limoen</Tag>
+                            <Tag variant={Variant.YELLOW}>Geel</Tag>
+                            <Tag variant={Variant.AMBER}>Amber</Tag>
+                            <Tag variant={Variant.ORANGE}>Oranje</Tag>
+                            <Tag variant={Variant.BROWN}>Bruin</Tag>
+                            <Tag variant={Variant.GRAY}>Grijs</Tag>
+                            <Tag variant={Variant.BLUE_GRAY}>Blauwgrijs</Tag>
                         </Card.Content>
                     </Card>
                 </Row>
