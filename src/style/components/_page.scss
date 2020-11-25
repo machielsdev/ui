@@ -1,4 +1,4 @@
-@use "../base/mixins";
+@use "../base/variables";
 
 .page {
     display: flex;
@@ -19,7 +19,7 @@
 
         .page-header-title {
             font-size: 2rem;
-            color: mixins.color('gray', 900);
+            color: variables.$base-font-color;
             font-weight: normal;
             margin: 0;
         }

@@ -3,13 +3,22 @@ export enum Variant {
     PRIMARY_GHOST = 'primary-ghost',
     SECONDARY = 'secondary',
     DANGER = 'danger',
-    DANGER_GHOST = 'danger-ghost'
+    DANGER_GHOST = 'danger-ghost',
+    RED = 'red',
+    PINK = 'pink',
+    PURPLE = 'purple',
+    DEEP_PURPLE = 'deep-purple',
+    INDIGO = 'indigo',
+    BLUE = 'blue',
+    LIGHT_BLUE = 'light-blue',
+    TEAL = 'teal',
+    GREEN = 'green',
+    LIGHT_GREEN = 'light-green',
+    LIME = 'lime',
+    YELLOW = 'yellow',
+    AMBER = 'amber',
+    ORANGE = 'orange',
+    BROWN = 'brown',
+    GRAY = 'gray',
+    BLUE_GRAY = 'blue-gray'
 }
-
-export const variantList: string[] = [
-    'primary',
-    'primary-ghost',
-    'secondary',
-    'danger',
-    'danger-ghost'
-];
