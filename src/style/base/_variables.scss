@@ -8,6 +8,7 @@ $colors: (
         'default': hsl(0, 65%, 51%),
         'hover': hsl(0, 66%, 47%),
         'active': hsl(0, 73%, 41%),
+        'dark': hsl(0, 73%, 41%),
         'default-font-color': #fff, //AA
     ),
     'pink': (
@@ -15,6 +16,7 @@ $colors: (
         'default': hsl(338, 78%, 48%),
         'hover': hsl(336, 78%, 43%),
         'active': hsl(334, 79%, 38%),
+        'dark': hsl(328, 81%, 29%),
         'default-font-color': #fff, //AA
     ),
     'purple': (
@@ -22,6 +24,7 @@ $colors: (
         'default': hsl(287, 65%, 40%),
         'hover': hsl(282, 68%, 38%),
         'active': hsl(277, 70%, 35%),
+        'dark': hsl(267, 75%, 31%),
         'default-font-color': #fff, //AAAA
     ),
     'deep-purple': (
@@ -30,6 +33,7 @@ $colors: (
         'default': hsl(260, 54%, 45%),
         'hover': hsl(258, 58%, 42%),
         'active': hsl(251, 69%, 34%),
+        'dark': hsl(251, 69%, 34%),
         'default-font-color': #fff,
     ),
     'indigo': (
@@ -37,6 +41,7 @@ $colors: (
         'default': hsl(232, 50%, 45%),
         'hover': hsl(232, 54%, 41%),
         'active': hsl(233, 57%, 37%),
+        'dark': hsl(235, 66%, 30%),
         'default-font-color': #fff, //AAA
     ),
     'blue': (
@@ -44,6 +49,7 @@ $colors: (
         'default': hsl(210, 79%, 46%),
         'hover': hsl(212, 80%, 42%),
         'active': hsl(216, 85%, 34%),
+        'dark': hsl(216, 85%, 34%),
         'default-font-color': #fff, //AA
     ),
     'light-blue': (
@@ -51,6 +57,7 @@ $colors: (
         'default': hsl(199, 91%, 64%),
         'hover': hsl(199, 92%, 56%),
         'active': hsl(199, 98%, 48%),
+        'dark': hsl(206, 99%, 31%),
         'default-font-color': #000, //AAA
     ),
     'teal': (
@@ -58,6 +65,7 @@ $colors: (
         'default': hsl(187, 100%, 38%),
         'hover': hsl(186, 100%, 33%),
         'active': hsl(185, 100%, 28%),
+        'dark': hsl(182, 100%, 20%),
         'default-font-color': #000, //AAA
     ),
     'green': (
@@ -65,6 +73,7 @@ $colors: (
         'default': hsl(123, 41%, 45%),
         'hover': hsl(123, 43%, 39%),
         'active': hsl(123, 46%, 34%),
+        'dark': hsl(124, 55%, 24%),
         'default-font-color': #000, //AA
     ),
     'light-green': (
@@ -72,6 +81,7 @@ $colors: (
         'default': hsl(89, 46%, 48%),
         'hover': hsl(92, 48%, 42%),
         'active': hsl(95, 49%, 36%),
+        'dark': hsl(103, 56%, 26%),
         'default-font-color': #000, //AAA
     ),
     'lime': (
@@ -79,6 +89,7 @@ $colors: (
         'default': hsl(64, 60%, 50%),
         'hover': hsl(62, 61%, 44%),
         'active': hsl(60, 63%, 38%),
+        'dark': hsl(54, 70%, 30%),
         'default-font-color': #000, //AAA
     ),
     'yellow': (
@@ -86,6 +97,7 @@ $colors: (
         'default': hsl(49, 98%, 60%),
         'hover': hsl(43, 96%, 58%),
         'active': hsl(37, 95%, 56%),
+        'dark': hsl(28, 92%, 53%),
         'default-font-color': #000, //AAA
     ),
     'amber': (
@@ -93,6 +105,7 @@ $colors: (
         'default': hsl(42, 100%, 50%),
         'hover': hsl(38, 100%, 50%),
         'active': hsl(34, 100%, 50%),
+        'dark': hsl(26, 100%, 50%),
         'default-font-color': #000, //AAA
     ),
     'orange': (
@@ -100,6 +113,7 @@ $colors: (
         'default': hsl(33, 100%, 49%),
         'hover': hsl(30, 100%, 48%),
         'active': hsl(27, 100%, 47%),
+        'dark': hsl(21, 100%, 45%),
         'default-font-color': #000, //AAA
     ),
     'brown': (
@@ -107,6 +121,7 @@ $colors: (
         'default': hsl(15, 25%, 34%),
         'hover': hsl(14, 26%, 29%),
         'active': hsl(11, 26%, 24%),
+        'dark': hsl(9, 28%, 19%),
         'default-font-color': #fff, //AAA
     ),
     'gray': (
@@ -114,6 +129,7 @@ $colors: (
         'default': hsl(0, 0%, 46%),
         'hover': hsl(0, 0%, 38%),
         'active': hsl(0, 0%, 26%),
+        'dark': hsl(0, 0%, 13%),
         'default-font-color': #fff, //AA
     ),
     'blue-gray': (
@@ -121,6 +137,7 @@ $colors: (
         'default': hsl(199, 18%, 33%),
         'hover': hsl(200, 18%, 26%),
         'active': hsl(200, 19%, 18%),
+        'dark': hsl(200, 19%, 18%),
         'default-font-color': #fff, //AAA
     )
 );
@@ -168,7 +185,7 @@ $primary-color-light-background: color('deep-purple', 'background');
 $danger-color: color('red', 'default');
 $danger-color-hover: color('red', 'hover');
 $danger-color-active: color('red', 'active');
-$danger-color-light-background: color('red', 'default');
+$danger-color-light-background: color('red', 'background');
 
 $success-color: color('green', 'default');
 $success-color-hover: color('green', 'hover');
