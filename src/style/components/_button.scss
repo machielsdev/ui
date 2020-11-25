@@ -1,3 +1,5 @@
+@use "../base/variables";
+
 .btn {
     background: transparent;
     border: solid 1px transparent;
@@ -90,6 +92,24 @@
         &:active {
             background: var(--danger-button-ghost-active-background);
             border-color: var(--danger-button-ghost-border);
+        }
+    }
+
+    @each $color, $_ in variables.$colors {
+        &.btn-#{$color} {
+            border-color: variables.color($color, 'default');
+            background: variables.color($color, 'default');
+            color: variables.color($color, 'default-font-color');
+
+            &:hover {
+                border-color: variables.color($color, 'hover');
+                background: variables.color($color, 'hover');
+            }
+
+            &:active {
+                border-color: variables.color($color, 'active');
+                background: variables.color($color, 'active');
+            }
         }
     }
 

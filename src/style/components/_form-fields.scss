@@ -1,4 +1,3 @@
-@use "../base/mixins";
 @use "../base/variables";
 @use "icons";
 
@@ -66,7 +65,7 @@
         font: {
             size: var(--form-field-font-size);
         }
-        color: mixins.color('gray', 700);
+        color: variables.color('gray', 'default');
         position: absolute;
         top: 50%;
         left: var(--form-field-padding);

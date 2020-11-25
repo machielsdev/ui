@@ -40,7 +40,7 @@ ReactDom.render(
                     <Card className="mb-8">
                         <Card.Header title="Buttons"/>
                         <Card.Content>
-                            <Grid columns={7} gap={4}>
+                            <Grid columns={7} gap={4} className="mb-8">
                                 <div>
                                     <Button variant={Variant.PRIMARY}>Primary</Button>
                                 </div>
@@ -61,6 +61,60 @@ ReactDom.render(
                                 </div>
                                 <div>
                                     <Button variant={Variant.PRIMARY} iconRight={<Icon icon="user"/>}>Icon right</Button>
+                                </div>
+                            </Grid>
+                            <h4>Button colors</h4>
+                            <Grid columns={7} gap={4} className="mb-8">
+                                <div>
+                                    <Button variant={Variant.RED} block>Rood</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.PINK} block>Roze</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.PURPLE} block>Paars</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.DEEP_PURPLE} block>Diep-paars</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.INDIGO} block>Indigo</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.BLUE} block>Blauw</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.LIGHT_BLUE} block>Lichtblauw</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.TEAL} block>Teal</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.GREEN} block>Groen</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.LIGHT_GREEN} block>Lichtgroen</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.LIME} block>Limoen</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.YELLOW} block>Geel</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.AMBER} block>Amber</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.ORANGE} block>Oranje</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.BROWN} block>Bruin</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.GRAY} block>Grijs</Button>
+                                </div>
+                                <div>
+                                    <Button variant={Variant.BLUE_GRAY} block>Blauwgrijs</Button>
                                 </div>
                             </Grid>
                         </Card.Content>

@@ -1,15 +1,143 @@
-@use "mixins";
-@use "colors";
+/**
+ * 1. Colors
+ */
+$colors: (
+    'red': (
+        'background': hsl(351, 100%, 96%),
+        'background-hover': hsl(354, 100%, 94%),
+        'default': hsl(0, 65%, 51%),
+        'hover': hsl(0, 66%, 47%),
+        'active': hsl(0, 73%, 41%),
+        'default-font-color': #fff, //AA
+    ),
+    'pink': (
+        'background': hsl(340, 80%, 94%),
+        'default': hsl(338, 78%, 48%),
+        'hover': hsl(336, 78%, 43%),
+        'active': hsl(334, 79%, 38%),
+        'default-font-color': #fff, //AA
+    ),
+    'purple': (
+        'background': hsl(292, 44%, 93%),
+        'default': hsl(287, 65%, 40%),
+        'hover': hsl(282, 68%, 38%),
+        'active': hsl(277, 70%, 35%),
+        'default-font-color': #fff, //AAAA
+    ),
+    'deep-purple': (
+        'background': hsl(264, 45%, 94%),
+        'background-hover': hsl(263, 45%, 90%),
+        'default': hsl(260, 54%, 45%),
+        'hover': hsl(258, 58%, 42%),
+        'active': hsl(251, 69%, 34%),
+        'default-font-color': #fff,
+    ),
+    'indigo': (
+        'background': hsl(231, 44%, 94%),
+        'default': hsl(232, 50%, 45%),
+        'hover': hsl(232, 54%, 41%),
+        'active': hsl(233, 57%, 37%),
+        'default-font-color': #fff, //AAA
+    ),
+    'blue': (
+        'background': hsl(205, 87%, 94%),
+        'default': hsl(210, 79%, 46%),
+        'hover': hsl(212, 80%, 42%),
+        'active': hsl(216, 85%, 34%),
+        'default-font-color': #fff, //AA
+    ),
+    'light-blue': (
+        'background': hsl(199, 94%, 94%),
+        'default': hsl(199, 91%, 64%),
+        'hover': hsl(199, 92%, 56%),
+        'active': hsl(199, 98%, 48%),
+        'default-font-color': #000, //AAA
+    ),
+    'teal': (
+        'background': hsl(177, 72%, 93%),
+        'default': hsl(187, 100%, 38%),
+        'hover': hsl(186, 100%, 33%),
+        'active': hsl(185, 100%, 28%),
+        'default-font-color': #000, //AAA
+    ),
+    'green': (
+        'background': hsl(125, 39%, 94%),
+        'default': hsl(123, 41%, 45%),
+        'hover': hsl(123, 43%, 39%),
+        'active': hsl(123, 46%, 34%),
+        'default-font-color': #000, //AA
+    ),
+    'light-green': (
+        'background': hsl(88, 52%, 94%),
+        'default': hsl(89, 46%, 48%),
+        'hover': hsl(92, 48%, 42%),
+        'active': hsl(95, 49%, 36%),
+        'default-font-color': #000, //AAA
+    ),
+    'lime': (
+        'background': hsl(66, 71%, 95%),
+        'default': hsl(64, 60%, 50%),
+        'hover': hsl(62, 61%, 44%),
+        'active': hsl(60, 63%, 38%),
+        'default-font-color': #000, //AAA
+    ),
+    'yellow': (
+        'background': hsl(55, 100%, 95%),
+        'default': hsl(49, 98%, 60%),
+        'hover': hsl(43, 96%, 58%),
+        'active': hsl(37, 95%, 56%),
+        'default-font-color': #000, //AAA
+    ),
+    'amber': (
+        'background': hsl(46, 100%, 94%),
+        'default': hsl(42, 100%, 50%),
+        'hover': hsl(38, 100%, 50%),
+        'active': hsl(34, 100%, 50%),
+        'default-font-color': #000, //AAA
+    ),
+    'orange': (
+        'background': hsl(37, 100%, 94%),
+        'default': hsl(33, 100%, 49%),
+        'hover': hsl(30, 100%, 48%),
+        'active': hsl(27, 100%, 47%),
+        'default-font-color': #000, //AAA
+    ),
+    'brown': (
+        'background': hsl(20, 16%, 93%),
+        'default': hsl(15, 25%, 34%),
+        'hover': hsl(14, 26%, 29%),
+        'active': hsl(11, 26%, 24%),
+        'default-font-color': #fff, //AAA
+    ),
+    'gray': (
+        'background': hsl(0, 0%, 98%),
+        'default': hsl(0, 0%, 46%),
+        'hover': hsl(0, 0%, 38%),
+        'active': hsl(0, 0%, 26%),
+        'default-font-color': #fff, //AA
+    ),
+    'blue-gray': (
+        'background': hsl(204, 15%, 94%),
+        'default': hsl(199, 18%, 33%),
+        'hover': hsl(200, 18%, 26%),
+        'active': hsl(200, 19%, 18%),
+        'default-font-color': #fff, //AAA
+    )
+);
+
+@function color($color, $variant: 'default') {
+    @return map-get(map-get($colors, $color), $variant);
+}
 
 /**
- * 1. Base
+ * 2. Base
  */
-$base-background-color: mixins.color('gray', 50);
+$base-background-color: color('gray', 'background');
 $base-body-gutter: 0;
-$base-font-color: mixins.color('blueGray', 900);
+$base-font-color: hsl(200, 19%, 18%);
 $base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
-$base-border-color: mixins.color('gray', 300);
-$bse-border-hover-color: mixins.color('gray', 400);
+$base-border-color: hsl(0, 0%, 88%);
+$base-border-hover-color: hsl(0, 0%, 74%);
 $base-border-radius: 4px;
 $base-gutter: 1rem;
 $base-gutter-steps: 0.25;
@@ -27,41 +155,30 @@ $breakpoints: (
     --base-font-color: #{$base-font-color};
     --base-font-family: #{$base-font-family};
     --base-border-color: #{$base-border-color};
-    --base-border-hover-color: #{$bse-border-hover-color};
+    --base-border-hover-color: #{$base-border-hover-color};
     --base-border-radius: #{$base-border-radius};
     --base-gutter: #{$base-gutter};
 }
 
-/**
- * 2. Colors
- */
-$primary-color: mixins.color('deepPurple', 600);
-$primary-color-hover: mixins.color('deepPurple', 700);
-$primary-color-active: mixins.color('deepPurple', 800);
-$primary-color-light-background: mixins.color('deepPurple', 50);
+$primary-color: color('deep-purple', 'default');
+$primary-color-hover: color('deep-purple', 'hover');
+$primary-color-active: color('deep-purple', 'active');
+$primary-color-light-background: color('deep-purple', 'background');
 
-$secondary-color: mixins.color('red', 600);
-$secondary-color-hover: mixins.color('red', 700);
-$secondary-color-active: mixins.color('red', 800);
+$danger-color: color('red', 'default');
+$danger-color-hover: color('red', 'hover');
+$danger-color-active: color('red', 'active');
+$danger-color-light-background: color('red', 'default');
 
-$danger-color: mixins.color('red', 700);
-$danger-color-hover: mixins.color('red', 800);
-$danger-color-active: mixins.color('red', 900);
-$danger-color-light-background: mixins.color('red', 50);
-
-$success-color: mixins.color('green', 700);
-$success-color-hover: mixins.color('green', 800);
-$success-color-active: mixins.color('green', 900);
+$success-color: color('green', 'default');
+$success-color-hover: color('green', 'hover');
+$success-color-active: color('green', 'active');
 
 :root {
     --primary-color: #{$primary-color};
     --primary-color-hover: #{$primary-color-hover};
     --primary-color-active: #{$primary-color-active};
     --primary-color-light-background: #{$primary-color-light-background};
-
-    --secondary-color: #{$secondary-color};
-    --secondary-color-hover: #{$secondary-color-hover};
-    --secondary-color-active: #{$secondary-color-active};
 
     --danger-color: #{$danger-color};
     --danger-color-hover: #{$danger-color-hover};
@@ -100,15 +217,15 @@ $button-padding: 1rem;
 $button-font-weight: 600;
 $button-font-size: 1rem;
 
-$primary-button-ghost-hover-background: mixins.color('deepPurple', 50);
-$primary-button-ghost-active-background: mixins.color('deepPurple', 75);
+$primary-button-ghost-hover-background: color('deep-purple', 'background');
+$primary-button-ghost-active-background: color('deep-purple', 'background-hover');
 
 $secondary-button-background: transparent;
-$secondary-button-hover-background: mixins.color('deepPurple', 50);
-$secondary-button-active-background: mixins.color('deepPurple', 75);
+$secondary-button-hover-background: color('deep-purple', 'background');
+$secondary-button-active-background: color('deep-purple', 'background-hover');
 
-$danger-button-ghost-hover-background: mixins.color('red', 50);
-$danger-button-ghost-active-background: mixins.color('red', 75);
+$danger-button-ghost-hover-background: color('red', 'background');
+$danger-button-ghost-active-background: color('red', 'background-hover');
 
 :root {
     --button-padding: #{$button-padding};
@@ -417,7 +534,6 @@ $icons: (
     'wifi-off': '\e9f2',
     'wifi': '\e9f3',
 );
-
 
 @function icon($name) {
     @return map-get($icons, $name);
