@@ -1,4 +1,4 @@
-@use "../base/mixins";
+@use "../base/variables";
 
 .vertical-navigation-container {
     width: 100%;
@@ -51,13 +51,13 @@
 }
 
 .navigation-primary {
-    color: mixins.color('deepPurple', 50);
+    color: variables.color('deep-purple', 'background');
 
     .vertical-navigation-list-item {
         color: currentColor;
     }
 
     .vertical-navigation-divider {
-        background: var(--primary-color-shadow-lighter);
+        background: var(--primary-color-light-background);
     }
 }
