@@ -222,17 +222,15 @@ $panel-gutter: 2rem;
  * 4. Page
  */
 $page-gutter: 2rem;
-$page-side-background-color: hsl(0, 0%, 96%);
+$page-side-background-color: #fff;
 $page-side-border-color: hsl(0, 0%, 88%);
 $page-side-gutter: 1rem;
-$page-header-height: 120px;
 
 :root {
     --page-gutter: #{$page-gutter};
     --page-side-background-color: #{$page-side-background-color};
     --page-side-border-color: #{$page-side-border-color};
     --page-side-gutter: #{$page-side-gutter};
-    --page-header-height: #{$page-header-height}
 }
 
 /**

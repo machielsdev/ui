@@ -2,26 +2,30 @@
 
 .page {
     display: flex;
+    flex-flow: row wrap;
 
     .page-main {
         display: flex;
         flex-direction: column;
-        flex: 1 1 100%;
+        flex: 1 1;
     }
 
     .page-header {
         border-bottom: solid 1px var(--base-border-color);
+        padding-top: var(--page-gutter);
         padding-right: var(--page-gutter);
         padding-left: var(--page-gutter);
-        height: var(--page-header-height);
-        display: flex;
-        align-items: center;
+
+        &:not(.with-title) {
+            padding-bottom: var(--page-gutter);
+        }
 
         .page-header-title {
             font-size: 2rem;
             color: variables.$base-font-color;
             font-weight: normal;
             margin: 0;
+            padding-bottom: var(--page-gutter);
         }
     }
 
@@ -30,7 +34,7 @@
     }
 
     .page-side {
-        flex: 1 1 auto;
+        flex: 0 0 auto;
         background: var(--page-side-background-color);
 
         &.page-side-right {
@@ -44,7 +48,19 @@
         &.page-side-fixed {
             align-self: flex-start;
             position: sticky;
-            top: 0; /* required */
+            top: 0;
+        }
+    }
+
+    .page-top {
+        width: 100%;
+        flex: 0 0 100%;
+        align-self: flex-start;
+        z-index: 9999;
+
+        &.page-top-sticky {
+            position: sticky;
+            top: 0;
         }
     }
 }

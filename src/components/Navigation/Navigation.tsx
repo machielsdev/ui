@@ -15,20 +15,16 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>((
     },
     ref
 ): React.ReactElement => (
-    <Panel
-        className="navigation"
+    <nav
+        ref={ref}
+        className={clsx(
+            'navigation-list',
+            sticky && 'navigation-sticky',
+            className
+        )}
     >
-        <nav
-            ref={ref}
-            className={clsx(
-                'navigation-list',
-                sticky && 'navigation-sticky',
-                className
-            )}
-        >
-            {children}
-        </nav>
-    </Panel>
+        {children}
+    </nav>
 ));
 
 Navigation.displayName = 'PageNavigation';

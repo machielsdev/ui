@@ -9,10 +9,10 @@
     position: relative;
 
     .vertical-navigation-top {
-        min-height: var(--page-header-height);
-        padding: 0 var(--base-gutter);
+        padding: var(--base-gutter);
         display: flex;
         align-items: center;
+        flex-direction: column;
     }
 
     .vertical-navigation-divider {
@@ -31,13 +31,13 @@
             color: currentColor;
             display: flex;
             padding: var(--base-gutter);
-            border-radius: var(--base-border-radius);
+            position: relative;
             font: {
                 weight: 500;
             }
 
             &:hover {
-                background: var(--vertical-navigation-active-item-background-color);
+                background: var(--vertical-navigation-hover-item-background-color);
             }
 
             .vertical-navigation-list-item-icon {
@@ -45,6 +45,27 @@
                 font: {
                     size: 1.1rem;
                 }
+            }
+
+            &.active {
+                color: #fff;
+                background: var(--primary-color);
+                border-radius: var(--base-border-radius);
+
+                //&:before {
+                //    content: '';
+                //    position: absolute;
+                //    height: 100%;
+                //    width: 3px;
+                //    background: var(--primary-color);
+                //    border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
+                //    left: 0;
+                //    top: 0;
+                //}
+            }
+
+            &:not(:last-child) {
+                margin-bottom: var(--base-gutter);
             }
         }
     }
@@ -54,7 +75,7 @@
     color: variables.color('deep-purple', 'background');
 
     .vertical-navigation-list-item {
-        color: currentColor;
+        color: #fff;
     }
 
     .vertical-navigation-divider {
