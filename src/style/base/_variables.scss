@@ -579,9 +579,11 @@ $form-field-font-size: 1rem;
  * 9. Navigation
  */
 $vertical-navigation-border-color: hsl(0, 0%, 88%);
-$vertical-navigation-active-item-background-color: rgba(0, 0, 0, .05);
+$vertical-navigation-hover-item-background-color: rgba(0, 0, 0, .05);
+$vertical-navigation-active-item-background-color: rgba(0, 0, 0, .1);
 
 :root {
     --vertical-navigation-border-color: #{$vertical-navigation-border-color};
+    --vertical-navigation-hover-item-background-color: #{$vertical-navigation-hover-item-background-color};
     --vertical-navigation-active-item-background-color: #{$vertical-navigation-active-item-background-color};
 }

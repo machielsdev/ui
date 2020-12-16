@@ -7,6 +7,8 @@ import NavigationTop from '@/components/Navigation/Vertical/Top';
 import NavigationList from '@/components/Navigation/Vertical/List';
 import NavigationListItem from '@/components/Navigation/Vertical/ListItem';
 import NavigationDivider from '@/components/Navigation/Vertical/Divider';
+import { useState } from 'react';
+import { VerticalNavigationScope } from './Vertical/VerticalNavigationScope';
 
 export interface VerticalNavigationStatics {
     Top: typeof NavigationTop;
@@ -17,6 +19,8 @@ export interface VerticalNavigationStatics {
 
 export interface SideNavigationProps extends React.HTMLAttributes<HTMLDivElement> {
     variant?: Variant | string;
+    collapsable?: boolean;
+    children: React.ReactNode | ((scope: VerticalNavigationScope) => React.ReactNode);
 }
 
 // @ts-ignore
@@ -28,18 +32,32 @@ const VerticalNavigation: ForwardComponentWithStatics<HTMLDivElement, SideNaviga
             variant
         },
         ref
-    ): React.ReactElement => (
-        <div
-            ref={ref}
-            className={clsx(
-                'vertical-navigation-container',
-                variant && `navigation-${variant}`,
-                className
-            )}
-        >
-            {children}
-        </div>
-    ));
+    ): React.ReactElement => {
+        const [collapsed, setCollapsed] = useState<boolean>(false);
+
+        const makeScope = (): VerticalNavigationScope => ({
+            collapsed,
+            collapse: () => setCollapsed(!collapsed)
+        });
+
+        children = typeof children === 'function'
+            ? (children as (scope: VerticalNavigationScope) => React.ReactNode)(makeScope())
+            : children;
+
+        return (
+            <div
+                ref={ref}
+                className={clsx(
+                    'vertical-navigation-container',
+                    collapsed && 'is-collapsed',
+                    variant && `navigation-${variant}`,
+                    className
+                )}
+            >
+                {children}
+            </div>
+        )
+    });
 
 VerticalNavigation.displayName = 'VerticalNavigation';
 VerticalNavigation.propTypes = {

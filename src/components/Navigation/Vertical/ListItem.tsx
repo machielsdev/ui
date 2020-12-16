@@ -29,7 +29,9 @@ const NavigationListItem = React.forwardRef<HTMLDivElement, NavigationListItemPr
                 {icon}
             </div>
         )}
-        {children}
+        <span className="vertical-navigation-list-item-text">
+            {children}
+        </span>
     </div>
 ));
 

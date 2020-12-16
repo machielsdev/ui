@@ -35,26 +35,24 @@ const TestControllable = () => {
 ReactDom.render(
     <Page>
         <Page.Left fixed>
-            <VerticalNavigation>
-                <VerticalNavigation.Top className="justify-content-center mb-4">
-                    <img src={logo} width={160} className="mb-8" />
-                    <Button
-                        iconLeft={<Icon icon="" />}
-                        variant={Variant.PRIMARY_GHOST}
-                        block
-                    >
-                        Download now
-                    </Button>
-                </VerticalNavigation.Top>
-                <VerticalNavigation.Divider />
-                <VerticalNavigation.List>
-                    <VerticalNavigation.Item active icon={<Icon icon="home" />}>
-                        Home
-                    </VerticalNavigation.Item>
-                    <VerticalNavigation.Item icon={<Icon icon="user" />}>
-                        User
-                    </VerticalNavigation.Item>
-                </VerticalNavigation.List>
+            <VerticalNavigation collapsable>
+                {({ collapse }) => (
+                    <>
+                        <VerticalNavigation.Top className="justify-content-center mb-4">
+                            <button onClick={collapse}></button>
+                            <img src={logo} width={160} className="mb-8" />
+                        </VerticalNavigation.Top>
+                        <VerticalNavigation.Divider />
+                        <VerticalNavigation.List>
+                            <VerticalNavigation.Item active icon={<Icon icon="home" />}>
+                                Home
+                            </VerticalNavigation.Item>
+                            <VerticalNavigation.Item icon={<Icon icon="user" />}>
+                                User
+                            </VerticalNavigation.Item>
+                        </VerticalNavigation.List>
+                    </>
+                )}
             </VerticalNavigation>
         </Page.Left>
         <Page.Main>
