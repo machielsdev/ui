@@ -8,6 +8,7 @@ import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
+import OverlayTrigger from '../../src/components/Overlay/OverlayTrigger';
 
 const TestControllable = () => {
     const [value, setValue] = useState('');
@@ -115,6 +116,17 @@ ReactDom.render(
                                 </div>
                                 <div>
                                     <Button variant={Variant.BLUE_GRAY} block>Blauwgrijs</Button>
+                                </div>
+                                <div>
+                                    <OverlayTrigger
+                                        overlay="test"
+                                    >
+                                        <Button
+                                            variant={Variant.ORANGE}
+                                        >
+                                            Hover me
+                                        </Button>
+                                    </OverlayTrigger>
                                 </div>
                             </Grid>
                         </Card.Content>
