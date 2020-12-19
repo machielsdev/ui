@@ -15,7 +15,7 @@ const OverlayTrigger = ({
     overlay,
     placement = 'top'
 }: OverlayTriggerProps): React.ReactElement => {
-    const [shown, setShown] = useState<boolean>(false);
+    const [shown, setShown] = useState<boolean>(true);
     const triggerRef = useRef<HTMLElement>();
 
     return (

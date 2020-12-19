@@ -1,25 +1,45 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { createPopper, Instance as PopperInstance, Placement } from '@popperjs/core';
+import {
+    createPopper,
+    Instance as PopperInstance,
+    Placement,
+    Options as PopperOptions, PositioningStrategy
+} from '@popperjs/core';
 import PropTypes from 'prop-types';
+import { Modifier } from '@popperjs/core/lib/types';
 
 interface OverlayProps {
     triggerRef: React.MutableRefObject<HTMLElement | undefined>;
     placement: Placement;
+    arrow?: boolean;
+    positionStrategy: PositioningStrategy;
 }
 
 const Overlay = ({
     children,
     triggerRef,
-    placement = 'top'
+    placement = 'top',
+    arrow = true,
+    positionStrategy = 'absolute'
 }: React.PropsWithChildren<OverlayProps>): React.ReactElement => {
     const ref = useRef<HTMLDivElement | null>(null);
     const popper = useRef<PopperInstance>();
 
-    const createPopperOptions = () => ({
-        placement
+    const createModifiers = (): Array<Partial<Modifier<any, any>>> => ([
+        ...(arrow ? [{
+            name: 'arrow',
+            options: {
+                element: '.overlay-arrow'
+            }
+        }] : [])
+    ]);
+
+    const createPopperOptions = (): PopperOptions => ({
+        modifiers: createModifiers(),
+        placement,
+        strategy: positionStrategy
     })
 
     useEffect(() => {
@@ -33,12 +53,13 @@ const Overlay = ({
     }, [])
 
     return createPortal(
-        <motion.div
+        <div
             ref={ref}
             className="overlay"
         >
+            <div className="overlay-arrow" />
             {children}
-        </motion.div> ,
+        </div> ,
         document.body
     )
 }
