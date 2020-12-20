@@ -2,21 +2,25 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import OverlayTrigger from '@/components/Overlay/OverlayTrigger';
 import { Placement } from '@popperjs/core';
+import { Trigger, triggerPropTypes } from '@/components/Overlay/Trigger';
 
 interface TooltipProps {
     arrow?: boolean;
     children: React.ReactElement;
     placement?: Placement;
     content: React.ReactNode;
+    trigger?: Trigger | string;
 }
 
 const Tooltip = ({
     arrow,
     children,
     content,
-    placement
+    placement,
+    trigger = 'hover'
 }: TooltipProps): React.ReactElement => (
     <OverlayTrigger
+        trigger={trigger}
         arrow={arrow}
         overlay={content}
         placement={placement}
@@ -30,7 +34,8 @@ Tooltip.displayName = 'Tooltip';
 Tooltip.propTypes = {
     children: PropTypes.element,
     placement: PropTypes.string,
-    content: PropTypes.node
+    content: PropTypes.node,
+    trigger: triggerPropTypes
 }
 
 export default Tooltip;
