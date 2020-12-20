@@ -2,20 +2,26 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
 import Overlay from '@/components/Overlay/index';
-import { Placement } from '@popperjs/core';
+import { Placement, PositioningStrategy } from '@popperjs/core';
 
 interface OverlayTriggerProps {
+    arrow?: boolean;
     children: React.ReactElement;
     overlay: React.ReactNode;
-    placement: Placement;
+    placement?: Placement;
+    positionStrategy?: PositioningStrategy;
+    className?: string;
 }
 
 const OverlayTrigger = ({
+    arrow,
     children: triggerElement,
+    className,
     overlay,
-    placement = 'top'
+    placement,
+    positionStrategy
 }: OverlayTriggerProps): React.ReactElement => {
-    const [shown, setShown] = useState<boolean>(true);
+    const [shown, setShown] = useState<boolean>(false);
     const triggerRef = useRef<HTMLElement>();
 
     return (
@@ -39,8 +45,11 @@ const OverlayTrigger = ({
             })}
             {shown && (
                 <Overlay
+                    arrow={arrow}
                     triggerRef={triggerRef}
                     placement={placement}
+                    positionStrategy={positionStrategy}
+                    className={className}
                 >
                     {overlay}
                 </Overlay>
@@ -51,8 +60,9 @@ const OverlayTrigger = ({
 
 OverlayTrigger.displayName = 'OverlayTrigger';
 OverlayTrigger.propTypes = {
-    children: PropTypes.node,
-    overlay: PropTypes.element,
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    overlay: PropTypes.element.isRequired,
     placement: PropTypes.string
 }
 

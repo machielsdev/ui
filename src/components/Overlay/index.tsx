@@ -9,16 +9,20 @@ import {
 } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import { Modifier } from '@popperjs/core/lib/types';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 interface OverlayProps {
+    className?: string;
     triggerRef: React.MutableRefObject<HTMLElement | undefined>;
-    placement: Placement;
+    placement?: Placement;
     arrow?: boolean;
-    positionStrategy: PositioningStrategy;
+    positionStrategy?: PositioningStrategy;
 }
 
 const Overlay = ({
     children,
+    className,
     triggerRef,
     placement = 'top',
     arrow = true,
@@ -31,7 +35,7 @@ const Overlay = ({
         ...(arrow ? [{
             name: 'arrow',
             options: {
-                element: '.overlay-arrow'
+                element: '.arrow'
             }
         }] : [])
     ]);
@@ -49,23 +53,32 @@ const Overlay = ({
                 ref.current,
                 createPopperOptions()
             );
+            popper.current?.forceUpdate()
         }
     }, [])
 
     return createPortal(
         <div
             ref={ref}
-            className="overlay"
+            className={clsx(
+                'overlay-container',
+                arrow && 'has-arrow',
+                className
+            )}
         >
-            <div className="overlay-arrow" />
-            {children}
+            {arrow && (<div className="overlay-arrow arrow" />)}
+            <motion.div
+                className="content"
+            >
+                {children}
+            </motion.div>
         </div> ,
         document.body
     )
 }
 
 Overlay.propTypes = {
-    triggerRef: PropTypes.instanceOf(HTMLElement).isRequired
+    triggerRef: PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement) })
 }
 
 export default Overlay;
