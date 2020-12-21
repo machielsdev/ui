@@ -156,6 +156,7 @@ ReactDom.render(
                                     <Tooltip
                                         content="Megalange tekst"
                                         placement="left"
+                                        trigger="click"
                                     >
                                         <Button
                                             variant={Variant.ORANGE}
