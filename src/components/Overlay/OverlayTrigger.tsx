@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import Overlay from '@/components/Overlay/index';
 import { Placement, PositioningStrategy } from '@popperjs/core';
 import { Trigger, triggerPropTypes } from '@/components/Overlay/Trigger';
+import { AnimatePresence } from 'framer-motion';
 
 interface OverlayTriggerProps {
     arrow?: boolean;
@@ -13,6 +14,7 @@ interface OverlayTriggerProps {
     positionStrategy?: PositioningStrategy;
     className?: string;
     trigger?: Trigger | string;
+    motion?: string;
 }
 
 const OverlayTrigger = ({
@@ -22,7 +24,8 @@ const OverlayTrigger = ({
     overlay,
     placement,
     positionStrategy,
-    trigger = 'hover'
+    trigger = 'hover',
+    motion
 }: OverlayTriggerProps): React.ReactElement => {
     const [shown, setShown] = useState<boolean>(false);
     const triggerRef = useRef<HTMLElement>();
@@ -66,17 +69,20 @@ const OverlayTrigger = ({
                 ref: triggerRef,
                 ...attachEvents(triggerElement, trigger)
             })}
-            {shown && (
-                <Overlay
-                    arrow={arrow}
-                    triggerRef={triggerRef}
-                    placement={placement}
-                    positionStrategy={positionStrategy}
-                    className={className}
-                >
-                    {overlay}
-                </Overlay>
-            )}
+            <AnimatePresence>
+                {shown && (
+                    <Overlay
+                        motion={motion}
+                        arrow={arrow}
+                        triggerRef={triggerRef}
+                        placement={placement}
+                        positionStrategy={positionStrategy}
+                        className={className}
+                    >
+                        {overlay}
+                    </Overlay>
+                )}
+            </AnimatePresence>
         </>
     )
 }

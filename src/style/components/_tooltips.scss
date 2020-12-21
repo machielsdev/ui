@@ -1,36 +1,44 @@
 .tooltip {
-    > .content {
-        background: rgba(0, 0, 0, .7);
-        color: #fff;
-        padding: calc(var(--base-gutter) / 2);
-        border-radius: var(--base-border-radius);
+    > .overlay-animator {
+        position: relative;
     }
 
-    > .arrow {
-        position: absolute;
-        z-index: -1;
+    > .overlay-animator, & {
+        > .content {
+            background: rgba(0, 0, 0, .7);
+            color: #fff;
+            padding: calc(var(--base-gutter) / 2);
+            border-radius: var(--base-border-radius);
+        }
 
-        &:before {
-            content: '';
+        > .arrow {
             position: absolute;
+            z-index: -1;
+
+            &:before {
+                content: '';
+                position: absolute;
+            }
         }
     }
 
     &[data-popper-placement^="top"] {
         &.has-arrow {
-            > .content {
-                margin-bottom: 8px;
-            }
+            > .overlay-animator, & {
+                > .content {
+                    margin-bottom: 8px;
+                }
 
-            > .arrow {
-                bottom: 0;
-                height: 8px;
-                width: 16px;
+                > .arrow {
+                    bottom: -8px;
+                    height: 8px;
+                    width: 16px;
 
-                &:before {
-                    border-top: solid 8px rgba(0, 0, 0, .7);
-                    border-left: solid 8px transparent;
-                    border-right: solid 8px transparent;
+                    &:before {
+                        border-top: solid 8px rgba(0, 0, 0, .7);
+                        border-left: solid 8px transparent;
+                        border-right: solid 8px transparent;
+                    }
                 }
             }
         }
@@ -38,19 +46,21 @@
 
     &[data-popper-placement^="bottom"] {
         &.has-arrow {
-            > .content {
-                margin-top: 8px;
-            }
+            > .overlay-animator, & {
+                > .content {
+                    margin-top: 8px;
+                }
 
-            > .arrow {
-                top: 0;
-                height: 8px;
-                width: 16px;
+                > .arrow {
+                    top: 0;
+                    height: 8px;
+                    width: 16px;
 
-                &:before {
-                    border-bottom: solid 8px rgba(0, 0, 0, .7);
-                    border-left: solid 8px transparent;
-                    border-right: solid 8px transparent;
+                    &:before {
+                        border-bottom: solid 8px rgba(0, 0, 0, .7);
+                        border-left: solid 8px transparent;
+                        border-right: solid 8px transparent;
+                    }
                 }
             }
         }
@@ -58,19 +68,21 @@
 
     &[data-popper-placement^="right"] {
         &.has-arrow {
-            > .content {
-                margin-left: 8px;
-            }
+            > .overlay-animator, & {
+                > .content {
+                    margin-left: 8px;
+                }
 
-            > .arrow {
-                left: 0;
-                height: 16px;
-                width: 8px;
+                > .arrow {
+                    left: 0;
+                    height: 16px;
+                    width: 8px;
 
-                &:before {
-                    border-right: solid 8px rgba(0, 0, 0, .7);
-                    border-top: solid 8px transparent;
-                    border-bottom: solid 8px transparent;
+                    &:before {
+                        border-right: solid 8px rgba(0, 0, 0, .7);
+                        border-top: solid 8px transparent;
+                        border-bottom: solid 8px transparent;
+                    }
                 }
             }
         }
@@ -78,15 +90,17 @@
 
     &[data-popper-placement^="left"] {
         &.has-arrow {
-            > .content {
-                margin-right: 8px;
-            }
+            > .overlay-animator, & {
+                > .content {
+                    margin-right: 8px;
+                }
 
-            > .arrow {
-                right: 0;
-                border-bottom: solid 8px transparent;
-                border-left: solid 8px rgba(0, 0, 0, .7);
-                border-top: solid 8px transparent;
+                > .arrow {
+                    right: -8px;
+                    border-bottom: solid 8px transparent;
+                    border-left: solid 8px rgba(0, 0, 0, .7);
+                    border-top: solid 8px transparent;
+                }
             }
         }
     }

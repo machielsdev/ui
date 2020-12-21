@@ -10,6 +10,7 @@ interface TooltipProps {
     placement?: Placement;
     content: React.ReactNode;
     trigger?: Trigger | string;
+    motion?: string;
 }
 
 const Tooltip = ({
@@ -17,9 +18,11 @@ const Tooltip = ({
     children,
     content,
     placement,
-    trigger = 'hover'
+    trigger = 'hover',
+    motion
 }: TooltipProps): React.ReactElement => (
     <OverlayTrigger
+        motion={motion}
         trigger={trigger}
         arrow={arrow}
         overlay={content}
