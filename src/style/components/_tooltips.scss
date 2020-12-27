@@ -1,0 +1,66 @@
+.tooltip {
+    > .overlay-animator, & {
+        > .content {
+            background: rgba(0, 0, 0, .7);
+            color: #fff;
+            padding: calc(var(--base-gutter) / 2);
+            border-radius: var(--base-border-radius);
+        }
+    }
+
+    &[data-popper-placement^="top"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .arrow:before {
+                    border-top: solid 8px rgba(0, 0, 0, .7);
+                    border-left: solid 8px transparent;
+                    border-right: solid 8px transparent;
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="bottom"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .arrow:before {
+                    border-bottom: solid 8px rgba(0, 0, 0, .7);
+                    border-left: solid 8px transparent;
+                    border-right: solid 8px transparent;
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="right"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-left: 8px;
+                }
+                > .arrow:before {
+                    border-right: solid 8px rgba(0, 0, 0, .7);
+                    border-top: solid 8px transparent;
+                    border-bottom: solid 8px transparent;
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="left"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-right: 8px;
+                }
+
+                > .arrow:before {
+                    right: 0;
+                    border-bottom: solid 8px transparent;
+                    border-left: solid 8px rgba(0, 0, 0, .7);
+                    border-top: solid 8px transparent;
+                }
+            }
+        }
+    }
+}
