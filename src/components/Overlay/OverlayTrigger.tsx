@@ -63,26 +63,28 @@ const OverlayTrigger = ({
         }
     }
 
+    const createChildren = () => shown && (
+        <Overlay
+            motion={motion}
+            arrow={arrow}
+            triggerRef={triggerRef}
+            placement={placement}
+            positionStrategy={positionStrategy}
+            className={className}
+        >
+            {overlay}
+        </Overlay>
+    )
+
     return (
         <>
             {React.cloneElement(triggerElement, {
                 ref: triggerRef,
                 ...attachEvents(triggerElement, trigger)
             })}
-            <AnimatePresence>
-                {shown && (
-                    <Overlay
-                        motion={motion}
-                        arrow={arrow}
-                        triggerRef={triggerRef}
-                        placement={placement}
-                        positionStrategy={positionStrategy}
-                        className={className}
-                    >
-                        {overlay}
-                    </Overlay>
-                )}
-            </AnimatePresence>
+            {motion
+                ? React.createElement(AnimatePresence, {}, createChildren())
+                : createChildren()}
         </>
     )
 }

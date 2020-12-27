@@ -1,8 +1,4 @@
 .overlay-container {
-    > .overlay-animator {
-        position: relative;
-    }
-
     > .overlay-animator, & {
         > .arrow {
             position: absolute;
@@ -23,7 +19,7 @@
                 }
 
                 > .arrow {
-                    bottom: -8px;
+                    bottom: 0;
                     height: 8px;
                     width: 16px;
 
@@ -45,7 +41,7 @@
                 }
 
                 > .arrow {
-                    top: -8px;
+                    top: 0;
                     height: 8px;
                     width: 16px;
 

@@ -61,7 +61,7 @@ const Overlay = ({
         return {};
     }
 
-    useEffect((): void => {
+    useEffect(() => {
         if (ref.current && triggerRef.current) {
             popper.current = createPopper(
                 triggerRef.current,
@@ -71,6 +71,17 @@ const Overlay = ({
             popper.current?.forceUpdate()
         }
     }, [])
+
+    const createChildren = () => (
+        <>
+            {arrow && (<div className="overlay-arrow arrow" />)}
+            <div
+                className="content"
+            >
+                {children}
+            </div>
+        </>
+    );
 
     return createPortal(
         <MotionConfig features={[ExitFeature, AnimationFeature]}>
@@ -82,18 +93,13 @@ const Overlay = ({
                     className
                 )}
             >
-                <motion.div
-                    className="overlay-animator"
-                    exit={{}}
-                    {...createMotion()}
-                >
-                    {arrow && (<div className="overlay-arrow arrow" />)}
-                    <div
-                        className="content"
-                    >
-                        {children}
-                    </div>
-                </motion.div>
+                {Object.keys(createMotion()).length
+                    ? React.createElement<HTMLMotionProps<'div'>>(motion.div, {
+                        className: 'overlay-animator',
+                        ...createMotion(),
+                    }, createChildren())
+                    : createChildren()
+                }
             </div>
         </MotionConfig>,
         document.body
@@ -101,7 +107,7 @@ const Overlay = ({
 }
 
 Overlay.propTypes = {
-    triggerRef: PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement) })
+    triggerRef: PropTypes.shape({current: PropTypes.instanceOf(HTMLElement)})
 }
 
 export default Overlay;
