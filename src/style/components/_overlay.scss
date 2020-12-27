@@ -1,0 +1,101 @@
+.overlay-container {
+    > .overlay-animator, & {
+        > .arrow {
+            position: absolute;
+            z-index: -1;
+
+            &:before {
+                content: '';
+                position: absolute;
+            }
+        }
+    }
+
+    &[data-popper-placement^="top"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-bottom: 8px;
+                }
+
+                > .arrow {
+                    bottom: 0;
+                    height: 8px;
+                    width: 16px;
+
+                    &:before {
+                        border-top: solid 8px rgba(0, 0, 0, .7);
+                        border-left: solid 8px transparent;
+                        border-right: solid 8px transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="bottom"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-top: 8px;
+                }
+
+                > .arrow {
+                    top: 0;
+                    height: 8px;
+                    width: 16px;
+
+                    &:before {
+                        border-bottom: solid 8px rgba(0, 0, 0, .7);
+                        border-left: solid 8px transparent;
+                        border-right: solid 8px transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="right"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-left: 8px;
+                }
+
+                > .arrow {
+                    left: 0;
+                    height: 16px;
+                    width: 8px;
+
+                    &:before {
+                        border-right: solid 8px rgba(0, 0, 0, .7);
+                        border-top: solid 8px transparent;
+                        border-bottom: solid 8px transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-popper-placement^="left"] {
+        &.has-arrow {
+            > .overlay-animator, & {
+                > .content {
+                    margin-right: 8px;
+                }
+
+                > .arrow {
+                    right: 0;
+                    height: 16px;
+                    width: 8px;
+
+                    &:before {
+                        border-bottom: solid 8px transparent;
+                        border-left: solid 8px rgba(0, 0, 0, .7);
+                        border-top: solid 8px transparent;
+                    }
+                }
+            }
+        }
+    }
+}

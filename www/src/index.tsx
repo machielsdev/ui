@@ -8,6 +8,7 @@ import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
+import Tooltip from '../../src/components/Tooltip';
 import VerticalNavigation from '../../src/components/Navigation/VerticalNavigation';
 
 const TestControllable = () => {
@@ -162,11 +163,11 @@ ReactDom.render(
                                         <Col className="py-4 background-primary-light">Col 3/4</Col>
                                     </Row>
 
-                                    <Row className="mb-8">
-                                        <Col className="py-4 background-primary-light">Col 1/3</Col>
-                                        <Col className="py-4 background-primary-light">Col 2/3</Col>
-                                        <Col className="py-4 background-primary-light">Col 3/4</Col>
-                                    </Row>
+                                <Row className="mb-8">
+                                    <Col className="py-4 background-primary-light">Col 1/3</Col>
+                                    <Col className="py-4 background-primary-light">Col 2/3</Col>
+                                    <Col className="py-4 background-primary-light">Col 3/4</Col>
+                                </Row>
 
                                     <Row className="mb-8">
                                         <Col className="py-4 background-primary-light">Col 1/4</Col>
@@ -1993,5 +1994,5 @@ ReactDom.render(
             </Page.Content>
         </Page.Main>
     </Page>,
-document.getElementById('root')
+    document.getElementById('root')
 );
