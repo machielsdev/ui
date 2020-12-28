@@ -20,6 +20,7 @@ interface OverlayProps {
     arrow?: boolean;
     positionStrategy?: PositioningStrategy;
     motion?: string;
+    config?: Array<Partial<Modifier<any, any>>>;
 }
 
 const Overlay = ({
@@ -29,7 +30,8 @@ const Overlay = ({
     placement = 'top',
     arrow = true,
     positionStrategy = 'absolute',
-    motion: triggerMotion
+    motion: triggerMotion,
+    config
 }: React.PropsWithChildren<OverlayProps>): React.ReactElement => {
     const ref = useRef<HTMLDivElement | null>(null);
     const popper = useRef<PopperInstance>();
@@ -40,7 +42,8 @@ const Overlay = ({
             options: {
                 element: '.arrow'
             }
-        }] : [])
+        }] : []),
+        ...(config || [])
     ]);
 
     const createPopperOptions = (): PopperOptions => ({

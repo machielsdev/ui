@@ -1,0 +1,97 @@
+@use "../base/variables";
+
+.vertical-navigation-container {
+    width: 100%;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+
+    .vertical-navigation-top {
+        padding: var(--base-gutter);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .vertical-navigation-divider {
+        height: 1px;
+        background: var(--vertical-navigation-border-color);
+        width: 100%;
+    }
+
+    .vertical-navigation-list {
+        padding: var(--base-gutter);
+        overflow-y: scroll;
+
+        .vertical-navigation-list-item {
+            align-items: center;
+            cursor: pointer;
+            color: currentColor;
+            display: flex;
+            padding: var(--base-gutter);
+            position: relative;
+            font: {
+                weight: 500;
+            }
+
+            &:hover {
+                background: var(--vertical-navigation-hover-item-background-color);
+            }
+
+            &:active {
+                background: var(--vertical-navigation-active-item-background-color);
+            }
+
+            .vertical-navigation-list-item-icon {
+                margin-right: var(--base-gutter);
+                font: {
+                    size: 1.1rem;
+                }
+            }
+
+            &.active {
+                color: #fff;
+                background: var(--primary-color);
+                border-radius: var(--base-border-radius);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: var(--base-gutter);
+            }
+        }
+    }
+
+    &.is-collapsed {
+        min-width: auto;
+
+        .vertical-navigation-list-item {
+            position: relative;
+            .vertical-navigation-list-item-icon {
+                margin-right: 0;
+            }
+
+            .vertical-navigation-list-item-text {
+                display: none;
+            }
+        }
+    }
+}
+
+.navigation-primary {
+    color: variables.color('deep-purple', 'background');
+
+    .vertical-navigation-list-item {
+        color: #fff;
+    }
+
+    .vertical-navigation-divider {
+        background: var(--primary-color-light-background);
+    }
+}
+
+.vertical-navigation-tooltip {
+    margin-left: 0.5rem;
+    background: #000;
+}

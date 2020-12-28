@@ -1,7 +1,14 @@
 @use "../base/variables";
 
 .page {
-    background: var(--page-background-color);
+    display: flex;
+    flex-flow: row wrap;
+
+    .page-main {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1;
+    }
 
     .page-header {
         border-bottom: solid 1px var(--base-border-color);
@@ -24,5 +31,36 @@
 
     .page-content {
         padding: var(--page-gutter);
+    }
+
+    .page-side {
+        flex: 0 0 auto;
+        background: var(--page-side-background-color);
+
+        &.page-side-right {
+            border-left: solid 1px var(--page-side-border-color);
+        }
+
+        &.page-side-left {
+            border-right: solid 1px var(--page-side-border-color);
+        }
+
+        &.page-side-fixed {
+            align-self: flex-start;
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    .page-top {
+        width: 100%;
+        flex: 0 0 100%;
+        align-self: flex-start;
+        z-index: 9999;
+
+        &.page-top-sticky {
+            position: sticky;
+            top: 0;
+        }
     }
 }

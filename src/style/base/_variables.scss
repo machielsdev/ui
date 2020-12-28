@@ -222,9 +222,15 @@ $panel-gutter: 2rem;
  * 4. Page
  */
 $page-gutter: 2rem;
+$page-side-background-color: #fff;
+$page-side-border-color: hsl(0, 0%, 88%);
+$page-side-gutter: 1rem;
 
 :root {
     --page-gutter: #{$page-gutter};
+    --page-side-background-color: #{$page-side-background-color};
+    --page-side-border-color: #{$page-side-border-color};
+    --page-side-gutter: #{$page-side-gutter};
 }
 
 /**
@@ -567,4 +573,17 @@ $form-field-font-size: 1rem;
     --form-field-padding: #{$form-field-padding};
     --form-field-font-weight: #{$form-field-font-weight};
     --form-field-font-size: #{$form-field-font-size};
+}
+
+/**
+ * 9. Navigation
+ */
+$vertical-navigation-border-color: hsl(0, 0%, 88%);
+$vertical-navigation-hover-item-background-color: rgba(0, 0, 0, .05);
+$vertical-navigation-active-item-background-color: rgba(0, 0, 0, .1);
+
+:root {
+    --vertical-navigation-border-color: #{$vertical-navigation-border-color};
+    --vertical-navigation-hover-item-background-color: #{$vertical-navigation-hover-item-background-color};
+    --vertical-navigation-active-item-background-color: #{$vertical-navigation-active-item-background-color};
 }
