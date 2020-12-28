@@ -7,8 +7,9 @@ import NavigationTop from '@/components/Navigation/Vertical/Top';
 import NavigationList from '@/components/Navigation/Vertical/List';
 import NavigationListItem from '@/components/Navigation/Vertical/ListItem';
 import NavigationDivider from '@/components/Navigation/Vertical/Divider';
-import { useState } from 'react';
-import { VerticalNavigationScope } from './Vertical/VerticalNavigationScope';
+import { useEffect, useState } from 'react';
+import { VerticalNavigationScope } from '@/components/Navigation/Vertical/VerticalNavigationScope';
+import { NavigationContext } from './Vertical/NavigationContext';
 
 export interface VerticalNavigationStatics {
     Top: typeof NavigationTop;
@@ -17,26 +18,51 @@ export interface VerticalNavigationStatics {
     Divider: typeof NavigationDivider;
 }
 
-export interface SideNavigationProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface VerticalNavigationProps extends React.HTMLAttributes<HTMLDivElement> {
+    /**
+     * Variant of the menu. With this prop, the color of the menu can be set.
+     */
     variant?: Variant | string;
+    /**
+     * Indicates whether the menu collapse is controllable.
+     */
     collapsable?: boolean;
+    /**
+     * Indicating whether the menu is collapsed. Can be used to make the navigation a controllable component
+     */
+    collapsed?: boolean;
+    /**
+     * Indicates whether a tooltip with the menu text must be shown when menu is collapsed. Default: true
+     */
+    tooltipsWhenCollapsed?: boolean;
+    /**
+     * Children of the menu. This can be either a React ChildNode or callback function to access various actions
+     */
     children: React.ReactNode | ((scope: VerticalNavigationScope) => React.ReactNode);
 }
 
 // @ts-ignore
-const VerticalNavigation: ForwardComponentWithStatics<HTMLDivElement, SideNavigationProps, VerticalNavigationStatics> =
+const VerticalNavigation: ForwardComponentWithStatics<HTMLDivElement, VerticalNavigationProps, VerticalNavigationStatics> =
     React.forwardRef((
         {
             children,
             className,
-            variant
+            variant,
+            collapsed,
+            tooltipsWhenCollapsed = true
         },
         ref
     ): React.ReactElement => {
-        const [collapsed, setCollapsed] = useState<boolean>(false);
+        const [isCollapsed, setCollapsed] = useState<boolean>(false);
+
+        useEffect(() => {
+            if (collapsed) {
+                setCollapsed(collapsed);
+            }
+        }, [collapsed])
 
         const makeScope = (): VerticalNavigationScope => ({
-            collapsed,
+            collapsed: isCollapsed,
             collapse: () => setCollapsed(!collapsed)
         });
 
@@ -45,17 +71,24 @@ const VerticalNavigation: ForwardComponentWithStatics<HTMLDivElement, SideNaviga
             : children;
 
         return (
-            <div
-                ref={ref}
-                className={clsx(
-                    'vertical-navigation-container',
-                    collapsed && 'is-collapsed',
-                    variant && `navigation-${variant}`,
-                    className
-                )}
+            <NavigationContext.Provider
+                value={{
+                    tooltipsWhenCollapsed: tooltipsWhenCollapsed,
+                    collapsed: isCollapsed
+                }}
             >
-                {children}
-            </div>
+                <div
+                    ref={ref}
+                    className={clsx(
+                        'vertical-navigation-container',
+                        isCollapsed && 'is-collapsed',
+                        variant && `navigation-${variant}`,
+                        className
+                    )}
+                >
+                    {children}
+                </div>
+            </NavigationContext.Provider>
         )
     });
 
@@ -63,7 +96,9 @@ VerticalNavigation.displayName = 'VerticalNavigation';
 VerticalNavigation.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    variant: PropTypes.string
+    variant: PropTypes.string,
+    collapsed: PropTypes.bool,
+    tooltipsWhenCollapsed: PropTypes.bool
 }
 
 VerticalNavigation.Top = NavigationTop;

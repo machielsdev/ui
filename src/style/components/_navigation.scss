@@ -75,14 +75,6 @@
             .vertical-navigation-list-item-text {
                 display: none;
             }
-
-            &:hover {
-                white-space: nowrap;
-
-                .vertical-navigation-list-item-text {
-                    display: block;
-                }
-            }
         }
     }
 }
@@ -97,4 +89,9 @@
     .vertical-navigation-divider {
         background: var(--primary-color-light-background);
     }
+}
+
+.vertical-navigation-tooltip {
+    margin-left: 0.5rem;
+    background: #000;
 }

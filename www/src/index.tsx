@@ -3,7 +3,8 @@ import { useState } from 'react';
 import * as ReactDom from 'react-dom';
 import '../../src/style/index.scss';
 import { Button, Card, Col, Grid, Icon, Page, Row, SelectField, Tag, TextField, Variant } from '../../src';
-import logo from '@/images/coderan/logo.svg';
+import logoFull from '@/images/coderan/logo.svg';
+import logoLetter from '@/images/coderan/logo-letter.svg';
 import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
@@ -36,21 +37,27 @@ const TestControllable = () => {
 ReactDom.render(
     <Page>
         <Page.Left fixed>
-            <VerticalNavigation collapsable>
-                {({ collapse }) => (
+            <VerticalNavigation collapsed>
+                {({ collapse, collapsed }) => (
                     <>
                         <VerticalNavigation.Top className="justify-content-center mb-4">
-                            <button onClick={collapse}></button>
-                            <img src={logo} width={160} className="mb-8" />
+                            {collapsed ? (
+                                <img src={logoLetter} height={36} />
+                            ) : (
+                                <img src={logoFull} height={36} />
+                            )}
                         </VerticalNavigation.Top>
                         <VerticalNavigation.Divider />
                         <VerticalNavigation.List>
-                            <VerticalNavigation.Item active icon={<Icon icon="home" />}>
-                                Home
-                            </VerticalNavigation.Item>
-                            <VerticalNavigation.Item icon={<Icon icon="user" />}>
-                                User
-                            </VerticalNavigation.Item>
+                            <VerticalNavigation.Item
+                                active
+                                icon={<Icon icon="home" />}
+                                content="Home"
+                            />
+                            <VerticalNavigation.Item
+                                icon={<Icon icon="user" />}
+                                content="Tooltips"
+                            />
                         </VerticalNavigation.List>
                     </>
                 )}
