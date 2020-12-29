@@ -48,7 +48,11 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((
     const modalRef = useRef<HTMLDivElement>(null);
     const [shown, setShown] = useState(false);
 
-    const hideModal = (_event?: React.MouseEvent): void => {
+    const hideModal = (event?: React.MouseEvent): void => {
+        if (event && event.target !== modalRef.current) {
+            return;
+        }
+
         setShown(false);
         getManager().removeModal(modalRef);
         if (onHide) {

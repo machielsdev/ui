@@ -38,6 +38,8 @@ export class ModalManager {
         if (this.modals.length === 0) {
             document.body.classList.remove('has-modal');
             this.removeBackdrop();
+        } else {
+            this.placeBackdrop();
         }
     }
 
