@@ -75,5 +75,5 @@ describe('Test modal', function (): void {
         });
 
         expect(mockFn).not.toHaveBeenCalled();
-    })
+    });
 });
