@@ -34,6 +34,7 @@ const TestControllable = () => {
 
 const TestModals = () => {
     const [modalOpen, setModalOpen] = useState(false);
+    const [foo, setFoo] = useState(false);
 
     return (
         <>
@@ -53,6 +54,22 @@ const TestModals = () => {
             >
                 <Card>
                     <Card.Content>
+                        <Button
+                            variant={Variant.GREEN}
+                            onClick={() => {
+                                setFoo(!foo);
+                            }}
+                        >
+                            Open second
+                        </Button>
+                        <Modal
+                            show={foo}
+                            onHide={(): void => {
+                                setFoo(false);
+                            }}
+                        >
+                            Second modal
+                        </Modal>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero!
                     </Card.Content>
                 </Card>

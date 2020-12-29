@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { createPortal } from 'react-dom';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { mergeRefs } from '@/components/utils/mergeRefs';
 import { ModalManager } from '@/components/Modal/modalManager';
 
@@ -35,12 +35,6 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     backdrop?: boolean
 }
 
-/**
- * Event fires when a model closes
- */
-export const MODAL_CLOSE = 'c:ui:modal.close';
-export const MODAL_OPEN = 'c:ui:modal.open';
-
 const Modal = React.forwardRef<HTMLDivElement, ModalProps>((
     {
         backdrop = true,
@@ -52,8 +46,10 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((
     ref
 ): React.ReactElement => {
     const modalRef = useRef<HTMLDivElement>(null);
+    const [shown, setShown] = useState(false);
 
-    const hideModal = (): void => {
+    const hideModal = (_event?: React.MouseEvent): void => {
+        setShown(false);
         getManager().removeModal(modalRef);
         if (onHide) {
             onHide();
@@ -61,37 +57,29 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((
     }
 
     const showModal = (): void => {
+        setShown(true);
         getManager().addModal({
             ref: modalRef,
             backdrop
         })
     }
 
-    useEffect(() => {
-        if (show) {
+    useEffect((): void => {
+        if (!shown && show) {
             showModal();
-        }
-    }, []);
-
-    useEffect(() => {
-        if (show) {
-            showModal();
-        } else {
+        } else if (shown && !shown) {
             hideModal();
         }
-    }, [show])
+    }, [show]);
 
     return createPortal(
         show ? (
             <div
                 ref={mergeRefs(ref, modalRef)}
                 className={clsx(
-                    'modal-container',
-                    show && 'modal-show'
+                    'modal-container'
                 )}
-                onClick={() => {
-                    hideModal()
-                }}
+                onClick={hideModal}
                 role="dialog"
                 aria-modal={true}
             >
