@@ -71,7 +71,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((
     useEffect((): void => {
         if (!shown && show) {
             showModal();
-        } else if (shown && !shown) {
+        } else if (shown && !show) {
             hideModal();
         }
     }, [show]);
