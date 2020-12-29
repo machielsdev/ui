@@ -3,7 +3,7 @@ import { useState } from 'react';
 import * as ReactDom from 'react-dom';
 
 import '../../src/style/index.scss';
-import { Button, Card, Col, Grid, Icon, Page, Row, SelectField, Tag, TextField, Variant } from '../../src';
+import { Button, Card, Col, Grid, Icon, Modal, Page, Row, SelectField, Tag, TextField, Variant } from '../../src';
 import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
@@ -31,6 +31,79 @@ const TestControllable = () => {
         </>
     );
 }
+
+const TestModals = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const [secondModalOpen, setSecondModalOpen] = useState(false);
+    const [thirdModalOpen, setThirdModalOpen] = useState(false);
+
+    return (
+        <>
+            <Button
+                variant={Variant.AMBER}
+                onClick={(): void => {
+                    setModalOpen(!modalOpen)
+                }}
+            >
+                Open modal
+            </Button>
+            <Modal
+                show={modalOpen}
+                onHide={() => {
+                    setModalOpen(false);
+                }}
+            >
+                <Card>
+                    <Card.Content>
+                        <Button
+                            variant={Variant.GREEN}
+                            onClick={() => {
+                                setSecondModalOpen(!secondModalOpen);
+                            }}
+                        >
+                            Open second
+                        </Button>
+                        <Modal
+                            show={secondModalOpen}
+                            onHide={(): void => {
+                                setSecondModalOpen(false);
+                            }}
+                            backdrop={false}
+                        >
+                            <Card>
+                                <Card.Header title="Second modal" />
+                                <Card.Content>
+                                    Content
+                                    <Button
+                                        variant={Variant.PURPLE}
+                                        onClick={() => {
+                                            setThirdModalOpen(!thirdModalOpen);
+                                        }}
+                                    >
+                                        <Modal
+                                            show={thirdModalOpen}
+                                            onHide={(): void => {
+                                                setThirdModalOpen(false);
+                                            }}
+                                        >
+                                            <Card>
+                                                <Card.Content>
+                                                    Third
+                                                </Card.Content>
+                                            </Card>
+                                        </Modal>
+                                        Open third
+                                    </Button>
+                                </Card.Content>
+                            </Card>
+                        </Modal>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero!
+                    </Card.Content>
+                </Card>
+            </Modal>
+        </>
+    )
+};
 
 ReactDom.render(
     <Page>
@@ -299,6 +372,14 @@ ReactDom.render(
                             <Tag variant={Variant.BROWN}>Bruin</Tag>
                             <Tag variant={Variant.GRAY}>Grijs</Tag>
                             <Tag variant={Variant.BLUE_GRAY}>Blauwgrijs</Tag>
+                        </Card.Content>
+                    </Card>
+                </Row>
+                <Row>
+                    <Card>
+                        <Card.Header title="Modals" />
+                        <Card.Content>
+                            <TestModals />
                         </Card.Content>
                     </Card>
                 </Row>

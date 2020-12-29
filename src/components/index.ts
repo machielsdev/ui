@@ -5,6 +5,7 @@ export * from './Grid';
 export * from './Page';
 export * from './Panel';
 export * from './Icon';
+export * from './Modal';
 export * from './utils';
 export * from './TextField';
 export * from './SelectField';
