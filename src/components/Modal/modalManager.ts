@@ -10,10 +10,6 @@ export interface StoredModal {
 export class ModalManager {
     modals: StoredModal[] = [];
 
-    public isTop(ref: RefObject<HTMLDivElement>): boolean {
-        return this.modals[this.modals.length - 1].ref === ref;
-    }
-
     public addModal(modal: StoredModal): void {
         this.modals.push(modal);
 
