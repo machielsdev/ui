@@ -34,7 +34,8 @@ const TestControllable = () => {
 
 const TestModals = () => {
     const [modalOpen, setModalOpen] = useState(false);
-    const [foo, setFoo] = useState(false);
+    const [secondModalOpen, setSecondModalOpen] = useState(false);
+    const [thirdModalOpen, setThirdModalOpen] = useState(false);
 
     return (
         <>
@@ -57,18 +58,44 @@ const TestModals = () => {
                         <Button
                             variant={Variant.GREEN}
                             onClick={() => {
-                                setFoo(!foo);
+                                setSecondModalOpen(!secondModalOpen);
                             }}
                         >
                             Open second
                         </Button>
                         <Modal
-                            show={foo}
+                            show={secondModalOpen}
                             onHide={(): void => {
-                                setFoo(false);
+                                setSecondModalOpen(false);
                             }}
+                            backdrop={false}
                         >
-                            Second modal
+                            <Card>
+                                <Card.Header title="Second modal" />
+                                <Card.Content>
+                                    Content
+                                    <Button
+                                        variant={Variant.PURPLE}
+                                        onClick={() => {
+                                            setThirdModalOpen(!thirdModalOpen);
+                                        }}
+                                    >
+                                        <Modal
+                                            show={thirdModalOpen}
+                                            onHide={(): void => {
+                                                setThirdModalOpen(false);
+                                            }}
+                                        >
+                                            <Card>
+                                                <Card.Content>
+                                                    Third
+                                                </Card.Content>
+                                            </Card>
+                                        </Modal>
+                                        Open third
+                                    </Button>
+                                </Card.Content>
+                            </Card>
                         </Modal>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis commodi dicta distinctio fugiat labore laboriosam nisi nobis, possimus quasi recusandae repellendus repudiandae tempore. A deleniti omnis perspiciatis quos vero!
                     </Card.Content>
