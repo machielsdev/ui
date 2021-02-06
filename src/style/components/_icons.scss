@@ -1,0 +1,23 @@
+@use "../base/variables";
+
+.icon {
+    font: {
+        family: 'Cui-Icons';
+        style: normal;
+        size: 1.3rem;
+    }
+    line-height: 1;
+    display: inline-block;
+
+    @for $i from 1 through 12 {
+        &.icon-size-#{$i} {
+            font-size: #{$i * variables.$base-gutter-steps}rem;
+        }
+    }
+}
+
+@each $name, $icon in variables.$icons {
+    .icon-#{$name}:before {
+        content: '#{$icon}';
+    }
+}

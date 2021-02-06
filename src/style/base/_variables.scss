@@ -1,0 +1,570 @@
+/**
+ * 1. Colors
+ */
+$colors: (
+    'red': (
+        'background': hsl(351, 100%, 96%),
+        'background-hover': hsl(354, 100%, 94%),
+        'default': hsl(0, 65%, 51%),
+        'hover': hsl(0, 66%, 47%),
+        'active': hsl(0, 73%, 41%),
+        'dark': hsl(0, 73%, 41%),
+        'default-font-color': #fff, //AA
+    ),
+    'pink': (
+        'background': hsl(340, 80%, 94%),
+        'default': hsl(338, 78%, 48%),
+        'hover': hsl(336, 78%, 43%),
+        'active': hsl(334, 79%, 38%),
+        'dark': hsl(328, 81%, 29%),
+        'default-font-color': #fff, //AA
+    ),
+    'purple': (
+        'background': hsl(292, 44%, 93%),
+        'default': hsl(287, 65%, 40%),
+        'hover': hsl(282, 68%, 38%),
+        'active': hsl(277, 70%, 35%),
+        'dark': hsl(267, 75%, 31%),
+        'default-font-color': #fff, //AAAA
+    ),
+    'deep-purple': (
+        'background': hsl(264, 45%, 94%),
+        'background-hover': hsl(263, 45%, 90%),
+        'default': hsl(260, 54%, 45%),
+        'hover': hsl(258, 58%, 42%),
+        'active': hsl(251, 69%, 34%),
+        'dark': hsl(251, 69%, 34%),
+        'default-font-color': #fff,
+    ),
+    'indigo': (
+        'background': hsl(231, 44%, 94%),
+        'default': hsl(232, 50%, 45%),
+        'hover': hsl(232, 54%, 41%),
+        'active': hsl(233, 57%, 37%),
+        'dark': hsl(235, 66%, 30%),
+        'default-font-color': #fff, //AAA
+    ),
+    'blue': (
+        'background': hsl(205, 87%, 94%),
+        'default': hsl(210, 79%, 46%),
+        'hover': hsl(212, 80%, 42%),
+        'active': hsl(216, 85%, 34%),
+        'dark': hsl(216, 85%, 34%),
+        'default-font-color': #fff, //AA
+    ),
+    'light-blue': (
+        'background': hsl(199, 94%, 94%),
+        'default': hsl(199, 91%, 64%),
+        'hover': hsl(199, 92%, 56%),
+        'active': hsl(199, 98%, 48%),
+        'dark': hsl(206, 99%, 31%),
+        'default-font-color': #000, //AAA
+    ),
+    'teal': (
+        'background': hsl(177, 72%, 93%),
+        'default': hsl(187, 100%, 38%),
+        'hover': hsl(186, 100%, 33%),
+        'active': hsl(185, 100%, 28%),
+        'dark': hsl(182, 100%, 20%),
+        'default-font-color': #000, //AAA
+    ),
+    'green': (
+        'background': hsl(125, 39%, 94%),
+        'default': hsl(123, 41%, 45%),
+        'hover': hsl(123, 43%, 39%),
+        'active': hsl(123, 46%, 34%),
+        'dark': hsl(124, 55%, 24%),
+        'default-font-color': #000, //AA
+    ),
+    'light-green': (
+        'background': hsl(88, 52%, 94%),
+        'default': hsl(89, 46%, 48%),
+        'hover': hsl(92, 48%, 42%),
+        'active': hsl(95, 49%, 36%),
+        'dark': hsl(103, 56%, 26%),
+        'default-font-color': #000, //AAA
+    ),
+    'lime': (
+        'background': hsl(66, 71%, 95%),
+        'default': hsl(64, 60%, 50%),
+        'hover': hsl(62, 61%, 44%),
+        'active': hsl(60, 63%, 38%),
+        'dark': hsl(54, 70%, 30%),
+        'default-font-color': #000, //AAA
+    ),
+    'yellow': (
+        'background': hsl(55, 100%, 95%),
+        'default': hsl(49, 98%, 60%),
+        'hover': hsl(43, 96%, 58%),
+        'active': hsl(37, 95%, 56%),
+        'dark': hsl(28, 92%, 53%),
+        'default-font-color': #000, //AAA
+    ),
+    'amber': (
+        'background': hsl(46, 100%, 94%),
+        'default': hsl(42, 100%, 50%),
+        'hover': hsl(38, 100%, 50%),
+        'active': hsl(34, 100%, 50%),
+        'dark': hsl(26, 100%, 50%),
+        'default-font-color': #000, //AAA
+    ),
+    'orange': (
+        'background': hsl(37, 100%, 94%),
+        'default': hsl(33, 100%, 49%),
+        'hover': hsl(30, 100%, 48%),
+        'active': hsl(27, 100%, 47%),
+        'dark': hsl(21, 100%, 45%),
+        'default-font-color': #000, //AAA
+    ),
+    'brown': (
+        'background': hsl(20, 16%, 93%),
+        'default': hsl(15, 25%, 34%),
+        'hover': hsl(14, 26%, 29%),
+        'active': hsl(11, 26%, 24%),
+        'dark': hsl(9, 28%, 19%),
+        'default-font-color': #fff, //AAA
+    ),
+    'gray': (
+        'background': hsl(0, 0%, 98%),
+        'default': hsl(0, 0%, 46%),
+        'hover': hsl(0, 0%, 38%),
+        'active': hsl(0, 0%, 26%),
+        'dark': hsl(0, 0%, 13%),
+        'default-font-color': #fff, //AA
+    ),
+    'blue-gray': (
+        'background': hsl(204, 15%, 94%),
+        'default': hsl(199, 18%, 33%),
+        'hover': hsl(200, 18%, 26%),
+        'active': hsl(200, 19%, 18%),
+        'dark': hsl(200, 19%, 18%),
+        'default-font-color': #fff, //AAA
+    )
+);
+
+@function color($color, $variant: 'default') {
+    @return map-get(map-get($colors, $color), $variant);
+}
+
+/**
+ * 2. Base
+ */
+$base-background-color: color('gray', 'background');
+$base-body-gutter: 0;
+$base-font-color: hsl(200, 19%, 18%);
+$base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
+$base-border-color: hsl(0, 0%, 88%);
+$base-border-hover-color: hsl(0, 0%, 74%);
+$base-border-radius: 4px;
+$base-gutter: 1rem;
+$base-gutter-steps: 0.25;
+
+$breakpoints: (
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px'
+);
+
+:root {
+    --base-body-background: #{$base-background-color};
+    --base-body-gutter: #{$base-body-gutter};
+    --base-font-color: #{$base-font-color};
+    --base-font-family: #{$base-font-family};
+    --base-border-color: #{$base-border-color};
+    --base-border-hover-color: #{$base-border-hover-color};
+    --base-border-radius: #{$base-border-radius};
+    --base-gutter: #{$base-gutter};
+}
+
+$primary-color: color('deep-purple', 'default');
+$primary-color-hover: color('deep-purple', 'hover');
+$primary-color-active: color('deep-purple', 'active');
+$primary-color-light-background: color('deep-purple', 'background');
+
+$danger-color: color('red', 'default');
+$danger-color-hover: color('red', 'hover');
+$danger-color-active: color('red', 'active');
+$danger-color-light-background: color('red', 'background');
+
+$success-color: color('green', 'default');
+$success-color-hover: color('green', 'hover');
+$success-color-active: color('green', 'active');
+
+:root {
+    --primary-color: #{$primary-color};
+    --primary-color-hover: #{$primary-color-hover};
+    --primary-color-active: #{$primary-color-active};
+    --primary-color-light-background: #{$primary-color-light-background};
+
+    --danger-color: #{$danger-color};
+    --danger-color-hover: #{$danger-color-hover};
+    --danger-color-active: #{$danger-color-active};
+    --danger-color-light-background: #{$danger-color-light-background};
+
+    --success-color: #{$success-color};
+    --success-color-hover: #{$success-color};
+    --success-color-active: #{$success-color-active}
+}
+
+/**
+ * 3. Panel
+ */
+$panel-background: #fff;
+$panel-gutter: 2rem;
+
+:root {
+    --panel-background: #{$panel-background};
+    --panel-gutter: #{$panel-gutter}
+}
+
+/**
+ * 4. Page
+ */
+$page-gutter: 2rem;
+
+:root {
+    --page-gutter: #{$page-gutter};
+}
+
+/**
+ * 5. Button
+ */
+$button-padding: 1rem;
+$button-font-weight: 600;
+$button-font-size: 1rem;
+
+$primary-button-ghost-hover-background: color('deep-purple', 'background');
+$primary-button-ghost-active-background: color('deep-purple', 'background-hover');
+
+$secondary-button-background: transparent;
+$secondary-button-hover-background: color('deep-purple', 'background');
+$secondary-button-active-background: color('deep-purple', 'background-hover');
+
+$danger-button-ghost-hover-background: color('red', 'background');
+$danger-button-ghost-active-background: color('red', 'background-hover');
+
+:root {
+    --button-padding: #{$button-padding};
+    --button-font-weight: #{$button-font-weight};
+    --button-font-size: #{$button-font-size};
+
+    --primary-button-background: var(--primary-color);
+    --primary-button-border: var(--primary-color);
+    --primary-button-hover-background: var(--primary-color-hover);
+    --primary-button-hover-border: var(--primary-color-hover);
+    --primary-button-active-background: var(--primary-color-active);
+    --primary-button-active-border: var(--primary-color-active);
+
+    --primary-button-ghost-color: var(--primary-color);
+    --primary-button-ghost-border: var(--primary-color);
+    --primary-button-ghost-hover-background: #{$primary-button-ghost-hover-background};
+    --primary-button-ghost-active-background: #{$primary-button-ghost-active-background};
+
+    --secondary-button-background: #{$secondary-button-background};
+    --secondary-button-hover-background: #{$secondary-button-hover-background};
+    --secondary-button-active-background: #{$secondary-button-active-background};
+
+    --danger-button-background: var(--danger-color);
+    --danger-button-border: var(--danger-color);
+    --danger-button-hover-background: var(--danger-color-hover);
+    --danger-button-hover-border: var(--danger-color-hover);
+    --danger-button-active-background: var(--danger-color-active);
+    --danger-button-active-border: var(--danger-color-active);
+
+    --danger-button-ghost-color: var(--danger-color);
+    --danger-button-ghost-border: var(--danger-color);
+    --danger-button-ghost-hover-background: #{$danger-button-ghost-hover-background};
+    --danger-button-ghost-active-background: #{$danger-button-ghost-active-background};
+}
+
+/**
+ * 6. Cards
+ */
+$card-padding: 1.5rem;
+$card-background: #fff;
+
+:root {
+    --card-padding: #{$card-padding};
+    --card-background: #{$card-background};
+}
+
+/**
+ * 7. Form fields
+ */
+$form-field-padding: 1rem;
+$form-field-font-weight: 500;
+$form-field-font-size: 1rem;
+
+:root {
+    --form-field-padding: #{$form-field-padding};
+    --form-field-font-weight: #{$form-field-font-weight};
+    --form-field-font-size: #{$form-field-font-size};
+}
+
+/**
+ * 8. Icons
+ */
+$icons: (
+    'activity': '\e900',
+    'alert-circle': '\e901',
+    'alert-triangle': '\e902',
+    'archive': '\e903',
+    'arrow-left': '\e904',
+    'arrow-circle-down': '\e905',
+    'arrow-circle-left': '\e906',
+    'arrow-circle-right': '\e907',
+    'arrow-circle-up': '\e908',
+    'sort-down': '\e909',
+    'arrow-down': '\e90a',
+    'arrow-right': '\e90b',
+    'arrow-alt-left': '\e90c',
+    'arrow-alt-down': '\e90d',
+    'arrow-alt-right': '\e90e',
+    'arrow-alt-up': '\e90f',
+    'sort-left': '\e910',
+    'sort-right': '\e911',
+    'sort-up': '\e912',
+    'arrow-up': '\e913',
+    'chevron-double-down': '\e914',
+    'chevron-double-left': '\e915',
+    'chevron-double-right': '\e916',
+    'chevron-double-up': '\e917',
+    'at': '\e918',
+    'attach-2': '\e919',
+    'attach': '\e91a',
+    'award': '\e91b',
+    'backspace': '\e91c',
+    'bar-chart-2': '\e91d',
+    'bar-chart': '\e91e',
+    'battery': '\e91f',
+    'behance': '\e920',
+    'bell-off': '\e921',
+    'bell': '\e922',
+    'bluetooth': '\e923',
+    'book-open': '\e924',
+    'book': '\e925',
+    'bookmark': '\e926',
+    'briefcase': '\e927',
+    'browser': '\e928',
+    'brush': '\e929',
+    'bulb': '\e92a',
+    'calendar': '\e92b',
+    'camera': '\e92c',
+    'car': '\e92d',
+    'cast': '\e92e',
+    'charging': '\e92f',
+    'checkmark-circle-2': '\e930',
+    'checkmark-circle': '\e931',
+    'checkmark': '\e932',
+    'checkmark-square-2': '\e933',
+    'checkmark-square': '\e934',
+    'chevron-down': '\e935',
+    'chevron-left': '\e936',
+    'chevron-right': '\e937',
+    'chevron-up': '\e938',
+    'clipboard': '\e939',
+    'clock': '\e93a',
+    'close-circle': '\e93b',
+    'close': '\e93c',
+    'close-square': '\e93d',
+    'cloud-download': '\e93e',
+    'cloud-upload': '\e93f',
+    'code-download': '\e940',
+    'code': '\e941',
+    'collapse': '\e942',
+    'color-palette': '\e943',
+    'color-picker': '\e944',
+    'compass': '\e945',
+    'copy': '\e946',
+    'corner-down-left': '\e947',
+    'corner-down-right': '\e948',
+    'corner-left-down': '\e949',
+    'corner-left-up': '\e94a',
+    'corner-right-down': '\e94b',
+    'corner-right-up': '\e94c',
+    'corner-up-left': '\e94d',
+    'corner-up-right': '\e94e',
+    'credit-card': '\e94f',
+    'crop': '\e950',
+    'cube': '\e951',
+    'diagonal-arrow-left-down': '\e952',
+    'diagonal-arrow-left-up': '\e953',
+    'diagonal-arrow-right-down': '\e954',
+    'diagonal-arrow-right-up': '\e955',
+    'done-all': '\e956',
+    'download': '\e957',
+    'droplet-off': '\e958',
+    'droplet': '\e959',
+    'edit-2': '\e95a',
+    'edit': '\e95b',
+    'email': '\e95c',
+    'expand': '\e95d',
+    'external-link': '\e95e',
+    'eye-off-2': '\e95f',
+    'eye-off': '\e960',
+    'eye': '\e961',
+    'facebook': '\e962',
+    'file-add': '\e963',
+    'file': '\e964',
+    'file-remove': '\e965',
+    'file-text': '\e966',
+    'film': '\e967',
+    'flag': '\e968',
+    'flash-off': '\e969',
+    'flash': '\e96a',
+    'flip-2': '\e96b',
+    'flip': '\e96c',
+    'folder-add': '\e96d',
+    'folder': '\e96e',
+    'folder-remove': '\e96f',
+    'funnel': '\e970',
+    'gift': '\e971',
+    'github': '\e972',
+    'globe-2': '\e973',
+    'globe': '\e974',
+    'google': '\e975',
+    'grid': '\e976',
+    'hard-drive': '\e977',
+    'hash': '\e978',
+    'headphones': '\e979',
+    'heart': '\e97a',
+    'home': '\e97b',
+    'image': '\e97c',
+    'inbox': '\e97d',
+    'info': '\e97e',
+    'keypad': '\e97f',
+    'layers': '\e980',
+    'layout': '\e981',
+    'link-2': '\e982',
+    'link': '\e983',
+    'linkedin': '\e984',
+    'list': '\e985',
+    'loader': '\e986',
+    'lock': '\e987',
+    'log-in': '\e988',
+    'log-out': '\e989',
+    'map': '\e98a',
+    'maximize': '\e98b',
+    'menu-2': '\e98c',
+    'menu-arrow': '\e98d',
+    'menu': '\e98e',
+    'message-circle': '\e98f',
+    'message-square': '\e990',
+    'mic-off': '\e991',
+    'mic': '\e992',
+    'minimize': '\e993',
+    'minus-circle': '\e994',
+    'minus': '\e995',
+    'minus-square': '\e996',
+    'monitor': '\e997',
+    'moon': '\e998',
+    'more-horizontal': '\e999',
+    'more-vertical': '\e99a',
+    'move': '\e99b',
+    'music': '\e99c',
+    'navigation-2': '\e99d',
+    'navigation': '\e99e',
+    'npm': '\e99f',
+    'options-2': '\e9a0',
+    'options': '\e9a1',
+    'pantone': '\e9a2',
+    'paper-plane': '\e9a3',
+    'pause-circle': '\e9a4',
+    'people': '\e9a5',
+    'percent': '\e9a6',
+    'user-add': '\e9a7',
+    'user-delete': '\e9a8',
+    'user-done': '\e9a9',
+    'user': '\e9aa',
+    'user-remove': '\e9ab',
+    'phone-call': '\e9ac',
+    'phone-missed': '\e9ad',
+    'phone-off': '\e9ae',
+    'phone': '\e9af',
+    'pie-chart': '\e9b0',
+    'pin': '\e9b1',
+    'play-circle': '\e9b2',
+    'plus-circle': '\e9b3',
+    'plus': '\e9b4',
+    'plus-square': '\e9b5',
+    'power': '\e9b6',
+    'pricetags': '\e9b7',
+    'printer': '\e9b8',
+    'question-mark-circle': '\e9b9',
+    'question-mark': '\e9ba',
+    'radio-button-off': '\e9bb',
+    'radio-button-on': '\e9bc',
+    'radio': '\e9bd',
+    'recording': '\e9be',
+    'refresh': '\e9bf',
+    'repeat': '\e9c0',
+    'rewind-left': '\e9c1',
+    'rewind-right': '\e9c2',
+    'save': '\e9c3',
+    'scissors': '\e9c4',
+    'search': '\e9c5',
+    'settings-2': '\e9c6',
+    'settings': '\e9c7',
+    'shake': '\e9c8',
+    'share': '\e9c9',
+    'shield-off': '\e9ca',
+    'shield': '\e9cb',
+    'shopping-bag': '\e9cc',
+    'shopping-cart': '\e9cd',
+    'shuffle-2': '\e9ce',
+    'shuffle': '\e9cf',
+    'step-backward': '\e9d0',
+    'step-forward': '\e9d1',
+    'slash': '\e9d2',
+    'smartphone': '\e9d3',
+    'smiling-face': '\e9d4',
+    'speaker': '\e9d5',
+    'square': '\e9d6',
+    'star': '\e9d7',
+    'stop-circle': '\e9d8',
+    'sun': '\e9d9',
+    'swap': '\e9da',
+    'sync': '\e9db',
+    'text': '\e9dc',
+    'thermometer-minus': '\e9dd',
+    'thermometer': '\e9de',
+    'thermometer-plus': '\e9df',
+    'toggle-left': '\e9e0',
+    'toggle-right': '\e9e1',
+    'trash-2': '\e9e2',
+    'trash': '\e9e3',
+    'trending-down': '\e9e4',
+    'trending-up': '\e9e5',
+    'tv': '\e9e6',
+    'twitter': '\e9e7',
+    'umbrella': '\e9e8',
+    'undo': '\e9e9',
+    'unlock': '\e9ea',
+    'upload': '\e9eb',
+    'video-off': '\e9ec',
+    'video': '\e9ed',
+    'volume-down': '\e9ee',
+    'volume-mute': '\e9ef',
+    'volume-off': '\e9f0',
+    'volume-up': '\e9f1',
+    'wifi-off': '\e9f2',
+    'wifi': '\e9f3',
+);
+
+@function icon($name) {
+    @return map-get($icons, $name);
+}
+
+/**
+ * 8. Form fields
+ */
+$form-field-padding: 1rem;
+$form-field-font-weight: 500;
+$form-field-font-size: 1rem;
+
+:root {
+    --form-field-padding: #{$form-field-padding};
+    --form-field-font-weight: #{$form-field-font-weight};
+    --form-field-font-size: #{$form-field-font-size};
+}

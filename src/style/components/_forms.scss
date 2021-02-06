@@ -1,0 +1,22 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    font: {
+        weight: 600;
+    }
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-message {
+    &.form-message-valid {
+        color: var(--success-color);
+    }
+
+    &.form-message-invalid {
+        font-weight: 500;
+        color: var(--danger-color);
+    }
+}

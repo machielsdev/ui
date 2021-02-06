@@ -1,0 +1,5 @@
+@use "variables";
+
+@function color($color, $variant: 'default') {
+    @return map-get(map-get(variables.$colors, $color), $variant);
+}

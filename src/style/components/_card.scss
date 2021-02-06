@@ -1,0 +1,52 @@
+@use "elevation";
+
+.card {
+    @extend .elevated-1;
+    background: var(--card-background);
+    border: solid 1px var(--base-border-color);
+    border-radius: var(--base-border-radius);
+    width: 100%;
+
+    .card-content {
+        padding: var(--card-padding);
+    }
+
+    .card-header {
+        padding: var(--card-padding);
+        display: flex;
+        align-items: center;
+
+        .card-header-actions {
+            margin-left: auto;
+
+            > .card-header-action {
+                margin-left: var(--card-padding);
+            }
+        }
+    }
+
+    .card-title {
+        font: {
+            weight: 600;
+            size: 1.2rem;
+        }
+    }
+
+    &.card-primary {
+        border-color: var(--primary-color);
+        background: var(--primary-color-light-background);
+    }
+
+    &.card-primary-ghost {
+        border-color: var(--primary-color);
+    }
+
+    &.card-danger {
+        border-color: var(--danger-color);
+        background: var(--danger-color-light-background);
+    }
+
+    &.card-danger-ghost {
+        border-color: var(--danger-color);
+    }
+}

@@ -1,0 +1,7 @@
+@use "../base/variables";
+
+@for $i from 1 through 5 {
+    .elevated-#{$i} {
+        box-shadow: 0 2px #{$i * 2 + 3}px 0px hsla(hue(variables.color('gray', 'default')), saturation(variables.color('gray', 'default')), lightness(variables.color('gray', 'default')), 0.2);
+    }
+}
