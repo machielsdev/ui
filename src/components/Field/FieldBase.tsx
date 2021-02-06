@@ -4,6 +4,8 @@ import { Icon, Variant } from '@/components';
 import clsx from 'clsx';
 import { ReactElement, useState } from 'react';
 import { FieldContext } from './FieldContext';
+import { ConfigManager } from '@/components/utils/config/ConfigManager';
+import { ConfigComponent } from '@/components/utils/config/ConfigComponent';
 
 interface FieldBaseProps {
     actions?: React.ReactNode;
@@ -32,7 +34,7 @@ export const getStateIcon = (valid: boolean | undefined): ReactElement | undefin
     );
 }
 
-const FieldBaseProps = ({
+const FieldBase: React.FunctionComponent & ConfigComponent = ({
     actions,
     className,
     children,
@@ -91,7 +93,9 @@ export const propTypes = {
     variant: PropTypes.string,
 }
 
-FieldBaseProps.displayName = 'FieldBase';
-FieldBaseProps.propTypes = propTypes;
+FieldBase.displayName = 'FieldBase';
+FieldBase.propTypes = propTypes;
+FieldBase.config = new ConfigManager();
+FieldBase.config.addNamespace('classes')
 
-export default FieldBaseProps;
+export default FieldBase;
