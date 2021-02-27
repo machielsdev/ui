@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Variant } from '@/components';
 import clsx from 'clsx';
+import { Variant } from '../utils';
 
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
     variant: Variant | string;

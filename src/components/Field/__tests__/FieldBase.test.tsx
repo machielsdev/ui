@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import FieldBase from '@/components/Field/FieldBase';
-import { Variant } from '@/components';
-import { FieldContext } from '@/components/Field/FieldContext';
+import FieldBase from '../FieldBase';
+import { Variant } from '../../utils';
+import { FieldContext } from '../FieldContext';
 
 describe('FieldBase test', () => {
     it('should render field base', () => {

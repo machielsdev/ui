@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
     spaced?: boolean;
 }
 

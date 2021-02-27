@@ -11,9 +11,9 @@ import PropTypes from 'prop-types';
 import { Modifier } from '@popperjs/core/lib/types';
 import clsx from 'clsx';
 import { AnimationFeature, ExitFeature, HTMLMotionProps, m as motion, MotionConfig } from 'framer-motion';
-import { motionsMap } from '@/components/animations/motionsMap';
+import { motionsMap } from '../animations';
 
-interface OverlayProps {
+export interface OverlayProps {
     className?: string;
     triggerRef: React.MutableRefObject<HTMLElement | undefined>;
     placement?: Placement;

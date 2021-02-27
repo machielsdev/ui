@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Panel } from '@/components/Panel';
+import Panel from '../Panel';
 
 describe('Page test', () => {
     it('should render panel', () => {

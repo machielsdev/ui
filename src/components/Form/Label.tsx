@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-type FormLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
+export type FormLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
 
 const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>((
     {

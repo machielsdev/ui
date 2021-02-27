@@ -2,8 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-interface FormGroupProps extends React.HTMLAttributes<HTMLDivElement> {
-}
+export type FormGroupProps = React.HTMLAttributes<HTMLDivElement>;
 
 const FormGroup = React.forwardRef<HTMLDivElement, FormGroupProps>((
     {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import PageHeader from '@/components/Page/Header';
-import PageContent from '@/components/Page/Content';
+import PageHeader from '../Page/Header';
+import PageContent from '../Page/Content';
 
 export type PageProps = React.HTMLAttributes<HTMLDivElement> ;
 

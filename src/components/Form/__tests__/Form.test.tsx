@@ -1,8 +1,8 @@
 import { render } from 'enzyme';
 import React from 'react';
-import FormGroup from '@/components/Form/Group';
-import FormLabel from '@/components/Form/Label';
-import FormMessage from '@/components/Form/Message';
+import FormGroup from '../Group';
+import FormLabel from '../Label';
+import FormMessage from '../Message';
 
 describe('Form test', () => {
     it('should render form-group', () => {

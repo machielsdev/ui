@@ -1,6 +1,8 @@
 import { render } from 'enzyme';
 import React from 'react';
-import { Col, Grid, Row } from '@/components';
+import Col from '../Col';
+import Grid from '../Grid';
+import Row from '../Row';
 
 describe('Grid test', () => {
     it('should render grid', () => {

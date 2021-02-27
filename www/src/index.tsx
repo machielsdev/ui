@@ -8,7 +8,7 @@ import Container from '../../src/components/Container/Container';
 import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
-import Tooltip from '../../src/components/Tooltip';
+import { Tooltip } from '../../src/components/Tooltip';
 
 const TestControllable = () => {
     const [value, setValue] = useState('');

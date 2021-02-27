@@ -1,6 +1,6 @@
 import { render } from 'enzyme';
-import { Icon } from '@/components';
 import React from 'react';
+import Icon from '../Icon';
 
 describe('Icon test', () => {
     it('should render icon', () => {

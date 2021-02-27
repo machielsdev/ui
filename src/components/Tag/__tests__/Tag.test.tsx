@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Tag, Variant } from '@/components';
+import Tag from '../Tag';
+import { Variant } from '../../utils';
 
 describe('Tag test', () => {
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { IconName } from '@/components/Icon/IconName';
+import { IconName } from './IconName';
 
-interface IconProps extends React.HTMLAttributes<HTMLElement> {
+export interface IconProps extends React.HTMLAttributes<HTMLElement> {
     icon: IconName | string;
     size?: string | number;
 }

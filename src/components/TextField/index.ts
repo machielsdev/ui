@@ -1,1 +1,2 @@
-export { default as TextField } from '@/components/TextField/TextField';
+export { default as TextField } from './TextField';
+export type { TextFieldProps } from './TextField';
