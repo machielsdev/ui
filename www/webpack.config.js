@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const dotenv = require('dotenv');
 
 /**
@@ -41,7 +41,7 @@ module.exports = {
                 }, {
                     loader: 'sass-loader',
                     options: {
-                        implementation: require('dart-sass')
+                        implementation: require('sass')
                     }
                 }]
             }, {
