@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Modal } from '@/components';
-import { ModalProps } from '@/components/Modal/Modal';
+import Modal, { ModalProps } from '../Modal';
 
 describe('Test modal', function (): void {
     it('should render modal', (): void => {

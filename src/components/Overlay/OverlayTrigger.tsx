@@ -1,12 +1,12 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
-import Overlay from '@/components/Overlay/index';
 import { Placement, PositioningStrategy } from '@popperjs/core';
-import { Trigger, triggerPropTypes } from '@/components/Overlay/Trigger';
 import { AnimatePresence } from 'framer-motion';
+import { Trigger, triggerPropTypes } from './Trigger';
+import Overlay from './Overlay';
 
-interface OverlayTriggerProps {
+export interface OverlayTriggerProps {
     arrow?: boolean;
     children: React.ReactElement;
     overlay: React.ReactNode;

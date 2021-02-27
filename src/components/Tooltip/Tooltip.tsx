@@ -1,10 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import OverlayTrigger from '@/components/Overlay/OverlayTrigger';
 import { Placement } from '@popperjs/core';
-import { Trigger, triggerPropTypes } from '@/components/Overlay/Trigger';
+import { OverlayTrigger, Trigger, triggerPropTypes } from '../Overlay';
 
-interface TooltipProps {
+export interface TooltipProps {
     arrow?: boolean;
     children: React.ReactElement;
     placement?: Placement;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-type PageContentProps = React.HTMLAttributes<HTMLDivElement>;
+export type PageContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 const PageContent = ({
     children,

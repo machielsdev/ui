@@ -1,5 +1,5 @@
-import { ModalManager } from '@/components/Modal/modalManager';
 import { createRef } from 'react';
+import { ModalManager } from '../modalManager';
 
 describe('Test modalManager', function () {
     it('should add backdrop if modal needs it', () => {

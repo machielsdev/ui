@@ -1,10 +1,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import CardContent from '@/components/Card/Content';
-import { ForwardComponentWithStatics } from '@/components/utils/ForwardComponentWithStatics';
-import CardHeader from '@/components/Card/Header';
-import { Variant } from '@/components';
+import CardContent from './Content';
+import { ForwardComponentWithStatics } from '../utils/ForwardComponentWithStatics';
+import CardHeader from './Header';
+import { Variant } from '../utils';
 
 export type CardStatics = {
     Content: typeof CardContent;

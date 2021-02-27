@@ -1,7 +1,6 @@
 import * as React from 'react';
-import FieldBaseProps from '@/components/Field/FieldBase';
-import FieldBase, { propTypes as basePropTypes } from '@/components/Field/FieldBase';
-import SelectFieldInput from '@/components/SelectField/SelectFieldInput';
+import { FieldBase, FieldBaseProps, propTypes as basePropTypes } from '../Field';
+import SelectFieldInput from './SelectFieldInput';
 
 export type SelectFieldProps = React.SelectHTMLAttributes<HTMLSelectElement> & FieldBaseProps;
 

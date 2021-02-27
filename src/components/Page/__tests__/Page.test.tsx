@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Page } from '@/components/Page';
+import Page from '../Page';
 
 describe('Page test', () => {
     it('should render page', () => {

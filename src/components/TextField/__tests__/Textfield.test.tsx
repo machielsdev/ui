@@ -1,6 +1,8 @@
 import { mount, render } from 'enzyme';
 import React from 'react';
-import { Button, TextField, Variant } from '@/components';
+import TextField from '../TextField';
+import { Variant } from '../../utils';
+import { Button } from '../../Button';
 
 describe('TextField test', () => {
     it('should render text input', () => {

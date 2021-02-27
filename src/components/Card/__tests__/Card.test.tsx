@@ -1,9 +1,9 @@
 import { render } from 'enzyme';
 import React from 'react';
-import Card from '@/components/Card/Card';
-import CardContent from '@/components/Card/Content';
-import CardHeader from '@/components/Card/Header';
-import { Variant } from '@/components';
+import { Variant } from '../../utils';
+import Card from '../Card';
+import CardContent from '../Content';
+import CardHeader from '../Header';
 
 describe('Card test', () => {
     it('should render card', () => {

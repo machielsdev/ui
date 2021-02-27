@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'enzyme';
-import { FieldContext } from '@/components/Field/FieldContext';
+import { FieldContext } from '../FieldContext';
 
 describe('FieldContext test', () => {
     it('should use default values when no consumer used', () => {

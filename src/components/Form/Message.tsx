@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-interface FormMessageProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FormMessageProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
     valid?: boolean;
 }

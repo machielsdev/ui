@@ -1,6 +1,6 @@
 import { render } from 'enzyme';
 import React from 'react';
-import Container from '@/components/Container/Container';
+import Container from '../Container';
 
 describe('Container test', () => {
     it('should render container', () => {

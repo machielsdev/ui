@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { createPortal } from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
-import { mergeRefs } from '@/components/utils/mergeRefs';
-import { ModalManager } from '@/components/Modal/modalManager';
+import { ModalManager } from './modalManager';
+import { mergeRefs } from '../utils/mergeRefs';
 
 let modalManager: ModalManager;
 
