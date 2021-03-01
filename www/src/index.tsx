@@ -23,7 +23,7 @@ import FormGroup from '../../src/components/Form/Group';
 import FormLabel from '../../src/components/Form/Label';
 import FormMessage from '../../src/components/Form/Message';
 import { Tooltip } from '../../src/components/Tooltip';
-import Pane from '../../src/components/Panel/Pane';
+import Pane from '../../src/components/Pane/Pane';
 
 const TestControllable = () => {
     const [value, setValue] = useState('');

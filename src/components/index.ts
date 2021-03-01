@@ -3,7 +3,7 @@ export * from './Card';
 export * from './Container';
 export * from './Grid';
 export * from './Page';
-export * from './Panel';
+export * from './Pane';
 export * from './Icon';
 export * from './Modal';
 export * from './utils';
