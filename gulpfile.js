@@ -4,23 +4,41 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 sass.compiler = require('sass');
 const rename = require('gulp-rename');
-const ts = require('gulp-typescript');
 
-const buildSass = async () => {
+const buildCss = async () => {
     return await gulp.src('./src/style/index.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist/style'));
+        .pipe(gulp.dest('./dist/css'));
 }
 
-gulp.task('sass', buildSass);
+gulp.task('css:build', buildCss);
 
-const buildSassMin = async () => {
+const copySass = async () => {
+    return await gulp.src('./src/style/**/*.scss')
+        .pipe(gulp.dest('./dist/scss'))
+}
+
+gulp.task('sass:copy', copySass);
+
+const buildCssMin = async () => {
     return await gulp.src('./src/style/index.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename('index.min.css'))
-        .pipe(gulp.dest('./dist/style'));
+        .pipe(gulp.dest('./dist/css'));
 }
 
-gulp.task('sass:min', buildSassMin);
+gulp.task('css:build:min', buildCssMin);
 
-gulp.task('default', gulp.series('sass', 'sass:min'));
+const copyIcons = async () => {
+    return await gulp.src('./src/icons/*')
+        .pipe(gulp.dest('./dist/icons'))
+}
+
+gulp.task('icons:copy', copyIcons);
+
+gulp.task('default', gulp.series(
+    'css:build',
+    'css:build:min',
+    'sass:copy',
+    'icons:copy'
+));

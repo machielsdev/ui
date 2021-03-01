@@ -1,6 +1,7 @@
 /**
  * 1. Base style setup
  */
+@forward "base/variables";
 @use "base/typography";
 @use "base/base";
 
