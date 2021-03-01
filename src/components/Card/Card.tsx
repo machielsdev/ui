@@ -16,7 +16,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 // Static properties are not given yet, when declaring the card const. Therefore, the error saying
-// that Card is missing above CardStatics  properties. These will defined after the card component
+// that Card is missing above CardStatics properties. These will defined after the card component
 // is defined.
 // @ts-ignore
 const Card: ForwardComponentWithStatics<HTMLDivElement, CardProps, CardStatics> = React.forwardRef((
