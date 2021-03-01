@@ -19,7 +19,8 @@
         "dist",
         "setupTests.ts",
         "babel.config.js",
-        "www"
+        "www",
+        "src/**/__tests__/*"
     ],
     "rules": {
         "comma-dangle": "off",
