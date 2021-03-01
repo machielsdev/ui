@@ -1,7 +1,27 @@
-.panel {
-    background: var(--panel-background);
+.pane-container {
+    display: flex;
 
-    &.panel-spaced {
-        padding: var(--panel-gutter);
+    &.vertical {
+        flex-direction: column;
+    }
+}
+
+.pane {
+    background: var(--panel-background);
+    display: flex;
+    flex-direction: column;
+    flex: 1 auto;
+    position: relative;
+
+    &.horizontal {
+        flex-direction: row;
+    }
+
+    .pane-content {
+        padding: var(--base-gutter);
+    }
+
+    .pane-header {
+        padding: var(--base-gutter);
     }
 }
