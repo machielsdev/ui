@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Variant } from '@/components';
+import { Variant } from '../utils';
 
 export type ButtonComponentTypes = 'button' | 'a';
 

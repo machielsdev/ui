@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { FieldContext, FieldContextProps } from '@/components/Field/FieldContext';
 import { propTypes, TextFieldProps } from './TextField';
 import { useContext, useEffect, useState } from 'react';
-import FieldContainer from '@/components/Field/FieldContainer';
+import { FieldContainer, FieldContext, FieldContextProps } from '../Field';
 
 const TextFieldInput = React.forwardRef<HTMLInputElement, TextFieldProps>((
     {

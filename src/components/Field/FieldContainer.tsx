@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-interface FieldContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FieldContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     toggles?: boolean;
 }
 

@@ -30,10 +30,7 @@
         "esModuleInterop": true,
         "strict": true,
         "isolatedModules": true,
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["src/*"]
-        }
+        "baseUrl": "./src"
     },
     "include": [
         "src/**/*.ts",
@@ -43,7 +40,9 @@
     "exclude": [
         "node_modules",
         "dist",
+        "scss",
         "setupTests.ts",
-        "www"
+        "www",
+        "src/**/__tests__/*"
     ]
 }

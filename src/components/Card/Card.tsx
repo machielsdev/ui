@@ -1,10 +1,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import CardContent from '@/components/Card/Content';
-import { ForwardComponentWithStatics } from '@/components/utils/ForwardComponentWithStatics';
-import CardHeader from '@/components/Card/Header';
-import { Variant } from '@/components';
+import CardContent from './Content';
+import { ForwardComponentWithStatics } from '../utils/ForwardComponentWithStatics';
+import CardHeader from './Header';
+import { Variant } from '../utils';
 
 export type CardStatics = {
     Content: typeof CardContent;
@@ -16,7 +16,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 // Static properties are not given yet, when declaring the card const. Therefore, the error saying
-// that Card is missing above CardStatics  properties. These will defined after the card component
+// that Card is missing above CardStatics properties. These will defined after the card component
 // is defined.
 // @ts-ignore
 const Card: ForwardComponentWithStatics<HTMLDivElement, CardProps, CardStatics> = React.forwardRef((

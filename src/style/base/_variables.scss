@@ -1,5 +1,5 @@
 /**
- * 1. Colors
+ * Colors
  */
 $colors: (
     'red': (
@@ -140,56 +140,54 @@ $colors: (
         'dark': hsl(200, 19%, 18%),
         'default-font-color': #fff, //AAA
     )
-);
+) !default;
 
 @function color($color, $variant: 'default') {
     @return map-get(map-get($colors, $color), $variant);
 }
 
 /**
- * 2. Base
+ * Base
  */
-$base-background-color: color('gray', 'background');
-$base-body-gutter: 0;
-$base-font-color: hsl(200, 19%, 18%);
-$base-font-family: 'Inter, apple-sf-pro-text, Helvetica, Arial, sans-serif';
-$base-border-color: hsl(0, 0%, 88%);
-$base-border-hover-color: hsl(0, 0%, 74%);
-$base-border-radius: 4px;
-$base-gutter: 1rem;
-$base-gutter-steps: 0.25;
+$base-background-color: color('gray', 'background') !default;
+$base-body-gutter: 0 !default;
+$base-font-color: hsl(200, 19%, 18%) !default;
+$base-border-color: hsl(0, 0%, 88%) !default;
+$base-border-hover-color: hsl(0, 0%, 74%) !default;
+$base-border-radius: 4px !default;
+$base-gutter: 1rem !default;
+$base-gutter-steps: 0.25 !default;
 
 $breakpoints: (
     'sm': '640px',
     'md': '768px',
     'lg': '1024px',
     'xl': '1280px'
-);
+) !default;
 
 :root {
     --base-body-background: #{$base-background-color};
     --base-body-gutter: #{$base-body-gutter};
     --base-font-color: #{$base-font-color};
-    --base-font-family: #{$base-font-family};
     --base-border-color: #{$base-border-color};
     --base-border-hover-color: #{$base-border-hover-color};
     --base-border-radius: #{$base-border-radius};
     --base-gutter: #{$base-gutter};
 }
 
-$primary-color: color('deep-purple', 'default');
-$primary-color-hover: color('deep-purple', 'hover');
-$primary-color-active: color('deep-purple', 'active');
-$primary-color-light-background: color('deep-purple', 'background');
+$primary-color: color('deep-purple', 'default') !default;
+$primary-color-hover: color('deep-purple', 'hover') !default;
+$primary-color-active: color('deep-purple', 'active') !default;
+$primary-color-light-background: color('deep-purple', 'background') !default;
 
-$danger-color: color('red', 'default');
-$danger-color-hover: color('red', 'hover');
-$danger-color-active: color('red', 'active');
-$danger-color-light-background: color('red', 'background');
+$danger-color: color('red', 'default') !default;
+$danger-color-hover: color('red', 'hover') !default;
+$danger-color-active: color('red', 'active') !default;
+$danger-color-light-background: color('red', 'background') !default;
 
-$success-color: color('green', 'default');
-$success-color-hover: color('green', 'hover');
-$success-color-active: color('green', 'active');
+$success-color: color('green', 'default') !default;
+$success-color-hover: color('green', 'hover') !default;
+$success-color-active: color('green', 'active') !default;
 
 :root {
     --primary-color: #{$primary-color};
@@ -208,41 +206,30 @@ $success-color-active: color('green', 'active');
 }
 
 /**
- * 3. Panel
+ * Page
  */
-$panel-background: #fff;
-$panel-gutter: 2rem;
-
-:root {
-    --panel-background: #{$panel-background};
-    --panel-gutter: #{$panel-gutter}
-}
-
-/**
- * 4. Page
- */
-$page-gutter: 2rem;
+$page-gutter: 2rem !default;
 
 :root {
     --page-gutter: #{$page-gutter};
 }
 
 /**
- * 5. Button
+ * Button
  */
-$button-padding: 1rem;
-$button-font-weight: 600;
-$button-font-size: 1rem;
+$button-padding: 1rem !default;
+$button-font-weight: 600 !default;
+$button-font-size: 1rem !default;
 
-$primary-button-ghost-hover-background: color('deep-purple', 'background');
-$primary-button-ghost-active-background: color('deep-purple', 'background-hover');
+$primary-button-ghost-hover-background: color('deep-purple', 'background') !default;
+$primary-button-ghost-active-background: color('deep-purple', 'background-hover') !default;
 
-$secondary-button-background: transparent;
-$secondary-button-hover-background: color('deep-purple', 'background');
-$secondary-button-active-background: color('deep-purple', 'background-hover');
+$secondary-button-background: transparent !default;
+$secondary-button-hover-background: color('deep-purple', 'background') !default;
+$secondary-button-active-background: color('deep-purple', 'background-hover') !default;
 
-$danger-button-ghost-hover-background: color('red', 'background');
-$danger-button-ghost-active-background: color('red', 'background-hover');
+$danger-button-ghost-hover-background: color('red', 'background') !default;
+$danger-button-ghost-active-background: color('red', 'background-hover') !default;
 
 :root {
     --button-padding: #{$button-padding};
@@ -279,10 +266,10 @@ $danger-button-ghost-active-background: color('red', 'background-hover');
 }
 
 /**
- * 6. Cards
+ * Cards
  */
-$card-padding: 1.5rem;
-$card-background: #fff;
+$card-padding: 1.5rem !default;
+$card-background: #fff !default;
 
 :root {
     --card-padding: #{$card-padding};
@@ -290,11 +277,11 @@ $card-background: #fff;
 }
 
 /**
- * 7. Form fields
+ * Form fields
  */
-$form-field-padding: 1rem;
-$form-field-font-weight: 500;
-$form-field-font-size: 1rem;
+$form-field-padding: 1rem !default;
+$form-field-font-weight: 500 !default;
+$form-field-font-size: 1rem !default;
 
 :root {
     --form-field-padding: #{$form-field-padding};
@@ -303,8 +290,9 @@ $form-field-font-size: 1rem;
 }
 
 /**
- * 8. Icons
+ * Icons
  */
+$iconPath: '../icons' !default;
 $icons: (
     'activity': '\e900',
     'alert-circle': '\e901',
@@ -557,11 +545,11 @@ $icons: (
 }
 
 /**
- * 8. Form fields
+ * Form fields
  */
-$form-field-padding: 1rem;
-$form-field-font-weight: 500;
-$form-field-font-size: 1rem;
+$form-field-padding: 1rem !default;
+$form-field-font-weight: 500 !default;
+$form-field-font-size: 1rem !default;
 
 :root {
     --form-field-padding: #{$form-field-padding};

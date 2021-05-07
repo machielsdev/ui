@@ -1,4 +1,4 @@
-import { mergeRefs } from '@/components/utils/mergeRefs';
+import { mergeRefs } from "../mergeRefs";
 
 describe('mergeRefs test', () => {
     it('should return null when falsy values applied', () => {

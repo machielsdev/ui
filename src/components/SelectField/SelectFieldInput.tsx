@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { propTypes, SelectFieldProps } from '@/components/SelectField/SelectField';
 import { Children, isValidElement, ReactNode, useContext, useEffect, useState } from 'react';
-import { FieldContext, FieldContextProps } from '@/components/Field/FieldContext';
 import clsx from 'clsx';
-import FieldContainer from '@/components/Field/FieldContainer';
+import { SelectFieldProps } from './SelectField';
+import { FieldContainer, FieldContext, FieldContextProps, propTypes } from '../Field';
 
 const determineInitialValue = (children: ReactNode): string => {
     let value = '';

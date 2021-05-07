@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import OverlayTrigger from '@/components/Overlay/OverlayTrigger';
 import { motion } from 'framer-motion';
+import OverlayTrigger from '../OverlayTrigger';
 
 describe('Overlay test', () => {
     it('should render overlay when hovered', async () => {

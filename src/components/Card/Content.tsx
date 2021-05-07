@@ -2,7 +2,7 @@ import * as React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-type CardContentProps = React.HTMLAttributes<HTMLDivElement>;
+export type CardContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>((
     {

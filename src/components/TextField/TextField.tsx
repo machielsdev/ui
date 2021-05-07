@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FieldBase, { propTypes as basePropTypes } from '@/components/Field/FieldBase';
-import FieldBaseProps from '@/components/Field/FieldBase';
-import TextFieldInput from '@/components/TextField/TextFieldInput';
+import { FieldBase, FieldBaseProps, propTypes as basePropTypes } from '../Field';
+import TextFieldInput from './TextFieldInput';
 
 export type TextFieldProps = React.InputHTMLAttributes<HTMLInputElement> & FieldBaseProps;
 

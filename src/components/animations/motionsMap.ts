@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import fade from '@/components/animations/fade';
+import fade from './fade';
 
 export const motionsMap = {
     fade

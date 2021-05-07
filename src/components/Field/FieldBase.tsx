@@ -1,17 +1,19 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, Variant } from '@/components';
 import clsx from 'clsx';
 import { ReactElement, useState } from 'react';
+import { Icon } from '../Icon';
 import { FieldContext } from './FieldContext';
+import { Variant } from '../utils';
 
-interface FieldBaseProps {
+export interface FieldBaseProps {
     actions?: React.ReactNode;
     className?: string;
     label?: React.ReactNode;
     valid?: boolean;
     variant?: Variant | string;
     value?: string | ReadonlyArray<string> | number;
+    children?: React.ReactNode;
 }
 
 export const getStateIcon = (valid: boolean | undefined): ReactElement | undefined => {
@@ -32,20 +34,23 @@ export const getStateIcon = (valid: boolean | undefined): ReactElement | undefin
     );
 }
 
-const FieldBaseProps = ({
-    actions,
-    className,
-    children,
-    label,
-    variant = Variant.PRIMARY,
-    valid
-}: React.PropsWithChildren<FieldBaseProps>,
+const FieldBaseProps = React.forwardRef<HTMLDivElement, FieldBaseProps>((
+    {
+        actions,
+        className,
+        children,
+        label,
+        variant = Variant.PRIMARY,
+        valid
+    },
+    ref
 ): React.ReactElement => {
     const [hasValue, setHasValue] = useState<boolean>(false);
     const [hasFocus, setHasFocus] = useState<boolean>(false);
 
     return (
         <div
+            ref={ref}
             className={clsx(
                 'form-field-base',
                 `form-field-${variant}`,
@@ -79,10 +84,11 @@ const FieldBaseProps = ({
             )}
         </div>
     );
-};
+});
 
 export const propTypes = {
     actions: PropTypes.node,
+    className: PropTypes.string,
     children: PropTypes.node,
     label: PropTypes.node,
     onChange: PropTypes.func,

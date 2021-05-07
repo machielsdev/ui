@@ -1,15 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const dotenv = require('dotenv');
 
 /**
  * Load env file and parse config, to be used when building the app
  * @returns {webpack.DefinePlugin}
  */
-const setEnvVars = () => {
+const setEnvVars = ()  => {
     const env = dotenv.config({
         path: './www/.env'
     }).parsed;
@@ -42,7 +41,7 @@ module.exports = {
                 }, {
                     loader: 'sass-loader',
                     options: {
-                        implementation: require('dart-sass')
+                        implementation: require('sass')
                     }
                 }]
             }, {
