@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { createPortal } from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
 import { ModalManager } from './modalManager';
-import { mergeRefs } from '../utils/mergeRefs';
+import { mergeRefs } from '../utils';
 
 let modalManager: ModalManager;
 
